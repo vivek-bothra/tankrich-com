@@ -58,6 +58,16 @@ export const projects: Project[] = [
   },
   // --- Business Tools & Web ---
   {
+    id: 'pureveg',
+    icon: '🌿',
+    name: 'PureVeg.xyz — Pure Veg Indian Food, Wherever You Are',
+    description: 'AI-powered global directory of pure vegetarian Indian restaurants — no mixed kitchens. Covers 100+ cities including Dubai, London, Singapore, New York and Melbourne. AI analyzes Google reviews to flag non-veg operations. Ad-free, forever free. Co-created with Sonal Daga.',
+    tags: ['AI', 'Directory', '100+ Cities', 'Google Reviews AI', 'Free', 'OpenAI + Anthropic'],
+    liveUrl: 'https://www.pureveg.xyz',
+    repoUrl: 'https://github.com/vivek-bothra',
+    group: 'tools',
+  },
+  {
     id: 'interactive-dashboard',
     icon: '📂',
     name: 'Fundamental Analysis Dashboard',
