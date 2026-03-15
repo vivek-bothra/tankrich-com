@@ -3,10 +3,12 @@ export interface Product {
   icon: string;
   name: string;
   description: string;
+  bullets?: string[];
   tags: string[];
   status: 'available' | 'development';
   liveUrl: string | null;
   ctaText: string;
+  modalType?: 'iframe' | 'info';
 }
 
 export const products: Product[] = [
@@ -15,6 +17,12 @@ export const products: Product[] = [
     icon: "🤖",
     name: "Autonomous Social Media Management",
     description: "Let AI run your complete social presence — hands-free but human-approved. Supports X (Twitter), Facebook Pages, and Instagram. AI drafts, schedules, and posts. You approve in seconds.",
+    bullets: [
+      "AI drafts posts tailored to your brand voice",
+      "Supports X / Twitter, Instagram, Facebook Pages",
+      "Human-in-the-loop approval — you stay in control",
+      "Automated scheduling and publishing",
+    ],
     tags: ["X / Twitter", "Instagram", "Facebook", "Human-in-loop"],
     status: "available",
     liveUrl: null,
@@ -25,16 +33,29 @@ export const products: Product[] = [
     icon: "⚙️",
     name: "GPT Minions for Your Workflows",
     description: "Automate the boring 1–2 step business tasks that eat your day. Custom GPT agents built for your exact workflow — from data entry to research summaries to client communications.",
+    bullets: [
+      "Custom GPT agents built around your exact workflow",
+      "Handles data entry, research, drafting, and summarisation",
+      "The BAS Creator GPT automates your BAS preparation",
+      "Built for solopreneurs and small business operators",
+    ],
     tags: ["GPT Agents", "Workflow", "Automation", "Solopreneurs"],
     status: "available",
     liveUrl: "https://chatgpt.com/g/g-69b34f8651a881918f2c891db7758fd0-bas-creator",
-    ctaText: "Try the GPT"
+    ctaText: "Try the GPT",
+    modalType: "info"
   },
   {
     id: 3,
     icon: "📊",
     name: "AI-Driven Business Dashboards",
     description: "Turn your business data into live, intelligent dashboards. From stock momentum trackers to custom analytics — built fast, deployed live, always actionable.",
+    bullets: [
+      "Custom dashboards built on your actual data",
+      "Live signals, momentum trackers, and KPI views",
+      "From idea to deployed dashboard in days",
+      "Always actionable — no more stale spreadsheets",
+    ],
     tags: ["Analytics", "Real-time", "Data", "Custom Build"],
     status: "available",
     liveUrl: "https://vivek-bothra.github.io/StockMomentumTracker",
@@ -45,6 +66,12 @@ export const products: Product[] = [
     icon: "🚀",
     name: "Accelerated AI Development",
     description: "Idea to live product in 3 weeks. I build and ship real AI-powered web products at speed — from concept and architecture to deployed MVP. See live examples built this way.",
+    bullets: [
+      "Concept to deployed MVP in 3 weeks",
+      "Full-stack AI-native architecture from day one",
+      "Real examples live and in production",
+      "Designed to scale — not throwaway prototypes",
+    ],
     tags: ["MVP", "Full-stack", "3-week sprint", "AI-native"],
     status: "available",
     liveUrl: "https://www.mywb.com.au",
@@ -55,6 +82,12 @@ export const products: Product[] = [
     icon: "🛡️",
     name: "Secure Personal AI Assistants",
     description: "24/7 AI assistants built on open-source frameworks — deployed on WhatsApp, Telegram, and web. Private, secure, and trained on your data. Always on, always helpful.",
+    bullets: [
+      "Deployed on WhatsApp, Telegram, or your website",
+      "Trained on your documents, FAQs, and data",
+      "Open-source stack — your data stays yours",
+      "Always available, always consistent",
+    ],
     tags: ["WhatsApp", "Telegram", "Open Source", "24/7"],
     status: "available",
     liveUrl: null,

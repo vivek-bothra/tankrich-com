@@ -6,26 +6,27 @@ export interface Project {
   tags: string[];
   liveUrl: string;
   repoUrl: string;
-  group: 'finance' | 'tools';
 }
 
-export const projectGroups = [
-  {
-    id: 'finance',
-    label: 'Finance & Markets',
-    icon: '📈',
-    description: 'Quantitative tools and live signal dashboards for traders and investors',
-  },
-  {
-    id: 'tools',
-    label: 'Business Tools & Web',
-    icon: '🛠️',
-    description: 'Deployed web products and business automation tools',
-  },
-] as const;
-
 export const projects: Project[] = [
-  // --- Finance & Markets ---
+  {
+    id: 'pureveg',
+    icon: '🌿',
+    name: 'PureVeg.xyz',
+    description: 'AI-powered global directory of pure vegetarian Indian restaurants — no mixed kitchens. Covers 100+ cities including Dubai, London, Singapore, New York, and Melbourne. AI analyzes Google reviews to flag non-veg operations. Ad-free, forever free. Co-created with Sonal Daga using Claude and Codex.',
+    tags: ['AI', 'Directory', '100+ Cities', 'Google Reviews AI', 'Free', 'Claude + Codex'],
+    liveUrl: 'https://www.pureveg.xyz',
+    repoUrl: 'https://github.com/vivek-bothra',
+  },
+  {
+    id: 'mywb',
+    icon: '💰',
+    name: 'My Wealth Base',
+    description: 'My Wealth Base calculates your ATO-compliant ESS income and CGT for every vest and sale — automatically. You never have to guess your RSU tax bill again.',
+    tags: ['ATO', 'ESS', 'RSU', 'CGT', 'Tax', 'AI-native'],
+    liveUrl: 'https://www.mywb.com.au',
+    repoUrl: 'https://github.com/vivek-bothra',
+  },
   {
     id: 'stock-momentum',
     icon: '📡',
@@ -34,17 +35,15 @@ export const projects: Project[] = [
     tags: ['Python', 'Quantitative', 'MACD', 'Weekly Signals'],
     liveUrl: 'https://vivek-bothra.github.io/StockMomentumTracker',
     repoUrl: 'https://github.com/vivek-bothra/StockMomentumTracker',
-    group: 'finance',
   },
   {
     id: 'market-top',
     icon: '🌐',
     name: 'Market Top Signals',
     description: 'Global momentum dashboard showing LONG / WATCH / FLAT signals for 14 major stock market indexes worldwide. Auto-generated every Monday using EMA, MACD, and RSI divergence.',
-    tags: ['HTML', 'EMA', 'MACD', 'RSI', '14 Indexes'],
+    tags: ['EMA', 'MACD', 'RSI', '14 Indexes', 'Weekly'],
     liveUrl: 'https://vivek-bothra.github.io/Market-Top-Indicator',
     repoUrl: 'https://github.com/vivek-bothra/Market-Top-Indicator',
-    group: 'finance',
   },
   {
     id: 'tankrich-signals',
@@ -54,18 +53,6 @@ export const projects: Project[] = [
     tags: ['Signals', 'Bitcoin', 'Gold', 'Silver', 'Live'],
     liveUrl: 'https://signals.tankrich.com.au',
     repoUrl: 'https://github.com/vivek-bothra/tankrich-signals-site',
-    group: 'finance',
-  },
-  // --- Business Tools & Web ---
-  {
-    id: 'pureveg',
-    icon: '🌿',
-    name: 'PureVeg.xyz — Pure Veg Indian Food, Wherever You Are',
-    description: 'AI-powered global directory of pure vegetarian Indian restaurants — no mixed kitchens. Covers 100+ cities including Dubai, London, Singapore, New York and Melbourne. AI analyzes Google reviews to flag non-veg operations. Ad-free, forever free. Co-created with Sonal Daga.',
-    tags: ['AI', 'Directory', '100+ Cities', 'Google Reviews AI', 'Free', 'OpenAI + Anthropic'],
-    liveUrl: 'https://www.pureveg.xyz',
-    repoUrl: 'https://github.com/vivek-bothra',
-    group: 'tools',
   },
   {
     id: 'interactive-dashboard',
@@ -75,26 +62,14 @@ export const projects: Project[] = [
     tags: ['JavaScript', 'Screener.in', 'Excel', 'Financial Analysis'],
     liveUrl: 'https://analysis.tankrich.com.au',
     repoUrl: 'https://github.com/vivek-bothra/Tankrich-Interactive-dashboard',
-    group: 'tools',
   },
   {
     id: 'mfd-site',
     icon: '💼',
     name: 'Tankrich MFD — Mutual Funds For Life',
     description: 'Full mutual fund advisory landing site. Goal-driven, data-driven investment strategies with team profiles and client onboarding. Built and deployed in days.',
-    tags: ['HTML', 'Mutual Funds', 'Advisory', 'Landing Page'],
+    tags: ['Mutual Funds', 'Advisory', 'Landing Page'],
     liveUrl: 'https://tankrichmfd.xyz',
     repoUrl: 'https://github.com/vivek-bothra/tankrichmfd-site',
-    group: 'tools',
-  },
-  {
-    id: 'mywb',
-    icon: '🚀',
-    name: 'MyWB — AI-Native Web Product',
-    description: 'A live AI-powered web product built from idea to deployment in under 3 weeks. A real example of the accelerated AI development approach in action.',
-    tags: ['AI-native', 'Full-stack', 'MVP', '3-week sprint'],
-    liveUrl: 'https://www.mywb.com.au',
-    repoUrl: 'https://github.com/vivek-bothra',
-    group: 'tools',
   },
 ];
