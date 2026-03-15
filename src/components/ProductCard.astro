@@ -8,8 +8,8 @@ interface Props {
 const { product } = Astro.props;
 const isAvailable = product.status === 'available';
 const whatsappUrl = 'https://wa.me/61449924670';
-const ctaHref = product.liveUrl ?? whatsappUrl;
-const ctaTarget = '_blank';
+const hasLiveUrl = !!product.liveUrl;
+const modalId = `modal-${product.id}`;
 ---
 
 <div class="product-card rounded-2xl p-6 flex flex-col gap-4 transition-all duration-300">
@@ -35,15 +35,80 @@ const ctaTarget = '_blank';
   </div>
 
   <!-- CTA -->
-  <a
-    href={ctaHref}
-    target={ctaTarget}
-    rel="noopener noreferrer"
-    class="cta-btn mt-2 px-5 py-2.5 rounded-lg text-sm font-semibold text-center transition-all duration-200 inline-block"
-  >
-    {product.ctaText} →
-  </a>
+  {hasLiveUrl ? (
+    <button
+      data-modal={modalId}
+      class="cta-btn mt-2 px-5 py-2.5 rounded-lg text-sm font-semibold text-center transition-all duration-200 w-full cursor-pointer"
+    >
+      {product.ctaText} →
+    </button>
+  ) : (
+    <a
+      href={whatsappUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="cta-btn mt-2 px-5 py-2.5 rounded-lg text-sm font-semibold text-center transition-all duration-200 inline-block"
+    >
+      {product.ctaText} →
+    </a>
+  )}
 </div>
+
+<!-- Modal -->
+{hasLiveUrl && (
+  <div id={modalId} class="modal-overlay" role="dialog" aria-modal="true" aria-label={product.name}>
+    <div class="modal-container">
+      <!-- Modal header -->
+      <div class="modal-header">
+        <div class="flex items-center gap-3">
+          <span class="text-2xl">{product.icon}</span>
+          <div>
+            <h3 class="font-bold text-base" style="color: #f0f4ff;">{product.name}</h3>
+            <a
+              href={product.liveUrl!}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-xs hover:underline flex items-center gap-1"
+              style="color: #8892b0;"
+            >
+              {product.liveUrl}
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+            </a>
+          </div>
+        </div>
+        <button class="modal-close" data-close={modalId} aria-label="Close">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+
+      <!-- iframe -->
+      <div class="modal-iframe-wrap">
+        <iframe
+          src={product.liveUrl!}
+          class="modal-iframe"
+          title={product.name}
+          sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
+        ></iframe>
+        <!-- Fallback shown if iframe blocked -->
+        <div class="iframe-fallback">
+          <div class="text-4xl mb-4">{product.icon}</div>
+          <p class="font-semibold mb-2" style="color: #f0f4ff;">This site can't be previewed here</p>
+          <p class="text-sm mb-6" style="color: #8892b0;">Some sites block embedded previews for security reasons.</p>
+          <a
+            href={product.liveUrl!}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-sm transition-all duration-200"
+            style="background: #4f8cff; color: #05060f;"
+          >
+            Open in New Tab
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+)}
 
 <style>
   .product-card {
@@ -89,4 +154,169 @@ const ctaTarget = '_blank';
     border-color: #4f8cff;
     box-shadow: 0 4px 20px rgba(79,140,255,0.3);
   }
+
+  /* Modal */
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: rgba(5,6,15,0.85);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+  }
+
+  .modal-overlay.open {
+    display: flex;
+  }
+
+  .modal-container {
+    background: #0d0f1e;
+    border: 1px solid rgba(79,140,255,0.2);
+    border-radius: 16px;
+    width: 100%;
+    max-width: 960px;
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 24px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(79,140,255,0.1);
+    animation: modal-in 0.2s ease;
+  }
+
+  @keyframes modal-in {
+    from { opacity: 0; transform: scale(0.97) translateY(8px); }
+    to   { opacity: 1; transform: scale(1) translateY(0); }
+  }
+
+  .modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    flex-shrink: 0;
+  }
+
+  .modal-close {
+    color: #8892b0;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 8px;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    flex-shrink: 0;
+  }
+
+  .modal-close:hover {
+    background: rgba(255,255,255,0.1);
+    color: #f0f4ff;
+  }
+
+  .modal-iframe-wrap {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .modal-iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: #fff;
+  }
+
+  .iframe-fallback {
+    display: none;
+    position: absolute;
+    inset: 0;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 40px;
+    background: #0d0f1e;
+  }
+
+  .iframe-fallback.visible {
+    display: flex;
+  }
 </style>
+
+<script>
+  // Open modal
+  document.querySelectorAll('[data-modal]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const id = (btn as HTMLElement).dataset.modal!;
+      const modal = document.getElementById(id);
+      if (!modal) return;
+      modal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+
+      // Detect iframe block via load + error
+      const iframe = modal.querySelector('iframe') as HTMLIFrameElement;
+      const fallback = modal.querySelector('.iframe-fallback') as HTMLElement;
+      if (iframe && fallback) {
+        iframe.addEventListener('load', () => {
+          try {
+            // If blocked, contentDocument will be null or throw
+            const doc = iframe.contentDocument;
+            if (!doc || doc.body?.innerHTML === '') {
+              showFallback(iframe, fallback);
+            }
+          } catch {
+            showFallback(iframe, fallback);
+          }
+        });
+        iframe.addEventListener('error', () => showFallback(iframe, fallback));
+      }
+    });
+  });
+
+  // Close modal
+  document.querySelectorAll('[data-close]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const id = (btn as HTMLElement).dataset.close!;
+      closeModal(id);
+    });
+  });
+
+  // Close on overlay click
+  document.querySelectorAll('.modal-overlay').forEach(overlay => {
+    overlay.addEventListener('click', (e) => {
+      if (e.target === overlay) {
+        overlay.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+    });
+  });
+
+  // Close on Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.modal-overlay.open').forEach(m => {
+        m.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    }
+  });
+
+  function closeModal(id: string) {
+    const modal = document.getElementById(id);
+    modal?.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function showFallback(iframe: HTMLIFrameElement, fallback: HTMLElement) {
+    iframe.style.display = 'none';
+    fallback.classList.add('visible');
+  }
+</script>
