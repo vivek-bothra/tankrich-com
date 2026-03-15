@@ -1,0 +1,91 @@
+---
+const stats = [
+  { value: "5+", label: "AI Products Live" },
+  { value: "3 Weeks", label: "Avg Time to Deploy" },
+  { value: "24/7", label: "AI Assistants Running" },
+  { value: "3+", label: "Platforms Supported" },
+];
+---
+
+<section id="about" class="py-24 px-6 relative">
+  <div class="section-divider" aria-hidden="true"></div>
+
+  <div class="max-w-6xl mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <!-- Left: Bio -->
+      <div>
+        <span class="text-sm font-semibold tracking-widest uppercase mb-4 block" style="color: #4f8cff;">About</span>
+        <h2 class="font-bold mb-6" style="color: #f0f4ff; font-size: clamp(28px, 4vw, 36px);">About Vivek</h2>
+
+        <div class="bio-card rounded-2xl p-6 mb-6">
+          <div class="flex items-center gap-4 mb-5">
+            <div class="avatar-placeholder w-14 h-14 rounded-full flex items-center justify-center text-xl font-bold" style="background: linear-gradient(135deg, #4f8cff, #a78bfa); color: #05060f;">V</div>
+            <div>
+              <p class="font-semibold" style="color: #f0f4ff;">Vivek Bothra</p>
+              <p class="text-sm" style="color: #8892b0;">AI Practitioner & Builder · Sydney, Australia</p>
+            </div>
+          </div>
+          <p class="leading-relaxed" style="color: #8892b0; font-size: 15px;">
+            I'm Vivek Bothra — an AI practitioner and builder based in Australia. I help businesses and solopreneurs cut through the AI noise and deploy systems that actually work.
+          </p>
+        </div>
+
+        <p class="leading-relaxed mb-8" style="color: #8892b0;">
+          From autonomous agents to intelligent dashboards, I've built and shipped real solutions across social media, finance, and business automation. My approach is simple: find the highest-leverage AI opportunity, build it fast, and make it work in the real world.
+        </p>
+
+        <a href="https://wa.me/61449924670" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-sm transition-all duration-200" style="background: rgba(79,140,255,0.1); color: #4f8cff; border: 1px solid rgba(79,140,255,0.2);">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+          Start a Conversation
+        </a>
+      </div>
+
+      <!-- Right: Stats -->
+      <div class="grid grid-cols-2 gap-4">
+        {stats.map(stat => (
+          <div class="stat-card rounded-2xl p-6 text-center">
+            <div class="text-3xl font-bold mb-2 stat-value">{stat.value}</div>
+            <div class="text-sm" style="color: #8892b0;">{stat.label}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .section-divider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(79,140,255,0.2), transparent);
+  }
+
+  .bio-card {
+    background: rgba(13,15,30,0.8);
+    border: 1px solid rgba(255,255,255,0.07);
+  }
+
+  .stat-card {
+    background: rgba(13,15,30,0.8);
+    border: 1px solid rgba(255,255,255,0.07);
+    transition: all 0.3s ease;
+  }
+
+  .stat-card:hover {
+    border-color: rgba(79,140,255,0.25);
+    box-shadow: 0 4px 20px rgba(79,140,255,0.1);
+    transform: translateY(-2px);
+  }
+
+  .stat-value {
+    background: linear-gradient(135deg, #4f8cff, #a78bfa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+</style>

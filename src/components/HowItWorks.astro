@@ -1,0 +1,106 @@
+---
+const steps = [
+  {
+    number: "01",
+    icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+    title: "Discovery Call",
+    description: "We map your business processes and identify the highest-ROI AI opportunities. No jargon — just clear, practical planning."
+  },
+  {
+    number: "02",
+    icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+    title: "Build & Deploy",
+    description: "I build fast. Most solutions are live within 1–3 weeks. From architecture to deployment — you see progress every step of the way."
+  },
+  {
+    number: "03",
+    icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+    title: "Iterate & Scale",
+    description: "We measure what's working, refine what isn't, and expand your AI stack as your business grows. Continuous improvement built in."
+  }
+];
+---
+
+<section id="how-it-works" class="py-24 px-6 relative">
+  <div class="section-divider" aria-hidden="true"></div>
+
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-16">
+      <span class="text-sm font-semibold tracking-widest uppercase mb-4 block" style="color: #4f8cff;">Process</span>
+      <h2 class="font-bold mb-4" style="color: #f0f4ff; font-size: clamp(28px, 4vw, 36px);">How I Work With You</h2>
+      <p class="text-lg max-w-xl mx-auto" style="color: #8892b0;">Simple, fast, and focused on results</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {steps.map((step, index) => (
+        <div class="step-card rounded-2xl p-8 relative text-center">
+          <!-- Step number background -->
+          <div class="step-number-bg font-bold mb-6" aria-hidden="true">{step.number}</div>
+
+          <!-- Icon -->
+          <div class="step-icon w-14 h-14 rounded-xl flex items-center justify-center mx-auto mb-6" style="color: #4f8cff;" set:html={step.icon}></div>
+
+          <!-- Content -->
+          <h3 class="text-xl font-bold mb-3" style="color: #f0f4ff;">{step.title}</h3>
+          <p class="text-sm leading-relaxed" style="color: #8892b0;">{step.description}</p>
+
+          <!-- Connector line (not on last) -->
+          {index < steps.length - 1 && (
+            <div class="connector hidden md:block" aria-hidden="true"></div>
+          )}
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .section-divider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(167,139,250,0.2), transparent);
+  }
+
+  .step-card {
+    background: rgba(13, 15, 30, 0.6);
+    border: 1px solid rgba(255,255,255,0.05);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .step-card:hover {
+    border-color: rgba(79,140,255,0.2);
+    box-shadow: 0 8px 30px rgba(79,140,255,0.08);
+  }
+
+  .step-number-bg {
+    font-size: 72px;
+    line-height: 1;
+    color: rgba(79,140,255,0.06);
+    position: absolute;
+    top: -10px;
+    right: 16px;
+    font-weight: 800;
+    user-select: none;
+  }
+
+  .step-icon {
+    background: rgba(79,140,255,0.08);
+    border: 1px solid rgba(79,140,255,0.15);
+    position: relative;
+    z-index: 1;
+  }
+
+  .connector {
+    position: absolute;
+    top: 50%;
+    right: -1rem;
+    width: 2rem;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(79,140,255,0.3), transparent);
+    z-index: 2;
+  }
+</style>

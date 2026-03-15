@@ -1,0 +1,76 @@
+---
+---
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+  <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="#" class="text-xl font-bold tracking-tight" style="color: #4f8cff;">tankrich</a>
+
+    <!-- Desktop Links -->
+    <div class="hidden md:flex items-center gap-8">
+      <a href="#products" class="text-sm font-medium transition-colors hover:text-white" style="color: #8892b0;">Products</a>
+      <a href="#about" class="text-sm font-medium transition-colors hover:text-white" style="color: #8892b0;">About</a>
+      <a href="https://wa.me/61449924670" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-200" style="background: #4f8cff; color: #05060f;">Contact</a>
+    </div>
+
+    <!-- Mobile Hamburger -->
+    <button id="hamburger" class="md:hidden flex flex-col gap-1.5 p-2" aria-label="Toggle menu">
+      <span class="hamburger-line block w-6 h-0.5 transition-all duration-300" style="background: #f0f4ff;"></span>
+      <span class="hamburger-line block w-6 h-0.5 transition-all duration-300" style="background: #f0f4ff;"></span>
+      <span class="hamburger-line block w-6 h-0.5 transition-all duration-300" style="background: #f0f4ff;"></span>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden md:hidden px-6 pb-6">
+    <div class="flex flex-col gap-4 pt-4" style="border-top: 1px solid #1a1d35;">
+      <a href="#products" class="text-sm font-medium" style="color: #8892b0;">Products</a>
+      <a href="#about" class="text-sm font-medium" style="color: #8892b0;">About</a>
+      <a href="https://wa.me/61449924670" target="_blank" rel="noopener noreferrer" class="inline-block px-4 py-2 rounded-lg text-sm font-semibold text-center" style="background: #4f8cff; color: #05060f;">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<style>
+  #navbar.scrolled {
+    background: rgba(5, 6, 15, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+</style>
+
+<script>
+  const navbar = document.getElementById('navbar');
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const hamburgerLines = document.querySelectorAll('.hamburger-line');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 20) {
+      navbar?.classList.add('scrolled');
+    } else {
+      navbar?.classList.remove('scrolled');
+    }
+  });
+
+  hamburger?.addEventListener('click', () => {
+    const isOpen = !mobileMenu?.classList.contains('hidden');
+    if (isOpen) {
+      mobileMenu?.classList.add('hidden');
+      hamburgerLines[0]?.style && (hamburgerLines[0].style.transform = '');
+      hamburgerLines[1]?.style && (hamburgerLines[1].style.opacity = '1');
+      hamburgerLines[2]?.style && (hamburgerLines[2].style.transform = '');
+    } else {
+      mobileMenu?.classList.remove('hidden');
+      hamburgerLines[0] && ((hamburgerLines[0] as HTMLElement).style.transform = 'rotate(45deg) translate(4px, 4px)');
+      hamburgerLines[1] && ((hamburgerLines[1] as HTMLElement).style.opacity = '0');
+      hamburgerLines[2] && ((hamburgerLines[2] as HTMLElement).style.transform = 'rotate(-45deg) translate(4px, -4px)');
+    }
+  });
+
+  // Close mobile menu when a link is clicked
+  document.querySelectorAll('#mobile-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu?.classList.add('hidden');
+    });
+  });
+</script>

@@ -1,0 +1,36 @@
+---
+import { products } from '../data/products';
+import ProductCard from './ProductCard.astro';
+---
+
+<section id="products" class="py-24 px-6 relative">
+  <!-- Section divider top -->
+  <div class="section-divider-top" aria-hidden="true"></div>
+
+  <div class="max-w-6xl mx-auto">
+    <!-- Header -->
+    <div class="text-center mb-16">
+      <span class="section-label text-sm font-semibold tracking-widest uppercase mb-4 block" style="color: #4f8cff;">Portfolio</span>
+      <h2 class="text-4xl font-bold mb-4" style="color: #f0f4ff; font-size: clamp(28px, 4vw, 36px);">What I Build</h2>
+      <p class="text-lg max-w-xl mx-auto" style="color: #8892b0;">Real AI solutions, live in production</p>
+    </div>
+
+    <!-- Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {products.map(product => (
+        <ProductCard product={product} />
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .section-divider-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(79,140,255,0.2), transparent);
+  }
+</style>
