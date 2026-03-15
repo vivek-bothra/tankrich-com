@@ -1,0 +1,304 @@
+---
+import { projects, projectGroups } from '../data/projects';
+---
+
+<section id="projects" class="py-24 px-6 relative">
+  <div class="section-divider" aria-hidden="true"></div>
+
+  <div class="max-w-6xl mx-auto">
+    <!-- Header -->
+    <div class="text-center mb-16">
+      <span class="text-sm font-semibold tracking-widest uppercase mb-4 block" style="color: #a78bfa;">Open Source & Live Projects</span>
+      <h2 class="font-bold mb-4" style="color: #f0f4ff; font-size: clamp(28px, 4vw, 36px);">Built & Shipped</h2>
+      <p class="text-lg max-w-xl mx-auto" style="color: #8892b0;">Every project below is live. Click to explore inside.</p>
+    </div>
+
+    <!-- Groups -->
+    {projectGroups.map(group => {
+      const groupProjects = projects.filter(p => p.group === group.id);
+      return (
+        <div class="mb-16 last:mb-0">
+          <!-- Group header -->
+          <div class="flex items-center gap-3 mb-8">
+            <span class="text-2xl">{group.icon}</span>
+            <div>
+              <h3 class="text-xl font-bold" style="color: #f0f4ff;">{group.label}</h3>
+              <p class="text-sm" style="color: #8892b0;">{group.description}</p>
+            </div>
+            <div class="flex-1 h-px ml-4" style="background: linear-gradient(90deg, rgba(167,139,250,0.2), transparent);"></div>
+          </div>
+
+          <!-- Cards grid -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {groupProjects.map(project => {
+              const modalId = `proj-modal-${project.id}`;
+              return (
+                <div class="proj-card rounded-2xl p-5 flex flex-col gap-3">
+                  <div class="flex items-center justify-between">
+                    <span class="text-3xl">{project.icon}</span>
+                    <a
+                      href={project.repoUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="repo-link flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-full transition-all duration-200"
+                      title="View on GitHub"
+                    >
+                      <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+                      </svg>
+                      GitHub
+                    </a>
+                  </div>
+
+                  <h4 class="font-bold text-base leading-snug" style="color: #f0f4ff;">{project.name}</h4>
+                  <p class="text-sm leading-relaxed flex-1" style="color: #8892b0;">{project.description}</p>
+
+                  <div class="flex flex-wrap gap-1.5">
+                    {project.tags.map(tag => (
+                      <span class="tag-pill text-xs px-2 py-0.5 rounded-full">{tag}</span>
+                    ))}
+                  </div>
+
+                  <button
+                    data-proj-modal={modalId}
+                    class="proj-btn mt-1 w-full px-4 py-2.5 rounded-lg text-sm font-semibold transition-all duration-200"
+                  >
+                    View Live →
+                  </button>
+                </div>
+
+                <!-- Modal -->
+                <div id={modalId} class="modal-overlay" role="dialog" aria-modal="true" aria-label={project.name}>
+                  <div class="modal-container">
+                    <div class="modal-header">
+                      <div class="flex items-center gap-3 min-w-0">
+                        <span class="text-xl flex-shrink-0">{project.icon}</span>
+                        <div class="min-w-0">
+                          <h3 class="font-bold text-sm truncate" style="color: #f0f4ff;">{project.name}</h3>
+                          <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" class="text-xs hover:underline flex items-center gap-1 truncate" style="color: #8892b0;">
+                            {project.liveUrl}
+                            <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="flex-shrink-0"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+                          </a>
+                        </div>
+                      </div>
+                      <button class="modal-close" data-proj-close={modalId} aria-label="Close">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+                      </button>
+                    </div>
+                    <div class="modal-iframe-wrap">
+                      <iframe
+                        src={project.liveUrl}
+                        class="modal-iframe"
+                        title={project.name}
+                        sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
+                      ></iframe>
+                      <div class="iframe-fallback">
+                        <div class="text-4xl mb-4">{project.icon}</div>
+                        <p class="font-semibold mb-2" style="color: #f0f4ff;">Preview not available here</p>
+                        <p class="text-sm mb-6" style="color: #8892b0;">This site restricts embedded previews.</p>
+                        <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-sm" style="background: #4f8cff; color: #05060f;">
+                          Open in New Tab
+                          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      );
+    })}
+  </div>
+</section>
+
+<style>
+  .section-divider {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(167,139,250,0.2), transparent);
+  }
+
+  .proj-card {
+    background: rgba(13,15,30,0.8);
+    border: 1px solid rgba(255,255,255,0.06);
+    transition: all 0.25s ease;
+  }
+
+  .proj-card:hover {
+    border-color: rgba(167,139,250,0.25);
+    box-shadow: 0 8px 30px rgba(167,139,250,0.08);
+    transform: translateY(-3px);
+  }
+
+  .repo-link {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    color: #8892b0;
+  }
+
+  .repo-link:hover {
+    background: rgba(255,255,255,0.08);
+    color: #f0f4ff;
+  }
+
+  .tag-pill {
+    background: rgba(167,139,250,0.08);
+    color: #8892b0;
+    border: 1px solid rgba(167,139,250,0.12);
+  }
+
+  .proj-btn {
+    background: rgba(167,139,250,0.08);
+    color: #a78bfa;
+    border: 1px solid rgba(167,139,250,0.2);
+    cursor: pointer;
+  }
+
+  .proj-btn:hover {
+    background: #a78bfa;
+    color: #05060f;
+    border-color: #a78bfa;
+    box-shadow: 0 4px 20px rgba(167,139,250,0.25);
+  }
+
+  /* Modal — same pattern as ProductCard */
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: rgba(5,6,15,0.85);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+  }
+
+  .modal-overlay.open { display: flex; }
+
+  .modal-container {
+    background: #0d0f1e;
+    border: 1px solid rgba(167,139,250,0.2);
+    border-radius: 16px;
+    width: 100%;
+    max-width: 960px;
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 24px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(167,139,250,0.1);
+    animation: modal-in 0.2s ease;
+  }
+
+  @keyframes modal-in {
+    from { opacity: 0; transform: scale(0.97) translateY(8px); }
+    to   { opacity: 1; transform: scale(1) translateY(0); }
+  }
+
+  .modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 18px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    flex-shrink: 0;
+    gap: 12px;
+  }
+
+  .modal-close {
+    color: #8892b0;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 8px;
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    flex-shrink: 0;
+  }
+
+  .modal-close:hover { background: rgba(255,255,255,0.1); color: #f0f4ff; }
+
+  .modal-iframe-wrap { flex: 1; position: relative; overflow: hidden; }
+  .modal-iframe { width: 100%; height: 100%; border: none; background: #fff; }
+
+  .iframe-fallback {
+    display: none;
+    position: absolute;
+    inset: 0;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 40px;
+    background: #0d0f1e;
+  }
+
+  .iframe-fallback.visible { display: flex; }
+</style>
+
+<script>
+  // Open
+  document.querySelectorAll('[data-proj-modal]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const id = (btn as HTMLElement).dataset.projModal!;
+      const modal = document.getElementById(id);
+      if (!modal) return;
+      modal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+
+      const iframe = modal.querySelector('iframe') as HTMLIFrameElement;
+      const fallback = modal.querySelector('.iframe-fallback') as HTMLElement;
+      if (iframe && fallback) {
+        iframe.addEventListener('load', () => {
+          try {
+            const doc = iframe.contentDocument;
+            if (!doc || doc.body?.innerHTML === '') showFallback(iframe, fallback);
+          } catch { showFallback(iframe, fallback); }
+        });
+        iframe.addEventListener('error', () => showFallback(iframe, fallback));
+      }
+    });
+  });
+
+  // Close button
+  document.querySelectorAll('[data-proj-close]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const id = (btn as HTMLElement).dataset.projClose!;
+      document.getElementById(id)?.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
+
+  // Click outside
+  document.querySelectorAll('.modal-overlay').forEach(overlay => {
+    overlay.addEventListener('click', e => {
+      if (e.target === overlay) {
+        (overlay as HTMLElement).classList.remove('open');
+        document.body.style.overflow = '';
+      }
+    });
+  });
+
+  // Escape key
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.modal-overlay.open').forEach(m => {
+        m.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    }
+  });
+
+  function showFallback(iframe: HTMLIFrameElement, fallback: HTMLElement) {
+    iframe.style.display = 'none';
+    fallback.classList.add('visible');
+  }
+</script>

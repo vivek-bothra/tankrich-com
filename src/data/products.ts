@@ -27,8 +27,8 @@ export const products: Product[] = [
     description: "Automate the boring 1–2 step business tasks that eat your day. Custom GPT agents built for your exact workflow — from data entry to research summaries to client communications.",
     tags: ["GPT Agents", "Workflow", "Automation", "Solopreneurs"],
     status: "available",
-    liveUrl: "https://www.linkedin.com/pulse/all-solopreneurs-needing-help-bas-vivek-bothra-zpzfc/",
-    ctaText: "See Example"
+    liveUrl: "https://chatgpt.com/g/g-69b34f8651a881918f2c891db7758fd0-bas-creator",
+    ctaText: "Try the GPT"
   },
   {
     id: 3,
