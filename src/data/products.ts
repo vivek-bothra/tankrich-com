@@ -4,11 +4,13 @@ export interface Product {
   name: string;
   description: string;
   bullets?: string[];
+  gallery?: { url: string; alt: string }[];
   tags: string[];
   status: 'available' | 'development';
   liveUrl: string | null;
   ctaText: string;
   modalType?: 'iframe' | 'info';
+  modalExtra?: 'rag-comparison';
 }
 
 export const products: Product[] = [
@@ -18,10 +20,20 @@ export const products: Product[] = [
     name: "Autonomous Social Media Management",
     description: "Let AI run your complete social presence — hands-free but human-approved. Supports X (Twitter), Facebook Pages, and Instagram. AI drafts, schedules, and posts. You approve in seconds.",
     bullets: [
-      "AI drafts posts tailored to your brand voice",
-      "Supports X / Twitter, Instagram, Facebook Pages",
-      "Human-in-the-loop approval — you stay in control",
-      "Automated scheduling and publishing",
+      "AI studies your brand voice and drafts platform-native content",
+      "Supports X / Twitter, Instagram, and Facebook Pages simultaneously",
+      "Human-in-the-loop: you review and approve before anything goes live",
+      "Automated scheduling — posts go out at the optimal time",
+    ],
+    gallery: [
+      {
+        url: "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?auto=format&fit=crop&w=700&q=75",
+        alt: "Social media management dashboard"
+      },
+      {
+        url: "https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?auto=format&fit=crop&w=700&q=75",
+        alt: "Social media on mobile"
+      }
     ],
     tags: ["X / Twitter", "Instagram", "Facebook", "Human-in-loop"],
     status: "available",
@@ -36,7 +48,7 @@ export const products: Product[] = [
     bullets: [
       "Custom GPT agents built around your exact workflow",
       "Handles data entry, research, drafting, and summarisation",
-      "The BAS Creator GPT automates your BAS preparation",
+      "The BAS Creator GPT automates your BAS preparation end-to-end",
       "Built for solopreneurs and small business operators",
     ],
     tags: ["GPT Agents", "Workflow", "Automation", "Solopreneurs"],
@@ -51,9 +63,9 @@ export const products: Product[] = [
     name: "AI-Driven Business Dashboards",
     description: "Turn your business data into live, intelligent dashboards. From stock momentum trackers to custom analytics — built fast, deployed live, always actionable.",
     bullets: [
-      "Custom dashboards built on your actual data",
+      "Custom dashboards built on your actual data sources",
       "Live signals, momentum trackers, and KPI views",
-      "From idea to deployed dashboard in days",
+      "From idea to deployed dashboard in days, not months",
       "Always actionable — no more stale spreadsheets",
     ],
     tags: ["Analytics", "Real-time", "Data", "Custom Build"],
@@ -69,7 +81,7 @@ export const products: Product[] = [
     bullets: [
       "Concept to deployed MVP in 3 weeks",
       "Full-stack AI-native architecture from day one",
-      "Real examples live and in production",
+      "Real examples live and in production — not demos",
       "Designed to scale — not throwaway prototypes",
     ],
     tags: ["MVP", "Full-stack", "3-week sprint", "AI-native"],
@@ -84,13 +96,31 @@ export const products: Product[] = [
     description: "24/7 AI assistants built on open-source frameworks — deployed on WhatsApp, Telegram, and web. Private, secure, and trained on your data. Always on, always helpful.",
     bullets: [
       "Deployed on WhatsApp, Telegram, or your website",
-      "Trained on your documents, FAQs, and data",
-      "Open-source stack — your data stays yours",
-      "Always available, always consistent",
+      "Trained on your documents, FAQs, and internal data",
+      "Open-source stack — your data stays yours, never shared",
+      "Always available, always consistent — zero downtime",
     ],
     tags: ["WhatsApp", "Telegram", "Open Source", "24/7"],
     status: "available",
     liveUrl: null,
     ctaText: "Enquire Now"
+  },
+  {
+    id: 6,
+    icon: "🧠",
+    name: "Leverage RAG for Business Decisions",
+    description: "Stop relying on LLMs that hallucinate or use outdated information. Retrieval Augmented Generation (RAG) grounds AI answers in your verified, authoritative business knowledge — making every response accurate, current, and context-aware.",
+    bullets: [
+      "Eliminates hallucinations — every answer grounded in your verified sources",
+      "Always up-to-date — retrieves from your latest documents, not stale training data",
+      "Context-aware — understands your business terminology precisely",
+      "Try the live demo: My Wealth Buddy Australia, a RAG-powered financial assistant",
+    ],
+    tags: ["RAG", "LLM", "Knowledge Base", "Custom GPT", "Business Intelligence"],
+    status: "available",
+    liveUrl: "https://chatgpt.com/g/g-68357c0b993c8191ae98916a3351d7c4-my-wealth-buddy-australia",
+    ctaText: "See RAG in Action",
+    modalType: "info",
+    modalExtra: "rag-comparison"
   }
 ];

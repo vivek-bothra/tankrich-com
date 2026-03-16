@@ -7,7 +7,7 @@ interface Props {
 
 const { product } = Astro.props;
 const isAvailable = product.status === 'available';
-const whatsappUrl = 'https://wa.me/61449924670';
+const whatsappUrl = 'https://wa.me/919352194655';
 const hasLiveUrl = !!product.liveUrl;
 const isInfoOnly = product.modalType === 'info';
 const modalId = `modal-${product.id}`;
@@ -92,11 +92,65 @@ const modalId = `modal-${product.id}`;
             <span class="tag-pill text-xs px-2.5 py-1 rounded-full font-medium">{tag}</span>
           ))}
         </div>
+
+        {/* Gallery images */}
+        {product.gallery && product.gallery.length > 0 && (
+          <div class="gallery-grid mt-5">
+            {product.gallery.map(img => (
+              <div class="gallery-item rounded-xl overflow-hidden">
+                <img
+                  src={img.url}
+                  alt={img.alt}
+                  class="gallery-img"
+                  loading="lazy"
+                  onerror="this.parentElement.style.display='none'"
+                />
+                <p class="gallery-caption">{img.alt}</p>
+              </div>
+            ))}
+          </div>
+        )}
       </div>
 
       <!-- Info-only: GPT / external CTA -->
       {isInfoOnly && (
         <div class="info-cta">
+
+          {/* RAG comparison table */}
+          {product.modalExtra === 'rag-comparison' && (
+            <div class="rag-comparison mb-5">
+              <div class="rag-grid">
+                <div class="rag-col rag-without">
+                  <div class="rag-col-header">
+                    <span class="rag-icon">⚠️</span>
+                    <span class="rag-col-title">LLM Without RAG</span>
+                  </div>
+                  <ul class="rag-list">
+                    <li>Makes up answers confidently</li>
+                    <li>Uses outdated training data</li>
+                    <li>Can't access your documents</li>
+                    <li>Mixes up context-specific terms</li>
+                  </ul>
+                </div>
+                <div class="rag-divider">
+                  <div class="rag-arrow">→</div>
+                </div>
+                <div class="rag-col rag-with">
+                  <div class="rag-col-header">
+                    <span class="rag-icon">✅</span>
+                    <span class="rag-col-title">LLM With RAG</span>
+                  </div>
+                  <ul class="rag-list">
+                    <li>Answers grounded in your data</li>
+                    <li>Retrieves current information</li>
+                    <li>Searches your knowledge base first</li>
+                    <li>Understands your business context</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          )}
+
           <div class="info-cta-inner rounded-xl p-6 text-center">
             <p class="text-sm mb-2 font-semibold" style="color: #f0f4ff;">Ready to try it?</p>
             <p class="text-sm mb-6" style="color: #8892b0;">This opens as a custom GPT inside ChatGPT. Click below to launch it.</p>
@@ -222,13 +276,14 @@ const modalId = `modal-${product.id}`;
     animation: modal-in 0.2s ease;
   }
 
-  /* Container — info-only variant (compact) */
+  /* Container — info-only variant (compact, scrollable) */
   .modal-container--info {
     background: #0d0f1e;
     border: 1px solid rgba(79,140,255,0.2);
     border-radius: 16px;
     width: 100%;
-    max-width: 560px;
+    max-width: 620px;
+    max-height: 90vh;
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -267,8 +322,20 @@ const modalId = `modal-${product.id}`;
   /* Service info panel */
   .service-info {
     padding: 20px 20px 16px;
-    flex-shrink: 0;
     border-bottom: 1px solid rgba(255,255,255,0.05);
+    overflow-y: auto;
+    flex-shrink: 0;
+  }
+
+  /* Info modal: make content area scrollable */
+  .modal-container--info .service-info,
+  .modal-container--info .info-cta {
+    flex-shrink: 0;
+  }
+
+  .modal-container--info .service-info {
+    overflow-y: auto;
+    max-height: 50vh;
   }
 
   .bullet-dot { color: #4f8cff; font-size: 8px; }
@@ -307,6 +374,67 @@ const modalId = `modal-${product.id}`;
     background: #0d0f1e;
   }
   .iframe-fallback.visible { display: flex; }
+
+  /* Gallery */
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .gallery-item {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+  .gallery-img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    display: block;
+  }
+  .gallery-caption {
+    font-size: 11px;
+    color: #8892b0;
+    padding: 6px 8px;
+    text-align: center;
+  }
+
+  /* RAG comparison */
+  .rag-comparison {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .rag-grid {
+    display: grid;
+    grid-template-columns: 1fr 32px 1fr;
+    align-items: stretch;
+  }
+  .rag-col { padding: 16px; }
+  .rag-without { background: rgba(239,68,68,0.04); }
+  .rag-with    { background: rgba(34,211,165,0.04); }
+  .rag-col-header {
+    display: flex; align-items: center; gap-6px; gap: 6px;
+    margin-bottom: 10px;
+  }
+  .rag-icon { font-size: 14px; }
+  .rag-col-title { font-size: 12px; font-weight: 700; color: #f0f4ff; }
+  .rag-list { list-style: none; padding: 0; margin: 0; }
+  .rag-list li {
+    font-size: 12px; color: #8892b0;
+    padding: 3px 0;
+    padding-left: 12px;
+    position: relative;
+  }
+  .rag-without .rag-list li::before { content: '✗'; position: absolute; left: 0; color: rgba(239,68,68,0.7); }
+  .rag-with    .rag-list li::before { content: '✓'; position: absolute; left: 0; color: #22d3a5; }
+  .rag-divider {
+    display: flex; align-items: center; justify-content: center;
+    background: rgba(255,255,255,0.02);
+    border-left: 1px solid rgba(255,255,255,0.05);
+    border-right: 1px solid rgba(255,255,255,0.05);
+  }
+  .rag-arrow { font-size: 16px; color: #4f8cff; }
 
   .ext-btn {
     background: #4f8cff;
