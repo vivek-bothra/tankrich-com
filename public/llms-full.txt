@@ -70,6 +70,14 @@ Stop relying on LLMs that hallucinate or use outdated information.
 
 ## Live Projects Portfolio
 
+### Number & Words
+Adaptive NAPLAN practice platform for Australian students in Years 3, 5, 7, and 9. Features 10,000+ AI-generated questions across numeracy, reading, language conventions, and writing. Includes interactive practice mode with instant explanations and timed test simulations mirroring real exam conditions. Subscriptions start at $49/year per year level.
+URL: https://numberandwords.xyz
+
+### Tankrich Nudges — Progressive Web App (PWA)
+A Progressive Web App delivering real-time push notifications to mutual fund advisory clients. Installable on any device like a native app — no app store required. Works offline, loads instantly, and sends timely investment nudges directly to the home screen. Demonstrates modern PWA capabilities: service workers, web push API, offline caching, and home screen installation.
+URL: https://tankrichmfd.xyz
+
 ### PureVeg.xyz
 AI-powered global directory of pure vegetarian Indian restaurants — no mixed kitchens. Covers 100+ cities including Dubai, London, Singapore, New York, and Melbourne. AI analyzes Google reviews to flag non-veg operations. Ad-free, forever free.
 URL: https://www.pureveg.xyz

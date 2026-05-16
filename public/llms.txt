@@ -21,6 +21,8 @@
 
 ## Live Products & Projects
 
+- Number & Words (numberandwords.xyz) — Adaptive NAPLAN practice platform for Australian students (Years 3, 5, 7, 9) with 10,000+ AI-generated questions
+- Tankrich Nudges PWA — Progressive Web App delivering real-time push notifications to clients, installable on any device without an app store
 - PureVeg.xyz — AI-powered global directory of pure vegetarian Indian restaurants (100+ cities)
 - My Wealth Base (mywb.com.au) — ATO-compliant ESS/RSU/CGT tax calculator
 - Internet Momentum Portfolio — Quantitative stock momentum tracker
