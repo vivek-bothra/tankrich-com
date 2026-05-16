@@ -10,6 +10,24 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: 'numberandwords',
+    icon: '📝',
+    name: 'Number & Words',
+    description: 'Adaptive NAPLAN practice platform for Australian students (Years 3, 5, 7, 9). 10,000+ AI-generated questions across numeracy, reading, language conventions, and writing. Includes interactive practice with instant explanations and timed test simulations.',
+    tags: ['AI', 'EdTech', 'NAPLAN', 'Adaptive Learning', 'Australia'],
+    liveUrl: 'https://numberandwords.xyz',
+    repoUrl: 'https://github.com/vivek-bothra',
+  },
+  {
+    id: 'nudges-pwa',
+    icon: '🔔',
+    name: 'Tankrich Nudges — PWA',
+    description: 'A Progressive Web App (PWA) delivering real-time push notifications to clients. Installable on any device like a native app — no app store required. Works offline, loads instantly, and sends timely nudges directly to the home screen.',
+    tags: ['PWA', 'Push Notifications', 'Offline-first', 'Installable'],
+    liveUrl: 'https://tankrichmfd.xyz',
+    repoUrl: 'https://github.com/vivek-bothra/tankrich-nudges',
+  },
+  {
     id: 'pureveg',
     icon: '🌿',
     name: 'PureVeg.xyz',
