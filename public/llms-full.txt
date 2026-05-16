@@ -1,0 +1,133 @@
+# Tankrich — Full AI Consulting & Products Documentation
+
+> Tankrich is an AI consulting practice run by Vivek Bothra, based in Melbourne, Australia. We build and deploy practical AI solutions for businesses and solopreneurs — systems that work in production, not just demos.
+
+## Founder: Vivek Bothra
+
+Vivek Bothra is an AI practitioner and builder based in Melbourne, Australia. He helps businesses cut through the AI noise and deploy systems that actually work. His background spans autonomous agents, intelligent dashboards, and business automation across social media, finance, and operations.
+
+Approach: Find the highest-leverage AI opportunity, build it fast, and make it work in the real world.
+
+## Services in Detail
+
+### 1. Autonomous Social Media Management
+
+Let AI run your complete social presence — hands-free but human-approved.
+
+- Supports X (Twitter), Facebook Pages, and Instagram simultaneously
+- AI studies your brand voice and drafts platform-native content
+- Human-in-the-loop: review and approve before anything goes live
+- Automated scheduling — posts go out at optimal times
+- Status: Available for new clients
+
+### 2. GPT Minions for Business Workflows
+
+Automate the boring 1-2 step business tasks that eat your day.
+
+- Custom GPT agents built around your exact workflow
+- Handles data entry, research, drafting, and summarisation
+- Includes the BAS Creator GPT for automated BAS preparation
+- Built for solopreneurs and small business operators
+- Live example: BAS Creator GPT on ChatGPT
+
+### 3. AI-Driven Business Dashboards
+
+Turn your business data into live, intelligent dashboards.
+
+- Custom dashboards built on your actual data sources
+- Live signals, momentum trackers, and KPI views
+- From idea to deployed dashboard in days, not months
+- Always actionable — no more stale spreadsheets
+- Live example: Stock Momentum Tracker
+
+### 4. Accelerated AI Development
+
+Idea to live product in 3 weeks.
+
+- Concept to deployed MVP in 3 weeks
+- Full-stack AI-native architecture from day one
+- Real examples live and in production — not demos
+- Designed to scale — not throwaway prototypes
+- Live example: My Wealth Base (mywb.com.au)
+
+### 5. Secure Personal AI Assistants
+
+24/7 AI assistants deployed on WhatsApp, Telegram, and web.
+
+- Trained on your documents, FAQs, and internal data
+- Open-source stack — your data stays yours, never shared
+- Always available, always consistent — zero downtime
+- Deployed on WhatsApp, Telegram, or your website
+
+### 6. Retrieval Augmented Generation (RAG) for Business
+
+Stop relying on LLMs that hallucinate or use outdated information.
+
+- Eliminates hallucinations — every answer grounded in your verified sources
+- Always up-to-date — retrieves from your latest documents, not stale training data
+- Context-aware — understands your business terminology precisely
+- Live example: My Wealth Buddy Australia (RAG-powered financial assistant)
+
+## Live Projects Portfolio
+
+### PureVeg.xyz
+AI-powered global directory of pure vegetarian Indian restaurants — no mixed kitchens. Covers 100+ cities including Dubai, London, Singapore, New York, and Melbourne. AI analyzes Google reviews to flag non-veg operations. Ad-free, forever free.
+URL: https://www.pureveg.xyz
+
+### My Wealth Base
+Calculates your ATO-compliant ESS income and CGT for every vest and sale automatically. Never guess your RSU tax bill again.
+URL: https://www.mywb.com.au
+
+### Internet Momentum Portfolio
+Quantitative strategy identifying internet and technology stocks with positive MACD momentum on a weekly basis. Fully automated signal generation.
+URL: https://vivek-bothra.github.io/StockMomentumTracker
+
+### Market Top Signals
+Global momentum dashboard showing LONG / WATCH / FLAT signals for 14 major stock market indexes worldwide. Auto-generated every Monday using EMA, MACD, and RSI divergence.
+URL: https://vivek-bothra.github.io/Market-Top-Indicator
+
+### Tankrich Signals Dashboard
+Live auto-generated trading signals for Bitcoin, Gold, and Silver — with recommendations, entry dates, and timeframes.
+URL: https://signals.tankrich.com.au
+
+### Fundamental Analysis Dashboard
+Upload Excel exports from Screener.in for any company and instantly get a multi-sheet financial dashboard.
+URL: https://analysis.tankrich.com.au
+
+### Tankrich MFD — Mutual Funds For Life
+Full mutual fund advisory platform. Goal-driven, data-driven investment strategies.
+URL: https://tankrichmfd.xyz
+
+## Process: How We Work Together
+
+1. Discovery Call — Map business processes and identify highest-ROI AI opportunities
+2. Build & Deploy — Most solutions live within 1-3 weeks
+3. Iterate & Scale — Measure, refine, and expand as business grows
+
+## Frequently Asked Questions
+
+Q: What types of businesses do you work with?
+A: Small businesses, solopreneurs, growing companies, and anyone who wants practical AI that delivers measurable results.
+
+Q: How long does a typical project take?
+A: Most solutions are live within 1-3 weeks. The average is 3 weeks from concept to deployed product.
+
+Q: Do you work with clients outside Australia?
+A: Yes. While based in Melbourne, Australia, we work with clients globally via WhatsApp and video calls.
+
+Q: What makes your approach different?
+A: No jargon, no fluff. We focus on the highest-leverage AI opportunity for your business and deploy it fast. Every project ships to production — we don't do demos or prototypes that never go live.
+
+Q: Is my data secure?
+A: Yes. AI assistants are built on open-source frameworks. Your data stays yours and is never shared with third parties.
+
+Q: What technologies do you use?
+A: GPT-4, Claude, custom RAG pipelines, Next.js, Astro, React, Supabase, Python, deployed on Vercel and Cloudflare.
+
+## Contact Information
+
+- Website: https://www.tankrich.com
+- Email: hello@tankrich.com
+- WhatsApp: +91 9352194655
+- GitHub: https://github.com/vivek-bothra
+- Location: Melbourne, Australia

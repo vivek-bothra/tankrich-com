@@ -7,11 +7,156 @@ interface Props {
 }
 
 const {
-  title = "tankrich.com — AI Consulting & Products by Vivek Bothra",
-  description = "Practical AI solutions for businesses and solopreneurs. Social automation, GPT agents, AI dashboards, and 24/7 assistants. Based in Australia.",
-  ogImage = "/og-image.png",
+  title = "Tankrich — AI Consulting & Products | Vivek Bothra, Melbourne Australia",
+  description = "Practical AI solutions for businesses and solopreneurs. Social automation, GPT agents, RAG systems, AI dashboards, and 24/7 assistants. Concept to deployed product in 3 weeks. Melbourne, Australia.",
+  ogImage = "https://www.tankrich.com/og-image.png",
   canonicalUrl = "https://www.tankrich.com",
 } = Astro.props;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://www.tankrich.com/#website",
+      "url": "https://www.tankrich.com",
+      "name": "Tankrich",
+      "description": "AI Consulting & Products by Vivek Bothra",
+      "publisher": { "@id": "https://www.tankrich.com/#person" }
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://www.tankrich.com/#business",
+      "name": "Tankrich",
+      "url": "https://www.tankrich.com",
+      "description": "AI consulting practice helping businesses and solopreneurs deploy practical AI solutions — social automation, GPT agents, RAG systems, dashboards, and 24/7 AI assistants.",
+      "founder": { "@id": "https://www.tankrich.com/#person" },
+      "areaServed": ["Australia", "Global"],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Melbourne",
+        "addressRegion": "VIC",
+        "addressCountry": "AU"
+      },
+      "email": "hello@tankrich.com",
+      "telephone": "+919352194655",
+      "priceRange": "$$",
+      "serviceType": ["AI Consulting", "AI Product Development", "Business Automation", "GPT Agent Development", "RAG Implementation"],
+      "knowsAbout": ["Artificial Intelligence", "Machine Learning", "GPT-4", "Claude AI", "RAG", "Social Media Automation", "Business Intelligence", "Web Development"],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "AI Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Autonomous Social Media Management",
+              "description": "AI-powered social media management for X/Twitter, Instagram, and Facebook with human-in-the-loop approval"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Custom GPT Agents",
+              "description": "Custom GPT agents built for your exact business workflow — data entry, research, drafting, and automation"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "AI-Driven Business Dashboards",
+              "description": "Live intelligent dashboards with signals, momentum trackers, and KPI views built on your data"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Accelerated AI Product Development",
+              "description": "Idea to deployed MVP in 3 weeks — full-stack AI-native architecture"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Secure AI Assistants",
+              "description": "24/7 AI assistants on WhatsApp, Telegram, and web — trained on your data, open-source stack"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "RAG for Business",
+              "description": "Retrieval Augmented Generation grounding AI answers in your verified business knowledge"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.tankrich.com/#person",
+      "name": "Vivek Bothra",
+      "url": "https://www.tankrich.com",
+      "jobTitle": "AI Practitioner & Builder",
+      "description": "AI practitioner and builder based in Melbourne, Australia. Helps businesses deploy practical AI — from autonomous agents to intelligent dashboards.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Melbourne",
+        "addressRegion": "VIC",
+        "addressCountry": "AU"
+      },
+      "email": "hello@tankrich.com",
+      "sameAs": [
+        "https://github.com/vivek-bothra"
+      ],
+      "knowsAbout": ["Artificial Intelligence", "GPT-4", "Claude", "RAG", "Python", "Next.js", "React", "Supabase", "Business Automation"]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.tankrich.com/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What AI services does Tankrich offer?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tankrich offers autonomous social media management, custom GPT agents for business workflows, AI-driven dashboards, accelerated AI product development (concept to MVP in 3 weeks), secure personal AI assistants for WhatsApp/Telegram/web, and RAG implementations for business knowledge."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does it take to build an AI solution with Tankrich?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most solutions are live within 1-3 weeks. The average time from concept to deployed, production-ready product is 3 weeks."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where is Tankrich based?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tankrich is based in Melbourne, Australia, but works with clients globally via WhatsApp and video calls."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who runs Tankrich?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tankrich is run by Vivek Bothra, an AI practitioner and builder who specializes in deploying practical AI solutions for businesses and solopreneurs."
+          }
+        }
+      ]
+    }
+  ]
+};
 ---
 
 <!DOCTYPE html>
@@ -23,6 +168,12 @@ const {
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalUrl} />
+    <meta name="author" content="Vivek Bothra" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="geo.region" content="AU-VIC" />
+    <meta name="geo.placename" content="Melbourne" />
+    <meta name="geo.position" content="-37.8136;144.9631" />
+    <meta name="ICBM" content="-37.8136, 144.9631" />
 
     <!-- OG Tags -->
     <meta property="og:type" content="website" />
@@ -30,12 +181,19 @@ const {
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="Tankrich" />
+    <meta property="og:locale" content="en_AU" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 
     <!-- Inter Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />

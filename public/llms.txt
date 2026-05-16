@@ -1,0 +1,48 @@
+# Tankrich — AI Consulting & Products
+
+> Tankrich is an AI consulting practice run by Vivek Bothra, based in Melbourne, Australia. We help businesses and solopreneurs deploy practical AI solutions — from social media automation to intelligent dashboards and 24/7 AI assistants.
+
+## About
+
+- Founded and operated by Vivek Bothra
+- Based in Melbourne, Australia
+- Specializes in practical, production-ready AI solutions
+- Clients include small businesses, solopreneurs, and growing companies
+- Average time from concept to deployed product: 3 weeks
+
+## Services
+
+- Autonomous Social Media Management (X/Twitter, Instagram, Facebook)
+- Custom GPT Agents for Business Workflows
+- AI-Driven Business Dashboards & Analytics
+- Accelerated AI Product Development (Idea to MVP in 3 weeks)
+- Secure Personal AI Assistants (WhatsApp, Telegram, Web)
+- Retrieval Augmented Generation (RAG) for Business Knowledge
+
+## Live Products & Projects
+
+- PureVeg.xyz — AI-powered global directory of pure vegetarian Indian restaurants (100+ cities)
+- My Wealth Base (mywb.com.au) — ATO-compliant ESS/RSU/CGT tax calculator
+- Internet Momentum Portfolio — Quantitative stock momentum tracker
+- Market Top Signals — Global momentum dashboard for 14 stock market indexes
+- Tankrich Signals — Live trading signals for Bitcoin, Gold, and Silver
+- Fundamental Analysis Dashboard — Upload Excel for instant financial analysis
+- Tankrich MFD — Mutual fund advisory platform
+
+## Technology Stack
+
+- AI/ML: GPT-4, Claude, RAG pipelines, custom agents
+- Frontend: Next.js, Astro, React, Tailwind CSS
+- Backend: Supabase, Node.js, Python
+- Deployment: Vercel, Cloudflare, GitHub Pages
+- Platforms: WhatsApp Business API, Telegram Bot API
+
+## Contact
+
+- Website: https://www.tankrich.com
+- Email: hello@tankrich.com
+- WhatsApp: +91 9352194655
+
+## Full Documentation
+
+For complete details about services and capabilities, see: https://www.tankrich.com/llms-full.txt

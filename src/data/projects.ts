@@ -67,9 +67,9 @@ export const projects: Project[] = [
     id: 'mfd-site',
     icon: '💼',
     name: 'Tankrich MFD — Mutual Funds For Life',
-    description: 'Full mutual fund advisory landing site. Goal-driven, data-driven investment strategies with team profiles and client onboarding. Built and deployed in days.',
-    tags: ['Mutual Funds', 'Advisory', 'Landing Page'],
+    description: 'Full mutual fund advisory platform with push notifications, goal-driven investment strategies, team profiles, and client onboarding. Built and deployed in days.',
+    tags: ['Mutual Funds', 'Advisory', 'PWA', 'Push Notifications'],
     liveUrl: 'https://tankrichmfd.xyz',
-    repoUrl: 'https://github.com/vivek-bothra/tankrichmfd-site',
+    repoUrl: 'https://github.com/vivek-bothra/tankrich-nudges',
   },
 ];
