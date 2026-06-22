@@ -1,6 +1,6 @@
-# Tankrich AI Consulting — Full Documentation
+# Tankrich AI Consulting, Full Documentation
 
-> Tankrich AI Consulting is a specialist artificial intelligence consultancy based in Melbourne, Australia, serving clients worldwide. We take organisations from AI strategy to systems that run in production — not demos or prototypes. Made in Melbourne, serving the world.
+> Tankrich AI Consulting is a specialist artificial intelligence consultancy based in Melbourne, Australia, serving clients worldwide. We take organisations from AI strategy to systems that run in production, not demos or prototypes. Made in Melbourne, serving the world.
 
 ## Who We Are
 
@@ -13,7 +13,7 @@ Approach: find the highest-leverage AI opportunity, design for accuracy and data
 ### 1. AI Strategy & Advisory
 We help leaders identify where AI creates real value and how to capture it.
 - AI opportunity assessment across operations and the value chain
-- Prioritised, ROI-led adoption roadmap — highest-leverage opportunities first
+- Prioritised, ROI-led adoption roadmap, highest-leverage opportunities first
 - Build-vs-buy, model selection and architecture guidance
 - Responsible, secure and pragmatic adoption from day one
 
@@ -21,13 +21,13 @@ We help leaders identify where AI creates real value and how to capture it.
 Concept to production-ready product in weeks, not quarters.
 - Full-stack, AI-native architecture from day one
 - Web, mobile (iOS / Android) and installable PWA delivery
-- Real systems running in production — not demos
+- Real systems running in production, not demos
 - Built to scale and operate
 
 ### 3. RAG & Knowledge Systems
 Retrieval-Augmented Generation grounds AI in your verified knowledge.
 - Answers grounded in your verified sources, eliminating hallucinations
-- Always current — retrieves from your latest documents, not stale training data
+- Always current, retrieves from your latest documents, not stale training data
 - Understands your business terminology and context
 - Secure knowledge bases that keep your data yours
 
@@ -41,7 +41,7 @@ Custom AI agents and copilots tuned to your exact workflows.
 Always-on AI assistants deployed where your customers already are.
 - Web, WhatsApp and Telegram
 - Trained on your documents, FAQs and internal knowledge
-- Open frameworks — your data stays yours, never resold
+- Open frameworks, your data stays yours, never resold
 - Available 24/7 with consistent answers
 
 ### 6. Data, Analytics & Decision Intelligence
@@ -52,70 +52,70 @@ Live, intelligent dashboards and signals that drive decisions.
 
 ## Case Studies
 
-### PatrolX Tech — Field Operations & Workforce Management (Australia)
+### PatrolX Tech, Field Operations & Workforce Management (Australia)
 URL: https://patrolxtech.com
-The challenge: Operations managers running security patrols, logistics, cleaning, facilities, aged care, construction and events were flying blind. The workforce was in the field, but visibility lived in spreadsheets and phone calls — leaving managers unable to prove where teams had been or that work was done, and clients waiting on answers.
-What we built: A single source of truth across native iOS and Android apps and a web admin dashboard sharing one synchronized data layer — live map tracking, GPS-verified site visits, shift timing to the second, automatic distance calculation between stops, photo-and-text daily reports, incident logging tagged with priority and location, multi-tenant administration, and push notifications. Published to the App Store and Google Play.
-The impact: Field work is now fully accounted for. Managers watch teams on a live map, hold GPS-verified proof of every site visit, and have retired spreadsheet tracking — closing the client-verification gap and erasing operational blind spots.
+The challenge: Operations managers running security patrols, logistics, cleaning, facilities, aged care, construction and events were flying blind. The workforce was in the field, but visibility lived in spreadsheets and phone calls, leaving managers unable to prove where teams had been or that work was done, and clients waiting on answers.
+What we built: A single source of truth across native iOS and Android apps and a web admin dashboard sharing one synchronized data layer, live map tracking, GPS-verified site visits, shift timing to the second, automatic distance calculation between stops, photo-and-text daily reports, incident logging tagged with priority and location, multi-tenant administration, and push notifications. Published to the App Store and Google Play.
+The impact: Field work is now fully accounted for. Managers watch teams on a live map, hold GPS-verified proof of every site visit, and have retired spreadsheet tracking, closing the client-verification gap and erasing operational blind spots.
 
-### Uniqweave — Manufacturing / Factory Process Automation (India)
+### Uniqweave, Manufacturing / Factory Process Automation (India)
 URL: https://www.fpoapp.com
-The challenge: A thriving ethnic-wear workshop was still run on paper and memory. Fabric stock, costing, material issue, production, dispatch and returns lived in disconnected ledgers — error-prone, impossible to audit and invisible in real time, with every rupee changing hands across many people on a busy shop floor.
-What we built: A mobile-first PWA spanning 18 modules — from fabric receipt, designs and cost sheets through orders, material issue, production, QC and packing, to dispatch and returns — with four role-based permission groups. The controls live in the database, not just the screen: stock can never go negative, production stages can never be skipped, dispatch always carries a billing reference. Layered with Shopify order sync, on-the-floor camera capture for fabric, and an AI copilot with alerts grounded in a live snapshot of the workshop.
-The impact: The full production journey now runs from a phone on the floor — fabric in, design and cost, order, material issue, produce, dispatch, returns — with every number, status and permission enforced automatically. For the first time the owner has an auditable, real-time view of the business, and the team runs it with no training.
+The challenge: A thriving ethnic-wear workshop was still run on paper and memory. Fabric stock, costing, material issue, production, dispatch and returns lived in disconnected ledgers, error-prone, impossible to audit and invisible in real time, with every rupee changing hands across many people on a busy shop floor.
+What we built: A mobile-first PWA spanning 18 modules, from fabric receipt, designs and cost sheets through orders, material issue, production, QC and packing, to dispatch and returns, with four role-based permission groups. The controls live in the database, not just the screen: stock can never go negative, production stages can never be skipped, dispatch always carries a billing reference. Layered with Shopify order sync, on-the-floor camera capture for fabric, and an AI copilot with alerts grounded in a live snapshot of the workshop.
+The impact: The full production journey now runs from a phone on the floor, fabric in, design and cost, order, material issue, produce, dispatch, returns, with every number, status and permission enforced automatically. For the first time the owner has an auditable, real-time view of the business, and the team runs it with no training.
 
-### Number & Words — EdTech / Adaptive Learning (Australia)
+### Number & Words, EdTech / Adaptive Learning (Australia)
 URL: https://numberandwords.xyz
 The challenge: Families preparing children for Australia's NAPLAN assessments (Years 3, 5, 7, 9) were stuck with thin, static worksheets and almost no adaptive feedback to target where a student was actually struggling.
 What we built: AI-generated and quality-assured 10,000+ questions across numeracy, reading, language conventions and writing, wrapped in interactive practice with instant, plain-language explanations and full timed simulations that mirror real exam conditions.
-The impact: Sparse, one-size-fits-all prep became a deep, always-available, curriculum-aligned platform — giving every student a vast adaptive question bank, immediate feedback and realistic practice on demand.
+The impact: Sparse, one-size-fits-all prep became a deep, always-available, curriculum-aligned platform, giving every student a vast adaptive question bank, immediate feedback and realistic practice on demand.
 
-### My Wealth Base — FinTech / Tax Automation (Australia)
+### My Wealth Base, FinTech / Tax Automation (Australia)
 URL: https://www.mywb.com.au
-The challenge: Australians paid in company equity faced one of the messiest corners of the tax code — working out ATO Employee Share Scheme income and Capital Gains Tax across dozens of vests and sales was manual, error-prone and hard to get right with confidence.
+The challenge: Australians paid in company equity faced one of the messiest corners of the tax code, working out ATO Employee Share Scheme income and Capital Gains Tax across dozens of vests and sales was manual, error-prone and hard to get right with confidence.
 What we built: An AI-native application that takes in every vesting and sale event and computes ATO-compliant ESS income and CGT automatically, presenting a clear, defensible position for each event.
-The impact: The guesswork is gone — users get an automatic, ATO-aligned view of their equity tax position for every vest and sale, replacing fragile spreadsheets and year-end anxiety with a number they can trust.
+The impact: The guesswork is gone, users get an automatic, ATO-aligned view of their equity tax position for every vest and sale, replacing fragile spreadsheets and year-end anxiety with a number they can trust.
 
-### PureVeg — Consumer / AI Directory (Global)
+### PureVeg, Consumer / AI Directory (Global)
 URL: https://www.pureveg.xyz
-The challenge: Strictly vegetarian diners travelling the world had no reliable way to find genuinely pure-vegetarian restaurants — mainstream directories quietly mixed in places with non-veg kitchens, making every search a gamble.
-What we built: Coverage across 100+ cities — Dubai, London, Singapore, New York, Melbourne and more — with AI pointed at the public review record to detect and flag likely non-veg operations. Shipped ad-free by design.
+The challenge: Strictly vegetarian diners travelling the world had no reliable way to find genuinely pure-vegetarian restaurants, mainstream directories quietly mixed in places with non-veg kitchens, making every search a gamble.
+What we built: Coverage across 100+ cities, Dubai, London, Singapore, New York, Melbourne and more, with AI pointed at the public review record to detect and flag likely non-veg operations. Shipped ad-free by design.
 The impact: An unreliable search became a trusted, global resource: an AI-curated, ad-free guide that screens out mixed kitchens across more than a hundred cities.
 
-### Tankrich MFD — Financial Services / Advisory PWA (India)
+### Tankrich MFD, Financial Services / Advisory PWA (India)
 URL: https://tankrichmfd.xyz
-The challenge: A mutual-fund practice wanted to feel modern to its clients — goal-based guidance, smooth onboarding and timely nudges — but couldn't justify the cost, time and friction of building native mobile apps.
+The challenge: A mutual-fund practice wanted to feel modern to its clients, goal-based guidance, smooth onboarding and timely nudges, but couldn't justify the cost, time and friction of building native mobile apps.
 What we built: A Progressive Web App with goal-driven investment strategies, client onboarding, team profiles, and a real-time push-notification layer landing nudges on the client's home screen. Installs like a native app, opens instantly, no app store required.
-The impact: The practice runs on one installable platform that onboards clients, communicates strategy and re-engages people through direct push — stood up in days, not the months a native build would have demanded.
+The impact: The practice runs on one installable platform that onboards clients, communicates strategy and re-engages people through direct push, stood up in days, not the months a native build would have demanded.
 
-### Automated Reels Engine — Marketing / Content & Media Automation (Global)
-The challenge: Publishing short-form video consistently is brutal — someone has to find timely topics, write tight scripts, produce clips and ship them every week. For a finance content operation this was a recurring time sink that fell behind whenever the week got busy, and inconsistency is fatal to social growth.
-What we built: An automated production line that runs on a schedule — discovering trending topics from Reddit, search trends, YouTube and RSS, then using Claude to draft a full batch of platform-native scripts and hashtag sets. The batch is pushed to Telegram for a human to approve in seconds (keeping editorial judgment in the loop) before the approved clips are produced and published as Reels to Instagram and Facebook.
-The impact: A reliable, hands-off content engine — every week it surfaces topics, writes scripts, waits for a one-tap approval and ships finished Reels to both platforms, turning a draining manual chore into consistent output.
+### Automated Reels Engine, Marketing / Content & Media Automation (Global)
+The challenge: Publishing short-form video consistently is brutal, someone has to find timely topics, write tight scripts, produce clips and ship them every week. For a finance content operation this was a recurring time sink that fell behind whenever the week got busy, and inconsistency is fatal to social growth.
+What we built: An automated production line that runs on a schedule, discovering trending topics from Reddit, search trends, YouTube and RSS, then using Claude to draft a full batch of platform-native scripts and hashtag sets. The batch is pushed to Telegram for a human to approve in seconds (keeping editorial judgment in the loop) before the approved clips are produced and published as Reels to Instagram and Facebook.
+The impact: A reliable, hands-off content engine, every week it surfaces topics, writes scripts, waits for a one-tap approval and ships finished Reels to both platforms, turning a draining manual chore into consistent output.
 
-### Autonomous Social Engine — Social Media / Autonomous AI (Global)
+### Autonomous Social Engine, Social Media / Autonomous AI (Global)
 URL: https://x.com/onewiseidiot
 The challenge: Growing a social account demands a steady stream of genuinely good posts, not filler. Doing it by hand is relentless, and most automation just spams low-quality output that erodes the audience it is meant to build.
-What we built: An in-house demonstrator that closes the loop completely — on a schedule it picks from a library of themes, generates candidate posts with an LLM, scores each on hook strength, structure, shareability and quality (filtering out clichés, bait and fake statistics), then publishes only the strongest candidate and logs the result. It runs three times a day with no human approval step and no external infrastructure.
-The impact: A living proof of disciplined autonomous social AI — original, quality-filtered posts published consistently and unattended at negligible cost, and the same engine can be adapted, with human-in-the-loop controls, to a brand's own voice.
+What we built: An in-house demonstrator that closes the loop completely, on a schedule it picks from a library of themes, generates candidate posts with an LLM, scores each on hook strength, structure, shareability and quality (filtering out clichés, bait and fake statistics), then publishes only the strongest candidate and logs the result. It runs three times a day with no human approval step and no external infrastructure.
+The impact: A living proof of disciplined autonomous social AI, original, quality-filtered posts published consistently and unattended at negligible cost, and the same engine can be adapted, with human-in-the-loop controls, to a brand's own voice.
 
-### Market Intelligence Suite — Capital Markets / Quantitative Analytics (Global)
+### Market Intelligence Suite, Capital Markets / Quantitative Analytics (Global)
 URL: https://signals.tankrich.com.au
-The challenge: Investors and analysts wanted disciplined, repeatable market signals but were trapped stitching together spreadsheets and eyeballing charts — analysis that was stale the moment it was finished.
-What we built: A family of always-current dashboards — a weekly internet and technology momentum portfolio (MACD); a global view issuing LONG / WATCH / FLAT calls across 14 major markets (EMA, MACD, RSI divergence); live Bitcoin, gold and silver signals with entries and timeframes; and a tool turning raw company exports into multi-sheet fundamental dashboards on demand. Signal generation runs itself and refreshes on schedule.
-The impact: Stale spreadsheets and ad-hoc chart-reading gave way to automated, always-current market intelligence across asset classes — repeatable, systematic signals decision-makers can act on.
+The challenge: Investors and analysts wanted disciplined, repeatable market signals but were trapped stitching together spreadsheets and eyeballing charts, analysis that was stale the moment it was finished.
+What we built: A family of always-current dashboards, a weekly internet and technology momentum portfolio (MACD); a global view issuing LONG / WATCH / FLAT calls across 14 major markets (EMA, MACD, RSI divergence); live Bitcoin, gold and silver signals with entries and timeframes; and a tool turning raw company exports into multi-sheet fundamental dashboards on demand. Signal generation runs itself and refreshes on schedule.
+The impact: Stale spreadsheets and ad-hoc chart-reading gave way to automated, always-current market intelligence across asset classes, repeatable, systematic signals decision-makers can act on.
 
 ## How We Work
 
-1. Discover & Assess — map operations and data, identify highest-ROI AI opportunities
-2. Design & Architect — define solution architecture, model strategy and data flows for security and scale
-3. Build & Ship — build in fast, visible iterations and deploy to production (most solutions live within weeks)
-4. Run & Scale — measure, refine and expand the AI footprint as the business grows
+1. Discover & Assess, map operations and data, identify highest-ROI AI opportunities
+2. Design & Architect, define solution architecture, model strategy and data flows for security and scale
+3. Build & Ship, build in fast, visible iterations and deploy to production (most solutions live within weeks)
+4. Run & Scale, measure, refine and expand the AI footprint as the business grows
 
 ## Frequently Asked Questions
 
 Q: What does Tankrich AI Consulting do?
-A: We are a specialist AI consultancy providing AI strategy and advisory, accelerated AI product development, RAG and knowledge systems, intelligent agents and automation, conversational AI, and decision intelligence — from ambition to production systems.
+A: We are a specialist AI consultancy providing AI strategy and advisory, accelerated AI product development, RAG and knowledge systems, intelligent agents and automation, conversational AI, and decision intelligence, from ambition to production systems.
 
 Q: How quickly can you deliver an AI solution?
 A: Most engagements move from concept to a deployed, production-ready solution within a few weeks, in fast and visible iterations.
@@ -124,7 +124,7 @@ Q: Do you work with clients outside Australia?
 A: Yes. We are based in Melbourne, Australia and serve clients worldwide, with delivered work across Australia, India and global markets. Engagements run over WhatsApp, email and video.
 
 Q: Is our data secure?
-A: Yes. We build on open frameworks and design for data ownership — your data stays yours, is never resold, and is never used to train external models. RAG keeps answers grounded in your verified sources.
+A: Yes. We build on open frameworks and design for data ownership, your data stays yours, is never resold, and is never used to train external models. RAG keeps answers grounded in your verified sources.
 
 Q: What technologies do you use?
 A: Claude, GPT, custom RAG pipelines, Next.js, Astro, React, Supabase, Python, native iOS/Android and PWAs, deployed on Vercel and Cloudflare. We pick the best tool per engagement.
@@ -134,4 +134,4 @@ A: Claude, GPT, custom RAG pipelines, Next.js, Astro, React, Supabase, Python, n
 - Website: https://www.tankrich.com
 - Email: hello@tankrich.com
 - WhatsApp: https://wa.me/919352194655 (fastest way to reach us)
-- Location: Melbourne, Australia — serving clients worldwide
+- Location: Melbourne, Australia, serving clients worldwide

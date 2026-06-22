@@ -1,6 +1,6 @@
 # Tankrich AI Consulting
 
-> Tankrich AI Consulting is a specialist artificial intelligence consultancy based in Melbourne, Australia, serving clients worldwide. We help organisations move from AI ambition to production systems — AI strategy and advisory, accelerated AI product development, RAG and knowledge systems, intelligent agents and automation, conversational AI, and decision intelligence. Made in Melbourne, serving the world.
+> Tankrich AI Consulting is a specialist artificial intelligence consultancy based in Melbourne, Australia, serving clients worldwide. We help organisations move from AI ambition to production systems, AI strategy and advisory, accelerated AI product development, RAG and knowledge systems, intelligent agents and automation, conversational AI, and decision intelligence. Made in Melbourne, serving the world.
 
 ## About
 
@@ -12,24 +12,24 @@
 
 ## Services
 
-- AI Strategy & Advisory — opportunity assessment and ROI-led adoption roadmap
-- Accelerated AI Product Development — concept to production-ready product in weeks
-- RAG & Knowledge Systems — grounding AI answers in your verified knowledge
-- Intelligent Agents & Automation — custom AI agents and copilots for your workflows
-- Conversational & Customer AI — assistants on web, WhatsApp, and Telegram
-- Data, Analytics & Decision Intelligence — live dashboards and automated signals
+- AI Strategy & Advisory, opportunity assessment and ROI-led adoption roadmap
+- Accelerated AI Product Development, concept to production-ready product in weeks
+- RAG & Knowledge Systems, grounding AI answers in your verified knowledge
+- Intelligent Agents & Automation, custom AI agents and copilots for your workflows
+- Conversational & Customer AI, assistants on web, WhatsApp, and Telegram
+- Data, Analytics & Decision Intelligence, live dashboards and automated signals
 
 ## Selected Case Studies (STAR)
 
-- PatrolX Tech (patrolxtech.com) — Field operations platform. iOS, Android and web apps with real-time GPS tracking, GPS-verified site visits, shift logging, incident reporting and multi-tenant administration. Result: distributed field teams accounted for end to end, replacing spreadsheet tracking with live, verifiable proof of work.
-- Uniqweave (fpoapp.com) — Factory process automation PWA for an Indian ethnic-wear and fabric workshop. 18 modules, four role-based permission groups, database-enforced stock and stage controls, Shopify sync, and an AI copilot. Result: the full production journey from fabric receipt to dispatch now runs auditably from a phone, with no specialist training.
-- Number & Words (numberandwords.xyz) — Adaptive NAPLAN practice platform with 10,000+ AI-generated questions across all domains, instant explanations and timed simulations.
-- My Wealth Base (mywb.com.au) — AI-native tool that automates ATO-compliant ESS income and CGT for every RSU vest and sale.
-- PureVeg (pureveg.xyz) — AI-curated, ad-free global directory of pure-vegetarian restaurants across 100+ cities, screening reviews for mixed kitchens.
-- Tankrich MFD (tankrichmfd.xyz) — Installable mutual-fund advisory PWA with goal-driven journeys, onboarding and real-time push notifications.
-- Automated Reels Engine — End-to-end content pipeline that discovers topics (Reddit, trends, YouTube, RSS), drafts platform-native scripts with Claude, takes one-tap human approval via Telegram, and publishes weekly Instagram and Facebook Reels. Result: consistent short-form video output with no dedicated video desk.
-- Autonomous Social Engine (x.com/onewiseidiot) — Fully autonomous X/Twitter engine that generates, quality-scores and publishes original posts three times daily with no human approval and no external database. An in-house demonstrator of disciplined autonomous social AI, adaptable with human-in-the-loop controls for a brand's own voice.
-- Market Intelligence Suite (signals.tankrich.com.au) — Automated quantitative dashboards: momentum portfolios, global index signals, live commodity signals and on-demand fundamental analysis.
+- PatrolX Tech (patrolxtech.com), Field operations platform. iOS, Android and web apps with real-time GPS tracking, GPS-verified site visits, shift logging, incident reporting and multi-tenant administration. Result: distributed field teams accounted for end to end, replacing spreadsheet tracking with live, verifiable proof of work.
+- Uniqweave (fpoapp.com), Factory process automation PWA for an Indian ethnic-wear and fabric workshop. 18 modules, four role-based permission groups, database-enforced stock and stage controls, Shopify sync, and an AI copilot. Result: the full production journey from fabric receipt to dispatch now runs auditably from a phone, with no specialist training.
+- Number & Words (numberandwords.xyz), Adaptive NAPLAN practice platform with 10,000+ AI-generated questions across all domains, instant explanations and timed simulations.
+- My Wealth Base (mywb.com.au), AI-native tool that automates ATO-compliant ESS income and CGT for every RSU vest and sale.
+- PureVeg (pureveg.xyz), AI-curated, ad-free global directory of pure-vegetarian restaurants across 100+ cities, screening reviews for mixed kitchens.
+- Tankrich MFD (tankrichmfd.xyz), Installable mutual-fund advisory PWA with goal-driven journeys, onboarding and real-time push notifications.
+- Automated Reels Engine, End-to-end content pipeline that discovers topics (Reddit, trends, YouTube, RSS), drafts platform-native scripts with Claude, takes one-tap human approval via Telegram, and publishes weekly Instagram and Facebook Reels. Result: consistent short-form video output with no dedicated video desk.
+- Autonomous Social Engine (x.com/onewiseidiot), Fully autonomous X/Twitter engine that generates, quality-scores and publishes original posts three times daily with no human approval and no external database. An in-house demonstrator of disciplined autonomous social AI, adaptable with human-in-the-loop controls for a brand's own voice.
+- Market Intelligence Suite (signals.tankrich.com.au), Automated quantitative dashboards: momentum portfolios, global index signals, live commodity signals and on-demand fundamental analysis.
 
 ## Technology
 
@@ -45,7 +45,7 @@
 - Website: https://www.tankrich.com
 - Email: hello@tankrich.com
 - WhatsApp: https://wa.me/919352194655 (fastest)
-- Location: Melbourne, Australia — serving clients worldwide
+- Location: Melbourne, Australia, serving clients worldwide
 
 ## Full Documentation
 
