@@ -1,109 +1,85 @@
 ---
-import { projects } from '../data/projects';
+import { caseStudies } from '../data/projects';
 ---
 
-<section id="projects" class="py-24 px-6 relative">
-  <div class="section-divider" aria-hidden="true"></div>
-
-  <div class="max-w-6xl mx-auto">
-    <div class="text-center mb-16">
-      <span class="text-sm font-semibold tracking-widest uppercase mb-4 block" style="color: #a78bfa;">Open Source & Live Projects</span>
-      <h2 class="font-bold mb-4" style="color: #f0f4ff; font-size: clamp(28px, 4vw, 36px);">Built & Shipped</h2>
-      <p class="text-lg max-w-xl mx-auto" style="color: #8892b0;">Every project below is live. Click to explore inside.</p>
+<section id="work" class="section section-alt">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Selected case studies</span>
+      <h2 class="section-title">Our work, in production</h2>
+      <p class="section-lead">
+        Every engagement below shipped a real system. Each case study is told the STAR way — Situation, Task, Action, Result — so you can see exactly how AI was applied and what it changed.
+      </p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-      {projects.map(project => {
-        const modalId = `proj-modal-${project.id}`;
+    <div class="cs-grid">
+      {caseStudies.map(cs => {
+        const modalId = `cs-modal-${cs.id}`;
         return (
           <>
-            <div class="proj-card rounded-2xl p-5 flex flex-col gap-3">
-              <div class="flex items-center justify-between">
-                <span class="text-3xl">{project.icon}</span>
-                <a
-                  href={project.repoUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="repo-link flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-full transition-all duration-200"
-                  title="View on GitHub"
-                >
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
-                  </svg>
-                  GitHub
-                </a>
+            <article class="cs-card">
+              <div class="cs-card-top">
+                <span class="cs-icon" aria-hidden="true">{cs.icon}</span>
+                <span class="cs-region">{cs.region}</span>
               </div>
-
-              <h4 class="font-bold text-base leading-snug" style="color: #f0f4ff;">{project.name}</h4>
-              <p class="text-sm leading-relaxed flex-1" style="color: #8892b0;">{project.description}</p>
-
-              <div class="flex flex-wrap gap-1.5">
-                {project.tags.map(tag => (
-                  <span class="tag-pill text-xs px-2 py-0.5 rounded-full">{tag}</span>
-                ))}
+              <p class="cs-sector">{cs.sector}</p>
+              <h3 class="cs-client">{cs.client}</h3>
+              <p class="cs-title">{cs.title}</p>
+              <p class="cs-summary">{cs.summary}</p>
+              <div class="cs-tags">
+                {cs.tags.slice(0, 4).map(tag => <span class="cs-tag">{tag}</span>)}
               </div>
-
-              <button
-                data-proj-modal={modalId}
-                class="proj-btn mt-1 w-full px-4 py-2.5 rounded-lg text-sm font-semibold transition-all duration-200"
-              >
-                View Live →
+              <button data-cs-modal={modalId} class="cs-readmore">
+                Read case study <span aria-hidden="true">→</span>
               </button>
-            </div>
+            </article>
 
             <!-- Modal -->
-            <div id={modalId} class="modal-overlay" role="dialog" aria-modal="true" aria-label={project.name}>
+            <div id={modalId} class="modal-overlay" role="dialog" aria-modal="true" aria-label={`${cs.client} case study`}>
               <div class="modal-container">
                 <div class="modal-header">
                   <div class="flex items-center gap-3 min-w-0">
-                    <span class="text-xl flex-shrink-0">{project.icon}</span>
+                    <span class="cs-icon-sm" aria-hidden="true">{cs.icon}</span>
                     <div class="min-w-0">
-                      <h3 class="font-bold text-sm truncate" style="color: #f0f4ff;">{project.name}</h3>
-                      <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" class="text-xs hover:underline flex items-center gap-1" style="color: #8892b0;">
-                        {project.liveUrl}
-                        <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="flex-shrink-0"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
-                      </a>
+                      <h3 class="modal-client">{cs.client}</h3>
+                      <p class="modal-sector">{cs.sector} · {cs.region}</p>
                     </div>
                   </div>
-                  <button class="modal-close" data-proj-close={modalId} aria-label="Close">
+                  <button class="modal-close" data-cs-close={modalId} aria-label="Close case study">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
                   </button>
                 </div>
 
-                <!-- Project info -->
-                <div class="proj-info">
-                  <p class="text-sm leading-relaxed mb-3" style="color: #8892b0;">{project.description}</p>
-                  <div class="flex flex-wrap gap-1.5">
-                    {project.tags.map(tag => (
-                      <span class="tag-pill text-xs px-2 py-0.5 rounded-full">{tag}</span>
-                    ))}
-                  </div>
-                </div>
+                <div class="modal-body">
+                  <p class="modal-title">{cs.title}</p>
 
-                <!-- iframe -->
-                <div class="modal-iframe-wrap">
-                  <div class="iframe-label">
-                    <span class="text-xs font-medium" style="color: #8892b0;">Live Preview</span>
-                    <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" class="text-xs flex items-center gap-1 hover:text-white transition-colors" style="color: #8892b0;">
-                      Open in new tab
-                      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
-                    </a>
+                  <div class="star-block">
+                    <div class="star-row">
+                      <span class="star-label">Situation</span>
+                      <p class="star-text">{cs.situation}</p>
+                    </div>
+                    <div class="star-row">
+                      <span class="star-label">Task</span>
+                      <p class="star-text">{cs.task}</p>
+                    </div>
+                    <div class="star-row">
+                      <span class="star-label">Action</span>
+                      <p class="star-text">{cs.action}</p>
+                    </div>
+                    <div class="star-row star-result">
+                      <span class="star-label">Result</span>
+                      <p class="star-text">{cs.result}</p>
+                    </div>
                   </div>
-                  <iframe
-                    src={project.liveUrl}
-                    class="modal-iframe"
-                    title={project.name}
-                    sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
-                  ></iframe>
-                  <div class="iframe-fallback">
-                    <div class="text-4xl mb-4">{project.icon}</div>
-                    <p class="font-semibold mb-2" style="color: #f0f4ff;">Preview not available here</p>
-                    <p class="text-sm mb-6" style="color: #8892b0;">This site restricts embedded previews.</p>
-                    <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" class="ext-btn inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-sm">
-                      Open in New Tab
-                      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
-                    </a>
+
+                  <div class="modal-tags">
+                    {cs.tags.map(tag => <span class="cs-tag">{tag}</span>)}
                   </div>
+
+                  <a href={cs.liveUrl} target="_blank" rel="noopener noreferrer" class="modal-visit">
+                    Visit {cs.liveUrl.replace(/^https?:\/\//, '')}
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+                  </a>
                 </div>
               </div>
             </div>
@@ -115,162 +91,140 @@ import { projects } from '../data/projects';
 </section>
 
 <style>
-  .section-divider {
-    position: absolute; top: 0; left: 0; right: 0;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(167,139,250,0.2), transparent);
-  }
+  .section { padding: 96px 0; }
+  .section-alt { background: var(--bg-alt); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
 
-  .proj-card {
-    background: rgba(13,15,30,0.8);
-    border: 1px solid rgba(255,255,255,0.06);
-    transition: all 0.25s ease;
+  .section-head { max-width: 740px; margin-bottom: 56px; }
+  .section-title { font-size: clamp(30px, 4vw, 44px); font-weight: 800; margin: 14px 0 18px; }
+  .section-lead { font-size: 19px; color: var(--muted); line-height: 1.6; }
+
+  .cs-grid {
+    display: grid; grid-template-columns: 1fr; gap: 22px;
   }
-  .proj-card:hover {
-    border-color: rgba(167,139,250,0.25);
-    box-shadow: 0 8px 30px rgba(167,139,250,0.08);
+  @media (min-width: 700px) { .cs-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1040px) { .cs-grid { grid-template-columns: repeat(3, 1fr); } }
+
+  .cs-card {
+    background: #fff; border: 1px solid var(--border); border-radius: 18px;
+    padding: 26px 26px 24px; display: flex; flex-direction: column;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+  }
+  .cs-card:hover {
+    border-color: rgba(91,52,214,0.35);
+    box-shadow: 0 18px 44px rgba(15,18,34,0.09);
     transform: translateY(-3px);
   }
 
-  .repo-link {
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.08);
-    color: #8892b0;
+  .cs-card-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+  .cs-icon {
+    width: 48px; height: 48px; border-radius: 12px; font-size: 24px;
+    display: flex; align-items: center; justify-content: center;
+    background: var(--accent-soft); border: 1px solid rgba(91,52,214,0.16);
   }
-  .repo-link:hover { background: rgba(255,255,255,0.08); color: #f0f4ff; }
+  .cs-region {
+    font-size: 11.5px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--accent); background: var(--accent-soft);
+    padding: 4px 10px; border-radius: 999px;
+  }
 
-  .tag-pill {
-    background: rgba(167,139,250,0.08);
-    color: #8892b0;
-    border: 1px solid rgba(167,139,250,0.12);
-  }
+  .cs-sector { font-size: 12.5px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); margin-bottom: 6px; }
+  .cs-client { font-size: 22px; font-weight: 800; margin-bottom: 8px; }
+  .cs-title { font-size: 15.5px; font-weight: 600; color: var(--ink); margin-bottom: 12px; line-height: 1.4; }
+  .cs-summary { font-size: 14.5px; color: var(--muted); line-height: 1.6; flex: 1; margin-bottom: 18px; }
 
-  .proj-btn {
-    background: rgba(167,139,250,0.08);
-    color: #a78bfa;
-    border: 1px solid rgba(167,139,250,0.2);
-    cursor: pointer;
+  .cs-tags { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 20px; }
+  .cs-tag {
+    font-size: 12px; font-weight: 500; padding: 4px 10px; border-radius: 999px;
+    background: var(--bg-alt); color: var(--muted); border: 1px solid var(--border);
   }
-  .proj-btn:hover {
-    background: #a78bfa;
-    color: #05060f;
-    border-color: #a78bfa;
-    box-shadow: 0 4px 20px rgba(167,139,250,0.25);
+  .modal-tags .cs-tag { background: #fff; }
+
+  .cs-readmore {
+    align-self: flex-start;
+    background: none; border: none; cursor: pointer;
+    font-size: 15px; font-weight: 600; color: var(--accent);
+    display: inline-flex; align-items: center; gap: 7px;
+    transition: gap 0.18s ease;
   }
+  .cs-readmore:hover { gap: 11px; }
 
   /* Modal */
   .modal-overlay {
-    display: none;
-    position: fixed; inset: 0; z-index: 1000;
-    background: rgba(5,6,15,0.88);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    align-items: center; justify-content: center;
-    padding: 16px;
+    display: none; position: fixed; inset: 0; z-index: 1000;
+    background: rgba(12,14,26,0.55);
+    backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+    align-items: center; justify-content: center; padding: 16px;
   }
   .modal-overlay.open { display: flex; }
 
   .modal-container {
-    background: #0d0f1e;
-    border: 1px solid rgba(167,139,250,0.2);
-    border-radius: 16px;
-    width: 100%; max-width: 960px;
-    height: 88vh;
-    display: flex; flex-direction: column;
-    overflow: hidden;
-    box-shadow: 0 24px 80px rgba(0,0,0,0.7), 0 0 0 1px rgba(167,139,250,0.08);
+    background: #fff; border: 1px solid var(--border);
+    border-radius: 20px; width: 100%; max-width: 760px; max-height: 90vh;
+    display: flex; flex-direction: column; overflow: hidden;
+    box-shadow: 0 30px 90px rgba(12,14,26,0.3);
     animation: modal-in 0.2s ease;
   }
-
-  @keyframes modal-in {
-    from { opacity: 0; transform: scale(0.97) translateY(10px); }
-    to   { opacity: 1; transform: scale(1) translateY(0); }
-  }
+  @keyframes modal-in { from { opacity: 0; transform: scale(0.97) translateY(10px); } to { opacity: 1; transform: scale(1) translateY(0); } }
 
   .modal-header {
     display: flex; align-items: center; justify-content: space-between;
-    padding: 14px 18px;
-    border-bottom: 1px solid rgba(255,255,255,0.06);
-    flex-shrink: 0; gap: 12px;
+    padding: 18px 22px; border-bottom: 1px solid var(--border); flex-shrink: 0; gap: 12px;
   }
+  .cs-icon-sm {
+    width: 42px; height: 42px; border-radius: 11px; font-size: 21px; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    background: var(--accent-soft); border: 1px solid rgba(91,52,214,0.16);
+  }
+  .modal-client { font-size: 18px; font-weight: 800; }
+  .modal-sector { font-size: 13px; color: var(--muted); }
 
   .modal-close {
-    color: #8892b0;
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 8px;
-    width: 34px; height: 34px;
-    display: flex; align-items: center; justify-content: center;
-    cursor: pointer; transition: all 0.15s ease; flex-shrink: 0;
+    color: var(--muted); background: var(--bg-alt); border: 1px solid var(--border);
+    border-radius: 9px; width: 36px; height: 36px; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center; cursor: pointer;
+    transition: all 0.15s ease;
   }
-  .modal-close:hover { background: rgba(255,255,255,0.1); color: #f0f4ff; }
+  .modal-close:hover { background: #fff; color: var(--ink); border-color: var(--border-strong); }
 
-  .proj-info {
-    padding: 16px 18px;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
-    flex-shrink: 0;
-  }
+  .modal-body { padding: 24px 22px 26px; overflow-y: auto; }
+  .modal-title { font-size: 20px; font-weight: 700; color: var(--ink); line-height: 1.35; margin-bottom: 22px; }
 
-  .modal-iframe-wrap {
-    flex: 1; display: flex; flex-direction: column;
-    overflow: hidden; position: relative;
+  .star-block { display: flex; flex-direction: column; gap: 18px; margin-bottom: 24px; }
+  .star-row { padding-left: 16px; border-left: 2px solid var(--border-strong); }
+  .star-row.star-result { border-left-color: var(--accent); }
+  .star-label {
+    display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 6px;
   }
+  .star-result .star-label { color: var(--accent-2); }
+  .star-text { font-size: 15px; color: var(--body); line-height: 1.6; }
 
-  .iframe-label {
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 7px 14px;
-    background: rgba(255,255,255,0.02);
-    border-bottom: 1px solid rgba(255,255,255,0.04);
-    flex-shrink: 0;
-  }
+  .modal-tags { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 24px; }
 
-  .modal-iframe { width: 100%; flex: 1; border: none; background: #fff; min-height: 0; }
-
-  .iframe-fallback {
-    display: none; position: absolute; inset: 0;
-    align-items: center; justify-content: center;
-    flex-direction: column; text-align: center;
-    padding: 40px; background: #0d0f1e;
+  .modal-visit {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 12px 22px; border-radius: 10px; font-weight: 600; font-size: 15px; color: #fff;
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    box-shadow: 0 6px 18px rgba(91,52,214,0.25);
+    transition: transform 0.18s ease;
   }
-  .iframe-fallback.visible { display: flex; }
-
-  .ext-btn {
-    background: #a78bfa; color: #05060f;
-    box-shadow: 0 4px 20px rgba(167,139,250,0.3);
-  }
-  .ext-btn:hover {
-    background: #b99ffb;
-    box-shadow: 0 6px 28px rgba(167,139,250,0.45);
-    transform: translateY(-1px);
-  }
+  .modal-visit:hover { transform: translateY(-1px); }
 </style>
 
 <script>
-  document.querySelectorAll('[data-proj-modal]').forEach(btn => {
+  document.querySelectorAll('[data-cs-modal]').forEach(btn => {
     btn.addEventListener('click', () => {
-      const id = (btn as HTMLElement).dataset.projModal!;
+      const id = (btn as HTMLElement).dataset.csModal!;
       const modal = document.getElementById(id);
       if (!modal) return;
       modal.classList.add('open');
       document.body.style.overflow = 'hidden';
-
-      const iframe = modal.querySelector('iframe') as HTMLIFrameElement | null;
-      const fallback = modal.querySelector('.iframe-fallback') as HTMLElement | null;
-      if (iframe && fallback) {
-        iframe.addEventListener('load', () => {
-          try {
-            const doc = iframe.contentDocument;
-            if (!doc || doc.body?.innerHTML === '') showFallback(iframe, fallback);
-          } catch { showFallback(iframe, fallback); }
-        }, { once: true });
-        iframe.addEventListener('error', () => showFallback(iframe, fallback), { once: true });
-      }
     });
   });
 
-  document.querySelectorAll('[data-proj-close]').forEach(btn => {
+  document.querySelectorAll('[data-cs-close]').forEach(btn => {
     btn.addEventListener('click', () => {
-      const id = (btn as HTMLElement).dataset.projClose!;
+      const id = (btn as HTMLElement).dataset.csClose!;
       document.getElementById(id)?.classList.remove('open');
       document.body.style.overflow = '';
     });
@@ -293,9 +247,4 @@ import { projects } from '../data/projects';
       });
     }
   });
-
-  function showFallback(iframe: HTMLIFrameElement, fallback: HTMLElement) {
-    iframe.style.display = 'none';
-    fallback.classList.add('visible');
-  }
 </script>

@@ -1,141 +1,133 @@
-# Tankrich — Full AI Consulting & Products Documentation
+# Tankrich AI Consulting — Full Documentation
 
-> Tankrich is an AI consulting practice run by Vivek Bothra, based in Melbourne, Australia. We build and deploy practical AI solutions for businesses and solopreneurs — systems that work in production, not just demos.
+> Tankrich AI Consulting is a specialist artificial intelligence consultancy based in Melbourne, Australia, serving clients worldwide. We take organisations from AI strategy to systems that run in production — not demos or prototypes. Made in Melbourne, serving the world.
 
-## Founder: Vivek Bothra
+## Who We Are
 
-Vivek Bothra is an AI practitioner and builder based in Melbourne, Australia. He helps businesses cut through the AI noise and deploy systems that actually work. His background spans autonomous agents, intelligent dashboards, and business automation across social media, finance, and operations.
+Tankrich AI Consulting is an AI consulting firm that combines strategy, engineering and product delivery. We help organisations identify where artificial intelligence creates real, measurable value and then build, ship and operate those systems. Founded in Melbourne, Australia, we serve clients worldwide, with delivered work spanning field operations, manufacturing, financial services, education and consumer products across Australia, India and global markets.
 
-Approach: Find the highest-leverage AI opportunity, build it fast, and make it work in the real world.
+Approach: find the highest-leverage AI opportunity, design for accuracy and data ownership, build fast in visible iterations, and ship to production.
 
 ## Services in Detail
 
-### 1. Autonomous Social Media Management
+### 1. AI Strategy & Advisory
+We help leaders identify where AI creates real value and how to capture it.
+- AI opportunity assessment across operations and the value chain
+- Prioritised, ROI-led adoption roadmap — highest-leverage opportunities first
+- Build-vs-buy, model selection and architecture guidance
+- Responsible, secure and pragmatic adoption from day one
 
-Let AI run your complete social presence — hands-free but human-approved.
+### 2. Accelerated AI Product Development
+Concept to production-ready product in weeks, not quarters.
+- Full-stack, AI-native architecture from day one
+- Web, mobile (iOS / Android) and installable PWA delivery
+- Real systems running in production — not demos
+- Built to scale and operate
 
-- Supports X (Twitter), Facebook Pages, and Instagram simultaneously
-- AI studies your brand voice and drafts platform-native content
-- Human-in-the-loop: review and approve before anything goes live
-- Automated scheduling — posts go out at optimal times
-- Status: Available for new clients
+### 3. RAG & Knowledge Systems
+Retrieval-Augmented Generation grounds AI in your verified knowledge.
+- Answers grounded in your verified sources, eliminating hallucinations
+- Always current — retrieves from your latest documents, not stale training data
+- Understands your business terminology and context
+- Secure knowledge bases that keep your data yours
 
-### 2. GPT Minions for Business Workflows
+### 4. Intelligent Agents & Automation
+Custom AI agents and copilots tuned to your exact workflows.
+- Document processing, research, drafting and summarisation
+- Human-in-the-loop controls where judgment matters
+- For solo operators through to growing teams
 
-Automate the boring 1-2 step business tasks that eat your day.
+### 5. Conversational & Customer AI
+Always-on AI assistants deployed where your customers already are.
+- Web, WhatsApp and Telegram
+- Trained on your documents, FAQs and internal knowledge
+- Open frameworks — your data stays yours, never resold
+- Available 24/7 with consistent answers
 
-- Custom GPT agents built around your exact workflow
-- Handles data entry, research, drafting, and summarisation
-- Includes the BAS Creator GPT for automated BAS preparation
-- Built for solopreneurs and small business operators
-- Live example: BAS Creator GPT on ChatGPT
+### 6. Data, Analytics & Decision Intelligence
+Live, intelligent dashboards and signals that drive decisions.
+- Built on your actual data sources
+- Automated signals, KPI views and decision intelligence
+- From idea to deployed dashboard in days
 
-### 3. AI-Driven Business Dashboards
+## Case Studies (STAR Method)
 
-Turn your business data into live, intelligent dashboards.
+### PatrolX Tech — Field Operations & Workforce Management (Australia)
+URL: https://patrolxtech.com
+Situation: Operations managers overseeing mobile workforces (security patrols, logistics, commercial cleaning, facilities, aged care, construction, events) had no reliable view of their teams, relying on spreadsheets and phone calls with operational blind spots and client-verification delays.
+Task: Deliver a single platform giving managers instant, trustworthy visibility into where teams are, time on site, and proof of work — usable in the field and the back office.
+Action: Designed and shipped native iOS and Android apps plus a web admin dashboard with a synchronized data layer — live map tracking, GPS-verified site visits, shift timing to the second, automated kilometre calculation, photo-and-text daily reports, incident logging with priority and location, multi-tenant administration, and push notifications. Published to the App Store and Google Play.
+Result: Field work is accounted for end to end. Managers see teams on a live map, hold GPS-verified proof of every site visit, and have replaced spreadsheet tracking with synchronized mobile-and-web data — closing the client-verification gap.
 
-- Custom dashboards built on your actual data sources
-- Live signals, momentum trackers, and KPI views
-- From idea to deployed dashboard in days, not months
-- Always actionable — no more stale spreadsheets
-- Live example: Stock Momentum Tracker
+### Uniqweave — Manufacturing / Factory Process Automation (India)
+URL: https://www.fpoapp.com
+Situation: An Indian ethnic-wear and fabric workshop ran production on paper and memory. Fabric inventory, costing, material issue, production tracking, dispatch and returns were disconnected and error-prone, with no auditable real-time picture of the floor, all in rupees across many hands.
+Task: Digitise the entire workshop end to end on a phone, with strict financial and stock controls, clear role separation, and no specialist training required.
+Action: Built a mobile-first PWA spanning 18 modules (setup & catalog, orders & floor, ship & returns, admin/AI). Enforced four role-based permission groups (Admin, Workshop, Stores, Sales) and database-level guardrails — stock cannot go negative, production stages cannot be skipped, dispatch requires a billing reference. Integrated Shopify order sync, camera-based fabric capture on the floor, and an AI copilot with alerts (Gemini gateway) grounded in a live snapshot of workshop data.
+Result: The full production journey — fabric in, design & cost, order, material issue, produce/QC/pack, dispatch & billing, returns — now runs from a phone on the floor, with every number, status and permission enforced by the database, giving the owner an auditable, real-time view of the business.
 
-### 4. Accelerated AI Development
-
-Idea to live product in 3 weeks.
-
-- Concept to deployed MVP in 3 weeks
-- Full-stack AI-native architecture from day one
-- Real examples live and in production — not demos
-- Designed to scale — not throwaway prototypes
-- Live example: My Wealth Base (mywb.com.au)
-
-### 5. Secure Personal AI Assistants
-
-24/7 AI assistants deployed on WhatsApp, Telegram, and web.
-
-- Trained on your documents, FAQs, and internal data
-- Open-source stack — your data stays yours, never shared
-- Always available, always consistent — zero downtime
-- Deployed on WhatsApp, Telegram, or your website
-
-### 6. Retrieval Augmented Generation (RAG) for Business
-
-Stop relying on LLMs that hallucinate or use outdated information.
-
-- Eliminates hallucinations — every answer grounded in your verified sources
-- Always up-to-date — retrieves from your latest documents, not stale training data
-- Context-aware — understands your business terminology precisely
-- Live example: My Wealth Buddy Australia (RAG-powered financial assistant)
-
-## Live Projects Portfolio
-
-### Number & Words
-Adaptive NAPLAN practice platform for Australian students in Years 3, 5, 7, and 9. Features 10,000+ AI-generated questions across numeracy, reading, language conventions, and writing. Includes interactive practice mode with instant explanations and timed test simulations mirroring real exam conditions. Subscriptions start at $49/year per year level.
+### Number & Words — EdTech / Adaptive Learning (Australia)
 URL: https://numberandwords.xyz
+Situation: Families preparing students for Australia's NAPLAN assessments (Years 3, 5, 7, 9) faced thin, static practice material and little adaptive feedback.
+Task: Create a curriculum-aligned practice platform that scales to thousands of high-quality questions, adapts to each student, and explains as it goes.
+Action: Used AI to generate and quality-assure 10,000+ questions across all NAPLAN domains, then built interactive practice with instant explanations and timed full-test simulations.
+Result: Students get a deep, adaptive question bank with immediate feedback and realistic timed practice — turning sparse preparation into a continuously available, curriculum-aligned learning experience.
 
-### Tankrich Nudges — Progressive Web App (PWA)
-A Progressive Web App delivering real-time push notifications to mutual fund advisory clients. Installable on any device like a native app — no app store required. Works offline, loads instantly, and sends timely investment nudges directly to the home screen. Demonstrates modern PWA capabilities: service workers, web push API, offline caching, and home screen installation.
-URL: https://tankrichmfd.xyz
-
-### PureVeg.xyz
-AI-powered global directory of pure vegetarian Indian restaurants — no mixed kitchens. Covers 100+ cities including Dubai, London, Singapore, New York, and Melbourne. AI analyzes Google reviews to flag non-veg operations. Ad-free, forever free.
-URL: https://www.pureveg.xyz
-
-### My Wealth Base
-Calculates your ATO-compliant ESS income and CGT for every vest and sale automatically. Never guess your RSU tax bill again.
+### My Wealth Base — FinTech / Tax Automation (Australia)
 URL: https://www.mywb.com.au
+Situation: Australian employees with equity compensation struggled to compute ATO Employee Share Scheme (ESS) income and Capital Gains Tax across many vests and sales.
+Task: Remove the guesswork by automating ESS income and CGT calculation for every vest and sale, in line with ATO rules.
+Action: Built an AI-native application that ingests vesting and sale events and computes ATO-compliant ESS income and CGT automatically, presenting a clear, defensible position per event.
+Result: Users get an automatic, ATO-aligned view of their equity tax position for every vest and sale — replacing spreadsheets and uncertainty with a calculation they can rely on.
 
-### Internet Momentum Portfolio
-Quantitative strategy identifying internet and technology stocks with positive MACD momentum on a weekly basis. Fully automated signal generation.
-URL: https://vivek-bothra.github.io/StockMomentumTracker
+### PureVeg — Consumer / AI Directory (Global)
+URL: https://www.pureveg.xyz
+Situation: Strictly vegetarian diners travelling globally had no trustworthy way to find genuinely pure-vegetarian restaurants — most directories mixed in establishments with non-veg kitchens.
+Task: Build a directory diners can trust across major world cities, distinguishing truly pure-vegetarian operations from mixed kitchens.
+Action: Assembled coverage across 100+ cities including Dubai, London, Singapore, New York and Melbourne, and applied AI to analyse Google reviews and flag likely non-veg operations. Shipped ad-free.
+Result: Diners get an AI-curated, ad-free directory that screens for mixed kitchens across 100+ cities — turning an unreliable search into a trusted global resource.
 
-### Market Top Signals
-Global momentum dashboard showing LONG / WATCH / FLAT signals for 14 major stock market indexes worldwide. Auto-generated every Monday using EMA, MACD, and RSI divergence.
-URL: https://vivek-bothra.github.io/Market-Top-Indicator
-
-### Tankrich Signals Dashboard
-Live auto-generated trading signals for Bitcoin, Gold, and Silver — with recommendations, entry dates, and timeframes.
-URL: https://signals.tankrich.com.au
-
-### Fundamental Analysis Dashboard
-Upload Excel exports from Screener.in for any company and instantly get a multi-sheet financial dashboard.
-URL: https://analysis.tankrich.com.au
-
-### Tankrich MFD — Mutual Funds For Life
-Full mutual fund advisory platform. Goal-driven, data-driven investment strategies.
+### Tankrich MFD — Financial Services / Advisory PWA (India)
 URL: https://tankrichmfd.xyz
+Situation: A mutual-fund distribution practice needed a modern client-facing platform — goal-based guidance, onboarding and timely nudges — without the cost and friction of native app development.
+Task: Deliver a fast, installable advisory experience that keeps clients engaged and reaches them directly, built and deployed quickly.
+Action: Built a Progressive Web App with goal-driven investment strategies, client onboarding, team profiles, and a real-time push-notification layer landing nudges on the client's home screen. Installs like a native app, no app store required.
+Result: The practice runs on a single installable platform that onboards clients, communicates strategy, and re-engages them through direct push — delivered in days rather than the months a native build would require.
 
-## Process: How We Work Together
+### Market Intelligence Suite — Capital Markets / Quantitative Analytics (Global)
+URL: https://signals.tankrich.com.au
+Situation: Investors and analysts wanted disciplined, systematic market signals but were stuck stitching together spreadsheets and manual chart reviews that went stale immediately.
+Task: Replace manual analysis with automated, always-current dashboards generating clear signals across equities, global indexes and commodities.
+Action: Built a family of dashboards — a weekly internet/technology momentum portfolio (MACD); a global index dashboard issuing LONG / WATCH / FLAT signals across 14 markets (EMA, MACD, RSI divergence); live Bitcoin/gold/silver signals with entries and timeframes; and a fundamental-analysis tool turning Screener.in exports into multi-sheet dashboards. Signal generation is fully automated and refreshes on schedule.
+Result: Decision-makers get automated, always-current market intelligence across asset classes — replacing stale spreadsheets and ad-hoc chart reading with repeatable, systematic signals.
 
-1. Discovery Call — Map business processes and identify highest-ROI AI opportunities
-2. Build & Deploy — Most solutions live within 1-3 weeks
-3. Iterate & Scale — Measure, refine, and expand as business grows
+## How We Work
+
+1. Discover & Assess — map operations and data, identify highest-ROI AI opportunities
+2. Design & Architect — define solution architecture, model strategy and data flows for security and scale
+3. Build & Ship — build in fast, visible iterations and deploy to production (most solutions live within weeks)
+4. Run & Scale — measure, refine and expand the AI footprint as the business grows
 
 ## Frequently Asked Questions
 
-Q: What types of businesses do you work with?
-A: Small businesses, solopreneurs, growing companies, and anyone who wants practical AI that delivers measurable results.
+Q: What does Tankrich AI Consulting do?
+A: We are a specialist AI consultancy providing AI strategy and advisory, accelerated AI product development, RAG and knowledge systems, intelligent agents and automation, conversational AI, and decision intelligence — from ambition to production systems.
 
-Q: How long does a typical project take?
-A: Most solutions are live within 1-3 weeks. The average is 3 weeks from concept to deployed product.
+Q: How quickly can you deliver an AI solution?
+A: Most engagements move from concept to a deployed, production-ready solution within a few weeks, in fast and visible iterations.
 
 Q: Do you work with clients outside Australia?
-A: Yes. While based in Melbourne, Australia, we work with clients globally via WhatsApp and video calls.
+A: Yes. We are based in Melbourne, Australia and serve clients worldwide, with delivered work across Australia, India and global markets. Engagements run over WhatsApp, email and video.
 
-Q: What makes your approach different?
-A: No jargon, no fluff. We focus on the highest-leverage AI opportunity for your business and deploy it fast. Every project ships to production — we don't do demos or prototypes that never go live.
-
-Q: Is my data secure?
-A: Yes. AI assistants are built on open-source frameworks. Your data stays yours and is never shared with third parties.
+Q: Is our data secure?
+A: Yes. We build on open frameworks and design for data ownership — your data stays yours, is never resold, and is never used to train external models. RAG keeps answers grounded in your verified sources.
 
 Q: What technologies do you use?
-A: GPT-4, Claude, custom RAG pipelines, Next.js, Astro, React, Supabase, Python, deployed on Vercel and Cloudflare.
+A: Claude, GPT, custom RAG pipelines, Next.js, Astro, React, Supabase, Python, native iOS/Android and PWAs, deployed on Vercel and Cloudflare. We pick the best tool per engagement.
 
 ## Contact Information
 
 - Website: https://www.tankrich.com
 - Email: hello@tankrich.com
-- WhatsApp: +91 9352194655
-- GitHub: https://github.com/vivek-bothra
-- Location: Melbourne, Australia
+- WhatsApp: +91 93521 94655 (fastest way to reach us)
+- Location: Melbourne, Australia — serving clients worldwide

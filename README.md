@@ -1,6 +1,6 @@
 # tankrich.com
 
-AI Consulting & Products by Vivek Bothra
+Official website of **Tankrich AI Consulting** — a specialist AI consultancy based in Melbourne, Australia, serving clients worldwide.
 
 ## Local Development
 
@@ -20,6 +20,9 @@ npm run preview
 
 Deployed on Cloudflare Pages. Push to `main` to auto-deploy.
 
-## Adding Products
+## Editing Content
 
-Edit `src/data/products.ts` and add a new object to the `products` array.
+- **Services** — edit `src/data/products.ts` (`services` array).
+- **Case studies** — edit `src/data/projects.ts` (`caseStudies` array). Each entry follows the STAR method: `situation`, `task`, `action`, `result`. Keep results qualitative unless you have verified metrics.
+- **SEO / structured data** — `src/layouts/BaseLayout.astro` (meta tags + JSON-LD Organization schema).
+- **LLM discoverability** — `public/llms.txt` and `public/llms-full.txt`.

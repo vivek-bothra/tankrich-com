@@ -1,36 +1,96 @@
 ---
-import { products } from '../data/products';
-import ProductCard from './ProductCard.astro';
+import { services } from '../data/products';
 ---
 
-<section id="products" class="py-24 px-6 relative">
-  <!-- Section divider top -->
-  <div class="section-divider-top" aria-hidden="true"></div>
-
-  <div class="max-w-6xl mx-auto">
-    <!-- Header -->
-    <div class="text-center mb-16">
-      <span class="section-label text-sm font-semibold tracking-widest uppercase mb-4 block" style="color: #4f8cff;">Services</span>
-      <h2 class="text-4xl font-bold mb-4" style="color: #f0f4ff; font-size: clamp(28px, 4vw, 36px);">What I Build</h2>
-      <p class="text-lg max-w-xl mx-auto" style="color: #8892b0;">Real AI solutions, live in production</p>
+<section id="services" class="section">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">What we do</span>
+      <h2 class="section-title">AI consulting, end to end</h2>
+      <p class="section-lead">
+        From the first strategy conversation to systems running in production, Tankrich AI Consulting partners with you across the full lifecycle of artificial intelligence adoption.
+      </p>
     </div>
 
-    <!-- Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      {products.map(product => (
-        <ProductCard product={product} />
+    <div class="svc-grid">
+      {services.map(service => (
+        <article class="svc-card">
+          <div class="svc-icon" aria-hidden="true">{service.icon}</div>
+          <h3 class="svc-name">{service.name}</h3>
+          <p class="svc-desc">{service.description}</p>
+          {service.bullets && (
+            <ul class="svc-list">
+              {service.bullets.map(b => (
+                <li><span class="svc-tick" aria-hidden="true">→</span>{b}</li>
+              ))}
+            </ul>
+          )}
+          <div class="svc-tags">
+            {service.tags.map(tag => <span class="svc-tag">{tag}</span>)}
+          </div>
+        </article>
       ))}
     </div>
   </div>
 </section>
 
 <style>
-  .section-divider-top {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(79,140,255,0.2), transparent);
+  .section { padding: 96px 0; }
+
+  .section-head { max-width: 720px; margin-bottom: 56px; }
+  .section-title {
+    font-size: clamp(30px, 4vw, 44px);
+    font-weight: 800;
+    margin: 14px 0 18px;
+  }
+  .section-lead { font-size: 19px; color: var(--muted); line-height: 1.6; }
+
+  .svc-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+  @media (min-width: 700px) { .svc-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1040px) { .svc-grid { grid-template-columns: repeat(3, 1fr); } }
+
+  .svc-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 30px 28px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+  }
+  .svc-card:hover {
+    border-color: rgba(91,52,214,0.35);
+    box-shadow: 0 18px 44px rgba(15,18,34,0.08);
+    transform: translateY(-3px);
+  }
+
+  .svc-icon {
+    width: 52px; height: 52px; border-radius: 13px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 26px;
+    background: var(--accent-soft);
+    border: 1px solid rgba(91,52,214,0.16);
+    margin-bottom: 20px;
+  }
+
+  .svc-name { font-size: 21px; font-weight: 700; margin-bottom: 12px; }
+  .svc-desc { font-size: 15.5px; color: var(--muted); line-height: 1.6; margin-bottom: 18px; }
+
+  .svc-list { list-style: none; margin-bottom: 20px; }
+  .svc-list li {
+    display: flex; gap: 10px; align-items: flex-start;
+    font-size: 14.5px; color: var(--body); line-height: 1.5;
+    padding: 6px 0;
+  }
+  .svc-tick { color: var(--accent); font-weight: 700; flex-shrink: 0; }
+
+  .svc-tags { display: flex; flex-wrap: wrap; gap: 7px; }
+  .svc-tag {
+    font-size: 12px; font-weight: 500;
+    padding: 4px 10px; border-radius: 999px;
+    background: var(--bg-alt); color: var(--muted);
+    border: 1px solid var(--border);
   }
 </style>

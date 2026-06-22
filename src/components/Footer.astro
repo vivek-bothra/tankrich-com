@@ -1,41 +1,61 @@
 ---
+const year = new Date().getFullYear();
 ---
-<footer class="py-12 px-6 relative">
-  <div class="footer-divider" aria-hidden="true"></div>
-
-  <div class="max-w-6xl mx-auto">
-    <div class="flex flex-col md:flex-row items-center justify-between gap-6">
-      <!-- Logo -->
-      <a href="#" class="text-xl font-bold" style="color: #4f8cff;">tankrich</a>
-
-      <!-- Links -->
-      <div class="flex items-center gap-6 text-sm" style="color: #8892b0;">
-        <a href="#products" class="hover:text-white transition-colors">Products</a>
-        <a href="#about" class="hover:text-white transition-colors">About</a>
-        <a href="https://wa.me/919352194655" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Contact</a>
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand-col">
+        <a href="#" class="footer-brand" aria-label="Tankrich AI Consulting home">
+          <span class="footer-mark" aria-hidden="true"></span>
+          Tankrich <span class="footer-brand-sub">AI Consulting</span>
+        </a>
+        <p class="footer-tagline">
+          Enterprise AI consulting — strategy, product development, RAG, intelligent agents and decision intelligence. Made in Melbourne, serving the world.
+        </p>
       </div>
 
-      <!-- Right info -->
-      <div class="text-xs text-center md:text-right" style="color: #8892b0;">
-        <p>Built with AI · Deployed on Cloudflare</p>
-        <p class="mt-1">© 2026 Vivek Bothra / tankrich.com</p>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4 class="footer-heading">Explore</h4>
+          <a href="#services">Services</a>
+          <a href="#work">Case Studies</a>
+          <a href="#approach">Approach</a>
+          <a href="#about">About</a>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Contact</h4>
+          <a href="https://wa.me/919352194655" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+          <a href="mailto:hello@tankrich.com">hello@tankrich.com</a>
+          <span class="footer-static">Melbourne, Australia</span>
+          <span class="footer-static">Serving clients worldwide</span>
+        </div>
       </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© {year} Tankrich AI Consulting. All rights reserved.</p>
+      <p>Built with AI · Deployed on Cloudflare</p>
     </div>
   </div>
 </footer>
 
 <style>
-  footer {
-    background: rgba(13,15,30,0.5);
-    border-top: 1px solid rgba(255,255,255,0.04);
-  }
+  .footer { background: #fff; border-top: 1px solid var(--border); padding: 64px 0 36px; }
 
-  .footer-divider {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(79,140,255,0.15), transparent);
-  }
+  .footer-top { display: grid; grid-template-columns: 1fr; gap: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
+  @media (min-width: 820px) { .footer-top { grid-template-columns: 1.4fr 1fr; } }
+
+  .footer-brand { display: inline-flex; align-items: center; gap: 9px; font-size: 19px; font-weight: 800; color: var(--ink); margin-bottom: 14px; }
+  .footer-brand-sub { color: var(--accent); }
+  .footer-mark { width: 20px; height: 20px; border-radius: 6px; background: linear-gradient(135deg, var(--accent), var(--accent-2)); }
+  .footer-tagline { font-size: 15px; color: var(--muted); line-height: 1.65; max-width: 420px; }
+
+  .footer-links { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  .footer-col { display: flex; flex-direction: column; gap: 11px; }
+  .footer-heading { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink); margin-bottom: 4px; }
+  .footer-col a, .footer-static { font-size: 15px; color: var(--muted); transition: color 0.18s ease; }
+  .footer-col a:hover { color: var(--accent); }
+
+  .footer-bottom { display: flex; flex-wrap: wrap; gap: 10px; justify-content: space-between; padding-top: 28px; }
+  .footer-bottom p { font-size: 13.5px; color: var(--muted); }
 </style>
