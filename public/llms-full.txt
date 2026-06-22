@@ -88,6 +88,17 @@ The challenge: A mutual-fund practice wanted to feel modern to its clients — g
 What we built: A Progressive Web App with goal-driven investment strategies, client onboarding, team profiles, and a real-time push-notification layer landing nudges on the client's home screen. Installs like a native app, opens instantly, no app store required.
 The impact: The practice runs on one installable platform that onboards clients, communicates strategy and re-engages people through direct push — stood up in days, not the months a native build would have demanded.
 
+### Automated Reels Engine — Marketing / Content & Media Automation (Global)
+The challenge: Publishing short-form video consistently is brutal — someone has to find timely topics, write tight scripts, produce clips and ship them every week. For a finance content operation this was a recurring time sink that fell behind whenever the week got busy, and inconsistency is fatal to social growth.
+What we built: An automated production line that runs on a schedule — discovering trending topics from Reddit, search trends, YouTube and RSS, then using Claude to draft a full batch of platform-native scripts and hashtag sets. The batch is pushed to Telegram for a human to approve in seconds (keeping editorial judgment in the loop) before the approved clips are produced and published as Reels to Instagram and Facebook.
+The impact: A reliable, hands-off content engine — every week it surfaces topics, writes scripts, waits for a one-tap approval and ships finished Reels to both platforms, turning a draining manual chore into consistent output.
+
+### Autonomous Social Engine — Social Media / Autonomous AI (Global)
+URL: https://x.com/onewiseidiot
+The challenge: Growing a social account demands a steady stream of genuinely good posts, not filler. Doing it by hand is relentless, and most automation just spams low-quality output that erodes the audience it is meant to build.
+What we built: An in-house demonstrator that closes the loop completely — on a schedule it picks from a library of themes, generates candidate posts with an LLM, scores each on hook strength, structure, shareability and quality (filtering out clichés, bait and fake statistics), then publishes only the strongest candidate and logs the result. It runs three times a day with no human approval step and no external infrastructure.
+The impact: A living proof of disciplined autonomous social AI — original, quality-filtered posts published consistently and unattended at negligible cost, and the same engine can be adapted, with human-in-the-loop controls, to a brand's own voice.
+
 ### Market Intelligence Suite — Capital Markets / Quantitative Analytics (Global)
 URL: https://signals.tankrich.com.au
 The challenge: Investors and analysts wanted disciplined, repeatable market signals but were trapped stitching together spreadsheets and eyeballing charts — analysis that was stale the moment it was finished.

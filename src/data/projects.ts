@@ -10,7 +10,7 @@ export interface CaseStudy {
   outcome: string;
   tags: string[];
   region: string;
-  liveUrl: string;
+  liveUrl: string | null;
 }
 
 // Client work, told as case studies. Each one runs challenge → approach →
@@ -124,6 +124,42 @@ export const caseStudies: CaseStudy[] = [
     tags: ['PWA', 'Financial Advisory', 'Push Notifications', 'Onboarding', 'Installable'],
     region: 'India',
     liveUrl: 'https://tankrichmfd.xyz',
+  },
+  {
+    id: 'reels-engine',
+    client: 'Automated Reels Engine',
+    sector: 'Marketing · Content & Media Automation',
+    icon: '🎬',
+    title: 'A week of social video, produced without a studio',
+    summary:
+      'An end-to-end pipeline that researches, scripts and produces a full week of Instagram and Facebook Reels for finance content — with a human approving in seconds from their phone.',
+    challenge:
+      'Publishing short-form video consistently is brutal: someone has to find timely topics, write tight scripts, produce the clips and ship them every single week. For a finance content operation, that meant a recurring time sink that quietly fell behind whenever the week got busy — and inconsistency is fatal to social growth.',
+    approach:
+      'We built an automated production line that runs itself on a schedule. It discovers trending topics from multiple sources — Reddit, search trends, YouTube and RSS — then uses Claude to draft a full batch of platform-native scripts and hashtag sets. The batch is pushed to Telegram for a human to review and approve in seconds, keeping editorial judgment in the loop, before the approved clips are produced and published as Reels to Instagram and Facebook. No video desk, no weekly scramble.',
+    outcome:
+      'A reliable, hands-off content engine: every week the pipeline surfaces topics, writes the scripts, waits for a one-tap approval, and ships finished Reels to both platforms — turning a draining manual chore into consistent output that runs whether or not anyone has time for it.',
+    tags: ['Content Automation', 'Claude', 'Instagram', 'Facebook Reels', 'Human-in-the-loop'],
+    region: 'Global',
+    liveUrl: null,
+  },
+  {
+    id: 'social-autopilot',
+    client: 'Autonomous Social Engine',
+    sector: 'Social Media · Autonomous AI',
+    icon: '✍️',
+    title: 'A social account that grows itself, end to end',
+    summary:
+      'A fully autonomous X / Twitter engine that generates, scores and publishes original posts multiple times a day — no human in the loop, no database, running entirely on scheduled automation.',
+    challenge:
+      'Growing a social account demands a steady stream of genuinely good posts — not filler. Doing that by hand is relentless, and most automation just spams low-quality output that erodes the very audience it’s meant to build.',
+    approach:
+      'We built an in-house demonstrator that closes the loop completely. On a schedule it picks from a library of themes, generates a batch of candidate posts with an LLM, then scores each one on hook strength, structure, shareability and quality — explicitly filtering out clichés, bait and fake statistics — before publishing only the strongest candidate and logging the result. It runs three times a day, with no human approval step and no external infrastructure to maintain.',
+    outcome:
+      'A living proof of what disciplined autonomous social AI looks like: original, quality-filtered posts published consistently and unattended, at negligible running cost — the same engine we can adapt, with human-in-the-loop controls, for a brand’s own voice.',
+    tags: ['Autonomous AI', 'X / Twitter', 'LLM Scoring', 'Content Generation', 'Demonstrator'],
+    region: 'Global',
+    liveUrl: 'https://x.com/onewiseidiot',
   },
   {
     id: 'market-intelligence',

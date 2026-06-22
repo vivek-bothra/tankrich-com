@@ -72,10 +72,12 @@ import { caseStudies } from '../data/projects';
                     {cs.tags.map(tag => <span class="cs-tag">{tag}</span>)}
                   </div>
 
-                  <a href={cs.liveUrl} target="_blank" rel="noopener noreferrer" class="modal-visit">
-                    Visit {cs.liveUrl.replace(/^https?:\/\//, '')}
-                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
-                  </a>
+                  {cs.liveUrl && (
+                    <a href={cs.liveUrl} target="_blank" rel="noopener noreferrer" class="modal-visit">
+                      Visit {cs.liveUrl.replace(/^https?:\/\//, '')}
+                      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+                    </a>
+                  )}
                 </div>
               </div>
             </div>
