@@ -7,7 +7,7 @@ interface Props {
 }
 
 const {
-  title = "Tankrich AI Consulting — Enterprise AI Strategy, Build & Automation | Melbourne",
+  title = "Tankrich AI Consulting — AI Strategy, Build & Automation | Melbourne",
   description = "Tankrich AI Consulting helps organisations turn artificial intelligence into business outcomes — AI strategy, accelerated product development, RAG and knowledge systems, intelligent agents, and decision intelligence. Made in Melbourne, serving the world.",
   ogImage = "https://www.tankrich.com/og-image.png",
   canonicalUrl = "https://www.tankrich.com",
@@ -21,7 +21,7 @@ const jsonLd = {
       "@id": "https://www.tankrich.com/#website",
       "url": "https://www.tankrich.com",
       "name": "Tankrich AI Consulting",
-      "description": "Enterprise AI consulting — strategy, product development, RAG, intelligent agents, and decision intelligence.",
+      "description": "AI consulting — strategy, product development, RAG, intelligent agents, and decision intelligence.",
       "publisher": { "@id": "https://www.tankrich.com/#organization" },
       "inLanguage": "en"
     },
@@ -52,11 +52,11 @@ const jsonLd = {
         }
       },
       "email": "hello@tankrich.com",
-      "telephone": "+919352194655",
       "contactPoint": {
         "@type": "ContactPoint",
-        "telephone": "+919352194655",
         "contactType": "sales",
+        "email": "hello@tankrich.com",
+        "url": "https://wa.me/919352194655",
         "availableLanguage": ["English"],
         "areaServed": "Worldwide"
       },
@@ -177,7 +177,7 @@ const jsonLd = {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
 
-    <style>
+    <style is:global>
       :root {
         --bg: #ffffff;
         --bg-alt: #f6f7fb;
@@ -188,9 +188,9 @@ const jsonLd = {
         --ink: #0f1222;
         --body: #41465a;
         --muted: #6b7185;
-        --accent: #5b34d6;
-        --accent-2: #c026d3;
-        --accent-soft: #f1ecfe;
+        --accent: #2563eb;
+        --accent-2: #0ea5e9;
+        --accent-soft: #e8f1fe;
         --live: #0ea371;
         --max: 1180px;
       }
@@ -243,6 +243,12 @@ const jsonLd = {
         margin-right: auto;
         padding-left: 24px;
         padding-right: 24px;
+      }
+      @media (min-width: 768px) {
+        .container { padding-left: 40px; padding-right: 40px; }
+      }
+      @media (min-width: 1240px) {
+        .container { padding-left: 48px; padding-right: 48px; }
       }
 
       @media (prefers-reduced-motion: reduce) {

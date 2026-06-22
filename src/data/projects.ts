@@ -5,35 +5,32 @@ export interface CaseStudy {
   icon: string;
   title: string;
   summary: string;
-  situation: string;
-  task: string;
-  action: string;
-  result: string;
+  challenge: string;
+  approach: string;
+  outcome: string;
   tags: string[];
   region: string;
   liveUrl: string;
 }
 
-// All client work is presented as STAR case studies
-// (Situation · Task · Action · Result). Results are described
-// qualitatively — outcomes delivered, not unverified metrics.
+// Client work, told as case studies. Each one runs challenge → approach →
+// outcome. Outcomes are described qualitatively — what changed for the
+// client, not unverified metrics.
 export const caseStudies: CaseStudy[] = [
   {
     id: 'patrolx',
     client: 'PatrolX Tech',
     sector: 'Field Operations & Workforce Management',
     icon: '📍',
-    title: 'Real-time visibility for distributed field teams',
+    title: 'Every field team on the map, in real time',
     summary:
-      'A mobile-first platform that puts every field team on the map in real time — GPS-verified site visits, shift logging, incident reporting, and proof of work across iOS, Android and web.',
-    situation:
-      'Operations managers across security patrols, logistics, commercial cleaning, facilities, aged care, construction and events had no reliable view of their mobile workforce. Tracking ran on spreadsheets and phone calls, creating operational blind spots and delays in verifying work for clients.',
-    task:
-      'Deliver a single platform that gives managers instant, trustworthy visibility into where teams are, how long they spend on site, and proof that work was completed — usable in the field and in the back office.',
-    action:
-      'We designed and shipped native iOS and Android apps plus a web admin dashboard with a synchronized data layer. Capabilities include live map tracking, GPS-verified site visits with timestamps, shift timing logged to the second, automated kilometre calculation between events, daily reports with photos and text, incident logging with priority and location, multi-tenant administration for managing multiple partners, and push notifications to stakeholders. Apps were published to the App Store and Google Play.',
-    result:
-      'Field work is now accounted for end to end. Managers see teams on a live map, hold GPS-verified proof of every site visit, and have replaced spreadsheet tracking with synchronized mobile-and-web data — closing the client verification gap and eliminating operational blind spots.',
+      'A mobile-first platform that puts distributed field teams on a live map — GPS-verified site visits, shift logging, incident reporting and proof of work across iOS, Android and web.',
+    challenge:
+      'Operations managers running security patrols, logistics, cleaning, facilities, aged care, construction and events were flying blind. The workforce was out in the field, but visibility lived in spreadsheets and phone calls — leaving managers unable to prove where teams had been or that the work was actually done, and clients waiting on answers.',
+    approach:
+      'We built a single source of truth across native iOS and Android apps and a web admin dashboard, all sharing one synchronized data layer. Teams are tracked on a live map, with GPS-verified site visits, shift timing logged to the second, automatic distance calculation between stops, photo-and-text daily reports, and incident logging tagged with priority and location. Multi-tenant administration lets one operator oversee many partners, and push notifications keep the right people informed — and the apps shipped to the App Store and Google Play.',
+    outcome:
+      'Field work is now fully accounted for. Managers watch teams move on a live map, hold GPS-verified proof of every site visit, and have retired spreadsheet tracking for good — closing the client-verification gap and erasing the operational blind spots the business used to run on.',
     tags: ['iOS', 'Android', 'Web Dashboard', 'Real-time GPS', 'Multi-tenant', 'Push Notifications'],
     region: 'Australia',
     liveUrl: 'https://patrolxtech.com',
@@ -43,17 +40,15 @@ export const caseStudies: CaseStudy[] = [
     client: 'Uniqweave',
     sector: 'Manufacturing · Factory Process Automation',
     icon: '🧵',
-    title: 'Running an ethnic-wear workshop end to end from a phone',
+    title: 'An entire garment factory, run from a phone',
     summary:
-      'A mobile-first PWA that digitises an Indian ethnic-wear and fabric workshop from the bolt of cloth to the carton at dispatch — 18 modules, role-based access, database-enforced controls, and an AI copilot.',
-    situation:
-      'An ethnic-wear manufacturing workshop ran production on paper and memory. Fabric inventory, costing, material issue, production tracking, dispatch and returns were disconnected and error-prone, with no auditable, real-time picture of the floor — and everything measured in rupees across many hands.',
-    task:
-      'Digitise the entire workshop end to end on a device people already carry, with strict financial and stock controls, clear role separation, and no specialist training required to operate it.',
-    action:
-      'We built a mobile-first PWA spanning 18 modules across setup & catalog, orders & floor, ship & returns, and admin/AI. It enforces four role-based permission groups (Admin, Workshop, Stores, Sales) and database-level guardrails — stock can never go negative, production stages cannot be skipped, dispatch requires a billing reference. The build integrates Shopify order sync, camera-based fabric capture on the shop floor, and an AI copilot with alerts (Gemini gateway) grounded in a live snapshot of workshop data.',
-    result:
-      'The full production journey — fabric in → design & cost → order → material issue → produce, QC, pack → dispatch & billing → returns — now runs from a phone on the floor. Every number, status and permission is enforced by the database, giving the owner an auditable, real-time view of the business that staff can use with no training.',
+      'A mobile-first PWA that digitises an Indian ethnic-wear workshop from the bolt of cloth to the carton at dispatch — 18 modules, role-based access, built-in financial controls and an AI copilot.',
+    challenge:
+      'A thriving ethnic-wear workshop was still run on paper and memory. Fabric stock, costing, material issue, production, dispatch and returns lived in disconnected ledgers — error-prone, impossible to audit, and invisible in real time, with every rupee changing hands across many people on a busy shop floor.',
+    approach:
+      'We put the whole operation on the device everyone already carries. The PWA spans 18 modules — from fabric receipt, designs and cost sheets through orders, material issue, production, QC and packing, to dispatch and returns — with four role-based permission groups so each person sees exactly their part. Critically, the controls live in the database, not just the screen: stock can never go negative, production stages can never be skipped, and dispatch always carries a billing reference. We layered in Shopify order sync, on-the-floor camera capture for fabric, and an AI copilot with alerts grounded in a live snapshot of the workshop.',
+    outcome:
+      'The full production journey now runs from a phone on the floor — fabric in, design and cost, order, material issue, produce, dispatch, returns — with every number, status and permission enforced automatically. For the first time the owner has an auditable, real-time view of the business, and the team operates it with no training at all.',
     tags: ['PWA', 'Manufacturing ERP', 'Role-based Access', 'AI Copilot', 'Shopify', 'India'],
     region: 'India',
     liveUrl: 'https://www.fpoapp.com',
@@ -63,17 +58,15 @@ export const caseStudies: CaseStudy[] = [
     client: 'Number & Words',
     sector: 'EdTech · Adaptive Learning',
     icon: '📝',
-    title: 'An adaptive NAPLAN practice platform at national scale',
+    title: 'A national exam-prep platform, built by AI',
     summary:
-      'An AI-built adaptive practice platform for Australian students with 10,000+ generated questions across numeracy, reading, language conventions and writing — instant explanations and timed test simulations.',
-    situation:
-      'Families preparing students for Australia’s NAPLAN assessments (Years 3, 5, 7 and 9) faced thin, static practice material and little adaptive feedback to target weak areas.',
-    task:
-      'Create a curriculum-aligned practice platform that scales to thousands of high-quality questions and adapts to each student, with explanations that actually teach.',
-    action:
-      'We used AI to generate and quality-assure 10,000+ questions across all NAPLAN domains, then built interactive practice with instant explanations and timed full-test simulations on a fast, modern web stack.',
-    result:
-      'Students get a deep, adaptive question bank with immediate feedback and realistic timed practice — turning sparse preparation into a continuously available, curriculum-aligned learning experience.',
+      'An adaptive NAPLAN practice platform for Australian students with 10,000+ AI-generated questions across every domain — instant explanations and realistic timed test simulations.',
+    challenge:
+      'Families preparing children for Australia’s NAPLAN assessments — Years 3, 5, 7 and 9 — were stuck with thin, static worksheets and almost no adaptive feedback to target where a student was actually struggling.',
+    approach:
+      'We used AI to generate and quality-assure more than 10,000 questions spanning numeracy, reading, language conventions and writing, then wrapped them in an experience that teaches: interactive practice with instant, plain-language explanations, plus full timed simulations that mirror real exam conditions.',
+    outcome:
+      'Sparse, one-size-fits-all prep became a deep, always-available, curriculum-aligned platform — giving every student a vast adaptive question bank, immediate feedback, and realistic practice whenever they’re ready.',
     tags: ['EdTech', 'Adaptive Learning', 'NAPLAN', 'Content Generation', 'Australia'],
     region: 'Australia',
     liveUrl: 'https://numberandwords.xyz',
@@ -83,17 +76,15 @@ export const caseStudies: CaseStudy[] = [
     client: 'My Wealth Base',
     sector: 'FinTech · Tax Automation',
     icon: '💰',
-    title: 'Automating ATO-compliant equity tax for every vest and sale',
+    title: 'Never guess an equity tax bill again',
     summary:
-      'An AI-native tool that calculates ATO-compliant ESS income and capital gains for every RSU vest and sale automatically — so employees never have to guess their equity tax bill.',
-    situation:
-      'Australian employees with equity compensation struggled to compute their ATO Employee Share Scheme (ESS) income and Capital Gains Tax across many vests and sales — a manual, error-prone process few could get right.',
-    task:
-      'Remove the guesswork by automating ESS income and CGT calculation for every vest and sale, in line with ATO rules.',
-    action:
-      'We built an AI-native application that ingests vesting and sale events and computes ATO-compliant ESS income and CGT automatically, presenting a clear, defensible position for each event.',
-    result:
-      'Users get an automatic, ATO-aligned view of their equity tax position for every vest and sale — replacing spreadsheets and uncertainty with a calculation they can rely on.',
+      'An AI-native tool that automatically calculates ATO-compliant ESS income and capital gains for every RSU vest and sale — turning a dreaded spreadsheet exercise into a single, reliable answer.',
+    challenge:
+      'Australians paid in company equity faced one of the messiest corners of the tax code. Working out ATO Employee Share Scheme income and Capital Gains Tax across dozens of vests and sales was manual, error-prone, and something almost no one could get right with confidence.',
+    approach:
+      'We built an AI-native application that takes in every vesting and sale event and computes ATO-compliant ESS income and CGT automatically — presenting a clear, defensible position for each event rather than a tangle of formulas.',
+    outcome:
+      'The guesswork is gone. Users get an automatic, ATO-aligned view of their equity tax position for every vest and sale — replacing fragile spreadsheets and year-end anxiety with a number they can actually trust.',
     tags: ['FinTech', 'ATO', 'ESS', 'RSU', 'CGT', 'AI-native'],
     region: 'Australia',
     liveUrl: 'https://www.mywb.com.au',
@@ -103,17 +94,15 @@ export const caseStudies: CaseStudy[] = [
     client: 'PureVeg',
     sector: 'Consumer · AI Directory',
     icon: '🌿',
-    title: 'An AI-curated global directory of pure-vegetarian dining',
+    title: 'A pure-vegetarian dining guide diners can trust',
     summary:
-      'A global, ad-free directory of pure-vegetarian Indian restaurants across 100+ cities, using AI to analyse public reviews and flag mixed kitchens — so diners can trust the listing.',
-    situation:
-      'Strictly vegetarian diners travelling globally had no trustworthy way to find genuinely pure-vegetarian restaurants — most directories mixed in establishments with non-veg kitchens.',
-    task:
-      'Build a directory diners can trust, spanning major cities worldwide, that distinguishes truly pure-vegetarian operations from mixed kitchens.',
-    action:
-      'We assembled coverage across 100+ cities including Dubai, London, Singapore, New York and Melbourne, and applied AI to analyse Google reviews and flag likely non-veg operations. The product was shipped ad-free.',
-    result:
-      'Diners get an AI-curated, ad-free directory that screens for mixed kitchens across 100+ cities — turning an unreliable search into a trusted, global resource.',
+      'A global, ad-free directory of pure-vegetarian restaurants across 100+ cities, using AI to read public reviews and flag mixed kitchens — so the listing actually means what it says.',
+    challenge:
+      'Strictly vegetarian diners travelling the world had no reliable way to find genuinely pure-vegetarian restaurants. Mainstream directories quietly mixed in places with non-veg kitchens, turning every search into a gamble.',
+    approach:
+      'We built coverage across 100+ cities — Dubai, London, Singapore, New York, Melbourne and more — and pointed AI at the public review record to detect and flag likely non-veg operations. The whole product shipped ad-free, by design.',
+    outcome:
+      'An unreliable search became a trusted, global resource: an AI-curated, ad-free guide that screens out mixed kitchens across more than a hundred cities, so diners can choose with confidence.',
     tags: ['AI', 'Consumer', 'Review Analysis', '100+ Cities', 'Directory'],
     region: 'Global',
     liveUrl: 'https://www.pureveg.xyz',
@@ -123,17 +112,15 @@ export const caseStudies: CaseStudy[] = [
     client: 'Tankrich MFD',
     sector: 'Financial Services · Advisory PWA',
     icon: '💼',
-    title: 'A full mutual-fund advisory platform with push at its core',
+    title: 'A modern advisory practice, delivered in days',
     summary:
-      'An installable advisory platform for a mutual-fund practice — goal-driven investment journeys, client onboarding, team profiles, and real-time push notifications, with no app store required.',
-    situation:
-      'A mutual-fund distribution practice needed a modern client-facing platform — goal-based guidance, onboarding and timely nudges — without the cost and friction of native app development.',
-    task:
-      'Deliver a fast, installable advisory experience that keeps clients engaged and reaches them directly, built and deployed quickly.',
-    action:
-      'We built a Progressive Web App with goal-driven investment strategies, client onboarding, team profiles, and a real-time push-notification layer that lands nudges on the client’s home screen. It installs like a native app, works instantly, and needs no app store.',
-    result:
-      'The practice runs on a single installable platform that onboards clients, communicates strategy, and re-engages clients through direct push — delivered in days rather than the months a native build would require.',
+      'An installable advisory platform for a mutual-fund practice — goal-driven investment journeys, client onboarding, team profiles and real-time push, with no app store in sight.',
+    challenge:
+      'A mutual-fund practice wanted to feel modern to its clients — goal-based guidance, smooth onboarding, and timely nudges — but couldn’t justify the cost, time and friction of building native mobile apps to get there.',
+    approach:
+      'We delivered it as a Progressive Web App: goal-driven investment strategies, client onboarding, team profiles, and a real-time push-notification layer that lands nudges straight on the client’s home screen. It installs like a native app, opens instantly, and needs no app store.',
+    outcome:
+      'The practice now runs on one installable platform that onboards clients, communicates strategy and re-engages people through direct push — stood up in days, not the months a native build would have demanded.',
     tags: ['PWA', 'Financial Advisory', 'Push Notifications', 'Onboarding', 'Installable'],
     region: 'India',
     liveUrl: 'https://tankrichmfd.xyz',
@@ -143,17 +130,15 @@ export const caseStudies: CaseStudy[] = [
     client: 'Market Intelligence Suite',
     sector: 'Capital Markets · Quantitative Analytics',
     icon: '📡',
-    title: 'Automated market-signal dashboards for systematic decisions',
+    title: 'Systematic market signals, fully automated',
     summary:
-      'A suite of automated quantitative dashboards — momentum portfolios, global index signals, live commodity signals, and on-demand fundamental analysis — that turn raw market data into actionable views.',
-    situation:
-      'Investors and analysts wanted disciplined, systematic market signals but were stuck stitching together spreadsheets and manual chart reviews that went stale the moment they were built.',
-    task:
-      'Replace manual analysis with automated, always-current dashboards that generate clear signals across equities, global indexes and commodities.',
-    action:
-      'We built a family of dashboards: a weekly internet/technology momentum portfolio (MACD), a global index dashboard issuing LONG / WATCH / FLAT signals across 14 markets (EMA, MACD, RSI divergence), live Bitcoin/gold/silver signals with entries and timeframes, and a fundamental-analysis tool that turns Screener.in exports into multi-sheet financial dashboards. Signal generation is fully automated and refreshes on schedule.',
-    result:
-      'Decision-makers get automated, always-current market intelligence across asset classes — replacing stale spreadsheets and ad-hoc chart reading with repeatable, systematic signals.',
+      'A suite of automated quantitative dashboards — momentum portfolios, global index signals, live commodity calls and on-demand fundamental analysis — that turn raw market data into decisions.',
+    challenge:
+      'Investors and analysts wanted disciplined, repeatable market signals but were trapped stitching together spreadsheets and eyeballing charts — analysis that was stale the moment it was finished.',
+    approach:
+      'We built a family of always-current dashboards: a weekly internet and technology momentum portfolio driven by MACD; a global view issuing LONG / WATCH / FLAT calls across 14 major markets using EMA, MACD and RSI divergence; live Bitcoin, gold and silver signals with entries and timeframes; and a tool that turns raw company exports into multi-sheet fundamental dashboards on demand. Signal generation runs itself and refreshes on schedule.',
+    outcome:
+      'Stale spreadsheets and ad-hoc chart-reading gave way to automated, always-current market intelligence across asset classes — repeatable, systematic signals decision-makers can actually act on.',
     tags: ['Quantitative', 'Python', 'MACD / EMA / RSI', 'Dashboards', 'Automation'],
     region: 'Global',
     liveUrl: 'https://signals.tankrich.com.au',

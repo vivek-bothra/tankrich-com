@@ -50,56 +50,49 @@ Live, intelligent dashboards and signals that drive decisions.
 - Automated signals, KPI views and decision intelligence
 - From idea to deployed dashboard in days
 
-## Case Studies (STAR Method)
+## Case Studies
 
 ### PatrolX Tech — Field Operations & Workforce Management (Australia)
 URL: https://patrolxtech.com
-Situation: Operations managers overseeing mobile workforces (security patrols, logistics, commercial cleaning, facilities, aged care, construction, events) had no reliable view of their teams, relying on spreadsheets and phone calls with operational blind spots and client-verification delays.
-Task: Deliver a single platform giving managers instant, trustworthy visibility into where teams are, time on site, and proof of work — usable in the field and the back office.
-Action: Designed and shipped native iOS and Android apps plus a web admin dashboard with a synchronized data layer — live map tracking, GPS-verified site visits, shift timing to the second, automated kilometre calculation, photo-and-text daily reports, incident logging with priority and location, multi-tenant administration, and push notifications. Published to the App Store and Google Play.
-Result: Field work is accounted for end to end. Managers see teams on a live map, hold GPS-verified proof of every site visit, and have replaced spreadsheet tracking with synchronized mobile-and-web data — closing the client-verification gap.
+The challenge: Operations managers running security patrols, logistics, cleaning, facilities, aged care, construction and events were flying blind. The workforce was in the field, but visibility lived in spreadsheets and phone calls — leaving managers unable to prove where teams had been or that work was done, and clients waiting on answers.
+What we built: A single source of truth across native iOS and Android apps and a web admin dashboard sharing one synchronized data layer — live map tracking, GPS-verified site visits, shift timing to the second, automatic distance calculation between stops, photo-and-text daily reports, incident logging tagged with priority and location, multi-tenant administration, and push notifications. Published to the App Store and Google Play.
+The impact: Field work is now fully accounted for. Managers watch teams on a live map, hold GPS-verified proof of every site visit, and have retired spreadsheet tracking — closing the client-verification gap and erasing operational blind spots.
 
 ### Uniqweave — Manufacturing / Factory Process Automation (India)
 URL: https://www.fpoapp.com
-Situation: An Indian ethnic-wear and fabric workshop ran production on paper and memory. Fabric inventory, costing, material issue, production tracking, dispatch and returns were disconnected and error-prone, with no auditable real-time picture of the floor, all in rupees across many hands.
-Task: Digitise the entire workshop end to end on a phone, with strict financial and stock controls, clear role separation, and no specialist training required.
-Action: Built a mobile-first PWA spanning 18 modules (setup & catalog, orders & floor, ship & returns, admin/AI). Enforced four role-based permission groups (Admin, Workshop, Stores, Sales) and database-level guardrails — stock cannot go negative, production stages cannot be skipped, dispatch requires a billing reference. Integrated Shopify order sync, camera-based fabric capture on the floor, and an AI copilot with alerts (Gemini gateway) grounded in a live snapshot of workshop data.
-Result: The full production journey — fabric in, design & cost, order, material issue, produce/QC/pack, dispatch & billing, returns — now runs from a phone on the floor, with every number, status and permission enforced by the database, giving the owner an auditable, real-time view of the business.
+The challenge: A thriving ethnic-wear workshop was still run on paper and memory. Fabric stock, costing, material issue, production, dispatch and returns lived in disconnected ledgers — error-prone, impossible to audit and invisible in real time, with every rupee changing hands across many people on a busy shop floor.
+What we built: A mobile-first PWA spanning 18 modules — from fabric receipt, designs and cost sheets through orders, material issue, production, QC and packing, to dispatch and returns — with four role-based permission groups. The controls live in the database, not just the screen: stock can never go negative, production stages can never be skipped, dispatch always carries a billing reference. Layered with Shopify order sync, on-the-floor camera capture for fabric, and an AI copilot with alerts grounded in a live snapshot of the workshop.
+The impact: The full production journey now runs from a phone on the floor — fabric in, design and cost, order, material issue, produce, dispatch, returns — with every number, status and permission enforced automatically. For the first time the owner has an auditable, real-time view of the business, and the team runs it with no training.
 
 ### Number & Words — EdTech / Adaptive Learning (Australia)
 URL: https://numberandwords.xyz
-Situation: Families preparing students for Australia's NAPLAN assessments (Years 3, 5, 7, 9) faced thin, static practice material and little adaptive feedback.
-Task: Create a curriculum-aligned practice platform that scales to thousands of high-quality questions, adapts to each student, and explains as it goes.
-Action: Used AI to generate and quality-assure 10,000+ questions across all NAPLAN domains, then built interactive practice with instant explanations and timed full-test simulations.
-Result: Students get a deep, adaptive question bank with immediate feedback and realistic timed practice — turning sparse preparation into a continuously available, curriculum-aligned learning experience.
+The challenge: Families preparing children for Australia's NAPLAN assessments (Years 3, 5, 7, 9) were stuck with thin, static worksheets and almost no adaptive feedback to target where a student was actually struggling.
+What we built: AI-generated and quality-assured 10,000+ questions across numeracy, reading, language conventions and writing, wrapped in interactive practice with instant, plain-language explanations and full timed simulations that mirror real exam conditions.
+The impact: Sparse, one-size-fits-all prep became a deep, always-available, curriculum-aligned platform — giving every student a vast adaptive question bank, immediate feedback and realistic practice on demand.
 
 ### My Wealth Base — FinTech / Tax Automation (Australia)
 URL: https://www.mywb.com.au
-Situation: Australian employees with equity compensation struggled to compute ATO Employee Share Scheme (ESS) income and Capital Gains Tax across many vests and sales.
-Task: Remove the guesswork by automating ESS income and CGT calculation for every vest and sale, in line with ATO rules.
-Action: Built an AI-native application that ingests vesting and sale events and computes ATO-compliant ESS income and CGT automatically, presenting a clear, defensible position per event.
-Result: Users get an automatic, ATO-aligned view of their equity tax position for every vest and sale — replacing spreadsheets and uncertainty with a calculation they can rely on.
+The challenge: Australians paid in company equity faced one of the messiest corners of the tax code — working out ATO Employee Share Scheme income and Capital Gains Tax across dozens of vests and sales was manual, error-prone and hard to get right with confidence.
+What we built: An AI-native application that takes in every vesting and sale event and computes ATO-compliant ESS income and CGT automatically, presenting a clear, defensible position for each event.
+The impact: The guesswork is gone — users get an automatic, ATO-aligned view of their equity tax position for every vest and sale, replacing fragile spreadsheets and year-end anxiety with a number they can trust.
 
 ### PureVeg — Consumer / AI Directory (Global)
 URL: https://www.pureveg.xyz
-Situation: Strictly vegetarian diners travelling globally had no trustworthy way to find genuinely pure-vegetarian restaurants — most directories mixed in establishments with non-veg kitchens.
-Task: Build a directory diners can trust across major world cities, distinguishing truly pure-vegetarian operations from mixed kitchens.
-Action: Assembled coverage across 100+ cities including Dubai, London, Singapore, New York and Melbourne, and applied AI to analyse Google reviews and flag likely non-veg operations. Shipped ad-free.
-Result: Diners get an AI-curated, ad-free directory that screens for mixed kitchens across 100+ cities — turning an unreliable search into a trusted global resource.
+The challenge: Strictly vegetarian diners travelling the world had no reliable way to find genuinely pure-vegetarian restaurants — mainstream directories quietly mixed in places with non-veg kitchens, making every search a gamble.
+What we built: Coverage across 100+ cities — Dubai, London, Singapore, New York, Melbourne and more — with AI pointed at the public review record to detect and flag likely non-veg operations. Shipped ad-free by design.
+The impact: An unreliable search became a trusted, global resource: an AI-curated, ad-free guide that screens out mixed kitchens across more than a hundred cities.
 
 ### Tankrich MFD — Financial Services / Advisory PWA (India)
 URL: https://tankrichmfd.xyz
-Situation: A mutual-fund distribution practice needed a modern client-facing platform — goal-based guidance, onboarding and timely nudges — without the cost and friction of native app development.
-Task: Deliver a fast, installable advisory experience that keeps clients engaged and reaches them directly, built and deployed quickly.
-Action: Built a Progressive Web App with goal-driven investment strategies, client onboarding, team profiles, and a real-time push-notification layer landing nudges on the client's home screen. Installs like a native app, no app store required.
-Result: The practice runs on a single installable platform that onboards clients, communicates strategy, and re-engages them through direct push — delivered in days rather than the months a native build would require.
+The challenge: A mutual-fund practice wanted to feel modern to its clients — goal-based guidance, smooth onboarding and timely nudges — but couldn't justify the cost, time and friction of building native mobile apps.
+What we built: A Progressive Web App with goal-driven investment strategies, client onboarding, team profiles, and a real-time push-notification layer landing nudges on the client's home screen. Installs like a native app, opens instantly, no app store required.
+The impact: The practice runs on one installable platform that onboards clients, communicates strategy and re-engages people through direct push — stood up in days, not the months a native build would have demanded.
 
 ### Market Intelligence Suite — Capital Markets / Quantitative Analytics (Global)
 URL: https://signals.tankrich.com.au
-Situation: Investors and analysts wanted disciplined, systematic market signals but were stuck stitching together spreadsheets and manual chart reviews that went stale immediately.
-Task: Replace manual analysis with automated, always-current dashboards generating clear signals across equities, global indexes and commodities.
-Action: Built a family of dashboards — a weekly internet/technology momentum portfolio (MACD); a global index dashboard issuing LONG / WATCH / FLAT signals across 14 markets (EMA, MACD, RSI divergence); live Bitcoin/gold/silver signals with entries and timeframes; and a fundamental-analysis tool turning Screener.in exports into multi-sheet dashboards. Signal generation is fully automated and refreshes on schedule.
-Result: Decision-makers get automated, always-current market intelligence across asset classes — replacing stale spreadsheets and ad-hoc chart reading with repeatable, systematic signals.
+The challenge: Investors and analysts wanted disciplined, repeatable market signals but were trapped stitching together spreadsheets and eyeballing charts — analysis that was stale the moment it was finished.
+What we built: A family of always-current dashboards — a weekly internet and technology momentum portfolio (MACD); a global view issuing LONG / WATCH / FLAT calls across 14 major markets (EMA, MACD, RSI divergence); live Bitcoin, gold and silver signals with entries and timeframes; and a tool turning raw company exports into multi-sheet fundamental dashboards on demand. Signal generation runs itself and refreshes on schedule.
+The impact: Stale spreadsheets and ad-hoc chart-reading gave way to automated, always-current market intelligence across asset classes — repeatable, systematic signals decision-makers can act on.
 
 ## How We Work
 
@@ -129,5 +122,5 @@ A: Claude, GPT, custom RAG pipelines, Next.js, Astro, React, Supabase, Python, n
 
 - Website: https://www.tankrich.com
 - Email: hello@tankrich.com
-- WhatsApp: +91 93521 94655 (fastest way to reach us)
+- WhatsApp: https://wa.me/919352194655 (fastest way to reach us)
 - Location: Melbourne, Australia — serving clients worldwide

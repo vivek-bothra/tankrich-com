@@ -1,21 +1,21 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
   <defs>
     <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#1a1340"/>
-      <stop offset="50%" stop-color="#2d1a5e"/>
-      <stop offset="100%" stop-color="#4a1d6b"/>
+      <stop offset="0%" stop-color="#0a1733"/>
+      <stop offset="50%" stop-color="#122d57"/>
+      <stop offset="100%" stop-color="#134e7a"/>
     </linearGradient>
     <linearGradient id="mark" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#5b34d6"/>
-      <stop offset="100%" stop-color="#c026d3"/>
+      <stop offset="0%" stop-color="#2563eb"/>
+      <stop offset="100%" stop-color="#0ea5e9"/>
     </linearGradient>
     <radialGradient id="glow1" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="rgba(192,38,211,0.35)"/>
-      <stop offset="100%" stop-color="rgba(192,38,211,0)"/>
+      <stop offset="0%" stop-color="rgba(14,165,233,0.35)"/>
+      <stop offset="100%" stop-color="rgba(14,165,233,0)"/>
     </radialGradient>
     <radialGradient id="glow2" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="rgba(91,52,214,0.4)"/>
-      <stop offset="100%" stop-color="rgba(91,52,214,0)"/>
+      <stop offset="0%" stop-color="rgba(37,99,235,0.4)"/>
+      <stop offset="100%" stop-color="rgba(37,99,235,0)"/>
     </radialGradient>
   </defs>
   <rect width="1200" height="630" fill="url(#bg)"/>
@@ -24,10 +24,10 @@
   <!-- Logo mark -->
   <rect x="80" y="80" width="56" height="56" rx="14" fill="url(#mark)"/>
   <!-- Brand name -->
-  <text x="156" y="122" font-family="Arial,sans-serif" font-weight="800" font-size="34" fill="#ffffff">Tankrich <tspan fill="#d8b4fe">AI Consulting</tspan></text>
+  <text x="156" y="122" font-family="Arial,sans-serif" font-weight="800" font-size="34" fill="#ffffff">Tankrich <tspan fill="#bfdbfe">AI Consulting</tspan></text>
   <!-- Headline -->
-  <text x="80" y="280" font-family="Arial,sans-serif" font-weight="800" font-size="62" fill="#ffffff">Enterprise AI consulting</text>
-  <text x="80" y="356" font-family="Arial,sans-serif" font-weight="800" font-size="62" fill="#d8b4fe">that delivers outcomes</text>
+  <text x="80" y="280" font-family="Arial,sans-serif" font-weight="800" font-size="62" fill="#ffffff">AI consulting that turns</text>
+  <text x="80" y="356" font-family="Arial,sans-serif" font-weight="800" font-size="62" fill="#bfdbfe">ambition into outcomes</text>
   <!-- Sub -->
   <text x="80" y="430" font-family="Arial,sans-serif" font-weight="400" font-size="24" fill="rgba(255,255,255,0.8)">Strategy · Product · RAG · Agents · Decision Intelligence</text>
   <!-- Location badge -->
