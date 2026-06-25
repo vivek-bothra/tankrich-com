@@ -6,7 +6,10 @@ const year = new Date().getFullYear();
     <div class="footer-top">
       <div class="footer-brand-col">
         <a href="#" class="footer-brand" aria-label="Tankrich AI Consulting home">
-          <span class="footer-mark" aria-hidden="true"></span>
+          <svg class="footer-mark" width="24" height="24" viewBox="0 0 26 26" fill="none" aria-hidden="true">
+            <rect x="1" y="1" width="24" height="24" rx="6.5" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M7.5 9 H18.5 M13 9 V18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
           Tankrich <span class="footer-brand-sub">AI Consulting</span>
         </a>
         <p class="footer-tagline">
@@ -45,8 +48,8 @@ const year = new Date().getFullYear();
   @media (min-width: 820px) { .footer-top { grid-template-columns: 1.4fr 1fr; } }
 
   .footer-brand { display: inline-flex; align-items: center; gap: 9px; font-size: 19px; font-weight: 800; color: var(--ink); margin-bottom: 14px; }
-  .footer-brand-sub { color: var(--accent); }
-  .footer-mark { width: 20px; height: 20px; border-radius: 6px; background: linear-gradient(135deg, var(--accent), var(--accent-2)); }
+  .footer-brand-sub { color: var(--muted); font-weight: 600; }
+  .footer-mark { color: var(--ink); flex-shrink: 0; }
   .footer-tagline { font-size: 15px; color: var(--muted); line-height: 1.65; max-width: 420px; }
 
   .footer-links { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }

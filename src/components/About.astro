@@ -12,9 +12,9 @@ const principles = [
     <div class="about-grid">
       <div>
         <span class="eyebrow">About Tankrich</span>
-        <h2 class="about-title">A specialist AI consultancy, made in Melbourne</h2>
+        <h2 class="about-title">Built for businesses that never had a tech team</h2>
         <p class="about-lead">
-          Tankrich AI Consulting helps organisations turn artificial intelligence into a working part of their business. We combine strategy, engineering and product delivery to take clients from AI ambition to systems that run in the real world.
+          Most small businesses and solo founders can't afford an in-house AI and engineering team, and don't need one. Tankrich is that team, on demand. We combine strategy, engineering and product delivery to take you from AI ambition to systems that run in the real world.
         </p>
         <p class="about-body">
           Founded in Melbourne, Australia, we serve clients worldwide, with delivered work across Australia, India and global markets, spanning field operations, manufacturing, financial services, education and consumer products. Made in Melbourne, serving the world.
@@ -41,13 +41,13 @@ const principles = [
 </section>
 
 <style>
-  .section { padding: 96px 0; }
+  .section { padding: 112px 0; }
   .section-alt { background: var(--bg-alt); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
 
   .about-grid { display: grid; grid-template-columns: 1fr; gap: 48px; align-items: start; }
-  @media (min-width: 940px) { .about-grid { grid-template-columns: 1.05fr 1fr; gap: 64px; } }
+  @media (min-width: 940px) { .about-grid { grid-template-columns: 1.05fr 1fr; gap: 72px; } }
 
-  .about-title { font-size: clamp(28px, 3.6vw, 40px); font-weight: 800; margin: 14px 0 20px; }
+  .about-title { font-size: clamp(30px, 3.8vw, 44px); font-weight: 700; margin: 16px 0 22px; }
   .about-lead { font-size: 19px; color: var(--body); line-height: 1.6; margin-bottom: 18px; }
   .about-body { font-size: 16px; color: var(--muted); line-height: 1.7; margin-bottom: 26px; }
 
@@ -55,17 +55,17 @@ const principles = [
   .about-badge {
     font-size: 14px; font-weight: 600; color: var(--ink);
     background: #fff; border: 1px solid var(--border);
-    padding: 9px 16px; border-radius: 999px;
+    padding: 9px 16px; border-radius: 8px;
   }
 
   .about-cta { font-size: 16px; font-weight: 600; color: var(--accent); display: inline-flex; gap: 7px; align-items: center; transition: gap 0.18s ease; }
   .about-cta:hover { gap: 11px; }
 
-  .principles { display: grid; grid-template-columns: 1fr; gap: 16px; }
+  .principles { display: grid; grid-template-columns: 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
   @media (min-width: 560px) { .principles { grid-template-columns: repeat(2, 1fr); } }
 
-  .principle-card { background: #fff; border: 1px solid var(--border); border-radius: 16px; padding: 24px 22px; transition: border-color 0.2s ease, box-shadow 0.2s ease; }
-  .principle-card:hover { border-color: rgba(37,99,235,0.3); box-shadow: 0 12px 30px rgba(15,18,34,0.06); }
+  .principle-card { background: #fff; padding: 28px 26px; transition: background 0.2s ease; }
+  .principle-card:hover { background: var(--bg-alt); }
   .principle-title { font-size: 17px; font-weight: 700; margin-bottom: 9px; }
   .principle-text { font-size: 14.5px; color: var(--muted); line-height: 1.6; }
 </style>

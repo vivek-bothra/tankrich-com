@@ -7,8 +7,8 @@ interface Props {
 }
 
 const {
-  title = "Tankrich AI Consulting: AI Strategy, Build & Automation | Melbourne",
-  description = "Tankrich AI Consulting helps organisations turn artificial intelligence into business outcomes: AI strategy, accelerated product development, RAG and knowledge systems, intelligent agents, and decision intelligence. Made in Melbourne, serving the world.",
+  title = "Tankrich AI Consulting: The Tech Team SMEs & Founders Never Had | Melbourne",
+  description = "Tankrich AI Consulting is the tech team SMEs and solo founders never had: AI strategy, accelerated product development, RAG and knowledge systems, intelligent agents, and automation, shipped in weeks. Made in Melbourne, serving the world.",
   ogImage = "https://www.tankrich.com/og-image.png",
   canonicalUrl = "https://www.tankrich.com",
 } = Astro.props;
@@ -180,19 +180,19 @@ const jsonLd = {
     <style is:global>
       :root {
         --bg: #ffffff;
-        --bg-alt: #f6f7fb;
-        --bg-ink: #0c0e1a;
+        --bg-alt: #f4f5f7;
+        --bg-ink: #111318;
         --surface: #ffffff;
-        --border: #e6e8f0;
-        --border-strong: #d4d7e3;
-        --ink: #0f1222;
-        --body: #41465a;
-        --muted: #6b7185;
+        --border: #e8e9ee;
+        --border-strong: #d6d8e0;
+        --ink: #0f1115;
+        --body: #3a3f4a;
+        --muted: #71757f;
         --accent: #2563eb;
-        --accent-2: #0ea5e9;
-        --accent-soft: #e8f1fe;
-        --live: #0ea371;
-        --max: 1180px;
+        --accent-2: #1d4ed8;
+        --accent-soft: #eef3fe;
+        --live: #1aa06d;
+        --max: 1140px;
       }
 
       * {
@@ -218,21 +218,14 @@ const jsonLd = {
 
       h1, h2, h3, h4 {
         color: var(--ink);
-        letter-spacing: -0.02em;
-        line-height: 1.1;
-      }
-
-      .gradient-text {
-        background: linear-gradient(115deg, var(--accent) 0%, var(--accent-2) 100%);
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
+        letter-spacing: -0.025em;
+        line-height: 1.08;
       }
 
       .eyebrow {
-        font-size: 13px;
-        font-weight: 700;
-        letter-spacing: 0.14em;
+        font-size: 12.5px;
+        font-weight: 600;
+        letter-spacing: 0.12em;
         text-transform: uppercase;
         color: var(--accent);
       }
@@ -250,6 +243,33 @@ const jsonLd = {
       @media (min-width: 1240px) {
         .container { padding-left: 48px; padding-right: 48px; }
       }
+
+      /* Shared, flat, high-contrast button primitives (Cohere-style) */
+      .btn-primary {
+        display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+        padding: 14px 26px; border-radius: 8px;
+        font-weight: 600; font-size: 15.5px; color: #fff;
+        background: var(--ink); border: 1px solid var(--ink);
+        transition: background 0.18s ease, transform 0.18s ease;
+      }
+      .btn-primary:hover { background: #2a2e38; transform: translateY(-1px); }
+
+      .btn-secondary {
+        display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+        padding: 14px 24px; border-radius: 8px;
+        font-weight: 600; font-size: 15.5px; color: var(--ink);
+        background: #fff; border: 1px solid var(--border-strong);
+        transition: border-color 0.18s ease, background 0.18s ease;
+      }
+      .btn-secondary:hover { border-color: var(--ink); background: var(--bg-alt); }
+
+      .link-arrow {
+        display: inline-flex; align-items: center; gap: 7px;
+        font-size: 15px; font-weight: 600; color: var(--accent);
+        background: none; border: none; cursor: pointer;
+        transition: gap 0.18s ease;
+      }
+      .link-arrow:hover { gap: 11px; }
 
       @media (prefers-reduced-motion: reduce) {
         *, *::before, *::after {

@@ -2,9 +2,12 @@
 ---
 <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
   <div class="container py-4 flex items-center justify-between">
-    <a href="#" class="brand flex items-center gap-2 font-extrabold tracking-tight text-lg" aria-label="Tankrich AI Consulting home">
-      <span class="brand-mark" aria-hidden="true"></span>
-      <span>Tankrich<span class="brand-sub"> AI Consulting</span></span>
+    <a href="#" class="brand flex items-center gap-2.5 text-lg" aria-label="Tankrich AI Consulting home">
+      <svg class="brand-mark" width="26" height="26" viewBox="0 0 26 26" fill="none" aria-hidden="true">
+        <rect x="1" y="1" width="24" height="24" rx="6.5" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M7.5 9 H18.5 M13 9 V18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <span class="brand-word">Tankrich</span>
     </a>
 
     <!-- Desktop Links -->
@@ -38,23 +41,18 @@
 
 <style>
   #navbar {
-    background: rgba(255,255,255,0.7);
+    background: rgba(255,255,255,0.72);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
   }
   #navbar.scrolled {
-    background: rgba(255,255,255,0.92);
+    background: rgba(255,255,255,0.94);
     border-bottom: 1px solid var(--border);
-    box-shadow: 0 1px 20px rgba(15,18,34,0.04);
   }
 
-  .brand { color: var(--ink); }
-  .brand-sub { color: var(--accent); font-weight: 700; }
-  .brand-mark {
-    width: 20px; height: 20px; border-radius: 6px;
-    background: linear-gradient(135deg, var(--accent), var(--accent-2));
-    box-shadow: 0 2px 10px rgba(37,99,235,0.35);
-  }
+  .brand { color: var(--ink); font-weight: 700; letter-spacing: -0.02em; }
+  .brand-mark { color: var(--ink); flex-shrink: 0; }
+  .brand-word { color: var(--ink); }
 
   .nav-link {
     font-size: 15px;
@@ -62,19 +60,19 @@
     color: var(--body);
     transition: color 0.18s ease;
   }
-  .nav-link:hover { color: var(--accent); }
+  .nav-link:hover { color: var(--ink); }
 
   .nav-cta {
     padding: 9px 18px;
-    border-radius: 9px;
+    border-radius: 8px;
     font-size: 15px;
     font-weight: 600;
     color: #fff;
-    background: linear-gradient(135deg, var(--accent), var(--accent-2));
-    box-shadow: 0 4px 14px rgba(37,99,235,0.25);
-    transition: transform 0.18s ease, box-shadow 0.18s ease;
+    background: var(--ink);
+    border: 1px solid var(--ink);
+    transition: background 0.18s ease;
   }
-  .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(37,99,235,0.35); }
+  .nav-cta:hover { background: #2a2e38; }
 
   .hamburger-line { background: var(--ink); }
 </style>

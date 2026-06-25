@@ -3,9 +3,8 @@
 <section id="contact" class="section section-alt">
   <div class="container">
     <div class="contact-card">
-      <div class="contact-glow" aria-hidden="true"></div>
       <div class="contact-inner">
-        <span class="eyebrow" style="color:#fff;opacity:0.85;">Get in touch</span>
+        <span class="eyebrow" style="color:#9db4ff;">Get in touch</span>
         <h2 class="contact-title">Ready to put AI to work?</h2>
         <p class="contact-lead">
           Tell us about your business and the outcome you're after. No jargon, no fluff, just a clear conversation about practical AI that delivers. The fastest way to reach us is WhatsApp.
@@ -28,44 +27,37 @@
 </section>
 
 <style>
-  .section { padding: 96px 0; }
+  .section { padding: 112px 0; }
   .section-alt { background: var(--bg-alt); border-top: 1px solid var(--border); }
 
   .contact-card {
     position: relative; overflow: hidden;
-    border-radius: 26px;
-    background: linear-gradient(135deg, #0a1733 0%, #122d57 45%, #134e7a 100%);
-    padding: 64px 32px;
-  }
-  .contact-glow {
-    position: absolute; inset: 0;
-    background:
-      radial-gradient(ellipse 50% 60% at 85% 10%, rgba(14,165,233,0.35), transparent 60%),
-      radial-gradient(ellipse 50% 60% at 10% 100%, rgba(37,99,235,0.4), transparent 60%);
-    pointer-events: none;
+    border-radius: 20px;
+    background: var(--bg-ink);
+    padding: 80px 32px;
   }
   .contact-inner { position: relative; z-index: 1; max-width: 640px; margin: 0 auto; text-align: center; }
 
-  .contact-title { font-size: clamp(30px, 4.4vw, 46px); font-weight: 800; color: #fff; margin: 14px 0 18px; }
-  .contact-lead { font-size: 18px; color: rgba(255,255,255,0.8); line-height: 1.6; margin-bottom: 34px; }
+  .contact-title { font-size: clamp(32px, 4.6vw, 50px); font-weight: 700; color: #fff; margin: 16px 0 20px; letter-spacing: -0.03em; }
+  .contact-lead { font-size: 18px; color: rgba(255,255,255,0.72); line-height: 1.6; margin-bottom: 36px; }
 
-  .contact-actions { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; align-items: center; margin-bottom: 26px; }
+  .contact-actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; align-items: center; margin-bottom: 28px; }
 
   .contact-whatsapp {
     display: inline-flex; align-items: center; gap: 11px;
-    padding: 15px 28px; border-radius: 12px; font-weight: 700; font-size: 16px; color: #fff;
-    background: #25d366; box-shadow: 0 10px 30px rgba(37,211,102,0.3);
-    transition: transform 0.18s ease, box-shadow 0.18s ease;
+    padding: 15px 26px; border-radius: 8px; font-weight: 600; font-size: 16px; color: #fff;
+    background: #25d366;
+    transition: background 0.18s ease, transform 0.18s ease;
   }
-  .contact-whatsapp:hover { transform: translateY(-2px); box-shadow: 0 14px 38px rgba(37,211,102,0.45); }
+  .contact-whatsapp:hover { background: #20c35d; transform: translateY(-1px); }
 
   .contact-email {
     font-size: 16px; font-weight: 600; color: #fff;
-    padding: 15px 24px; border-radius: 12px;
-    border: 1px solid rgba(255,255,255,0.25);
+    padding: 15px 24px; border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.22);
     transition: background 0.18s ease;
   }
-  .contact-email:hover { background: rgba(255,255,255,0.1); }
+  .contact-email:hover { background: rgba(255,255,255,0.08); }
 
-  .contact-note { font-size: 14px; color: rgba(255,255,255,0.6); }
+  .contact-note { font-size: 14px; color: rgba(255,255,255,0.55); }
 </style>
