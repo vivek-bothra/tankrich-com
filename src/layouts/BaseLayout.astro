@@ -4,6 +4,9 @@ interface Props {
   description?: string;
   ogImage?: string;
   canonicalUrl?: string;
+  keywords?: string;
+  /** Replaces the default site-wide @graph. Pass an array of schema.org nodes. */
+  structuredData?: unknown[];
 }
 
 const {
@@ -11,9 +14,11 @@ const {
   description = "Tankrich AI Consulting is the tech team SMEs and solo founders never had: AI strategy, accelerated product development, RAG and knowledge systems, intelligent agents, and automation, shipped in weeks. Made in Melbourne, serving the world.",
   ogImage = "https://www.tankrich.com/og-image.png",
   canonicalUrl = "https://www.tankrich.com",
+  keywords = "AI consulting, AI consultancy, artificial intelligence consulting, AI strategy, AI product development, RAG, generative AI, AI agents, AI automation, Melbourne AI consulting",
+  structuredData,
 } = Astro.props;
 
-const jsonLd = {
+const defaultJsonLd = {
   "@context": "https://schema.org",
   "@graph": [
     {
@@ -51,11 +56,11 @@ const jsonLd = {
           "addressCountry": "AU"
         }
       },
-      "email": "hello@tankrich.com",
+      "email": "info@patrolxtech.com",
       "contactPoint": {
         "@type": "ContactPoint",
         "contactType": "sales",
-        "email": "hello@tankrich.com",
+        "email": "info@patrolxtech.com",
         "url": "https://wa.me/919352194655",
         "availableLanguage": ["English"],
         "areaServed": "Worldwide"
@@ -133,6 +138,10 @@ const jsonLd = {
     }
   ]
 };
+
+const jsonLd = structuredData
+  ? { "@context": "https://schema.org", "@graph": structuredData }
+  : defaultJsonLd;
 ---
 
 <!DOCTYPE html>
@@ -146,7 +155,7 @@ const jsonLd = {
     <link rel="canonical" href={canonicalUrl} />
     <meta name="author" content="Tankrich AI Consulting" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-    <meta name="keywords" content="AI consulting, AI consultancy, artificial intelligence consulting, AI strategy, AI product development, RAG, generative AI, AI agents, AI automation, Melbourne AI consulting" />
+    <meta name="keywords" content={keywords} />
     <meta name="geo.region" content="AU-VIC" />
     <meta name="geo.placename" content="Melbourne" />
     <meta name="geo.position" content="-37.8136;144.9631" />

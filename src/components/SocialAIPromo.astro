@@ -1,0 +1,124 @@
+---
+import { steps, setupFee, plans } from '../data/socialAi';
+---
+
+<section id="social-ai" class="sap">
+  <div class="container">
+    <div class="sap-grid">
+      <div class="sap-copy">
+        <div class="sap-badge">
+          <span class="sap-badge-star" aria-hidden="true">★</span>
+          Now available
+        </div>
+
+        <h2 class="sap-title">Tankrich <span class="sap-title-accent">Social Media AI</span></h2>
+
+        <p class="sap-lead">
+          A simple social media solution for small business. Never let your photos or videos
+          go to waste while you are in the shop or at work. Text them in, approve what comes
+          back, and you are posted to Instagram, Facebook, LinkedIn and TikTok.
+        </p>
+
+        <div class="sap-actions">
+          <a href="/social-ai" class="sap-btn-primary">How it works</a>
+          <a href="/social-ai-pricing" class="sap-btn-secondary">Plans and pricing →</a>
+        </div>
+
+        <p class="sap-note">
+          One-off setup ${setupFee.price} + GST · plans from ${plans[3].price} per month + GST ·
+          multiple channel support on every plan
+        </p>
+      </div>
+
+      <ol class="sap-steps">
+        {steps.map(step => (
+          <li class="sap-step">
+            <span class="sap-step-num" aria-hidden="true">{step.number}</span>
+            <span class="sap-step-title">{step.title}</span>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </div>
+</section>
+
+<style>
+  .sap {
+    background: var(--bg-ink);
+    padding: 88px 0;
+  }
+
+  .sap-grid { display: grid; grid-template-columns: 1fr; gap: 48px; align-items: center; }
+  @media (min-width: 940px) { .sap-grid { grid-template-columns: 1.25fr 0.75fr; gap: 64px; } }
+
+  .sap-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 7px 16px; border-radius: 999px;
+    background: rgba(37, 99, 235, 0.18);
+    border: 1px solid rgba(147, 178, 255, 0.35);
+    color: #b9cdff;
+    font-size: 13px; font-weight: 600;
+    margin-bottom: 24px;
+  }
+  .sap-badge-star { font-size: 12px; }
+
+  .sap-title {
+    font-size: clamp(30px, 4.2vw, 46px);
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: -0.032em;
+    margin-bottom: 20px;
+  }
+  .sap-title-accent { color: #7ea6ff; }
+
+  .sap-lead {
+    font-size: 17.5px;
+    color: rgba(255, 255, 255, 0.72);
+    line-height: 1.65;
+    max-width: 600px;
+    margin-bottom: 32px;
+  }
+
+  .sap-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 24px; }
+
+  .sap-btn-primary {
+    display: inline-flex; align-items: center; justify-content: center;
+    padding: 14px 26px; border-radius: 8px;
+    font-weight: 600; font-size: 15.5px;
+    color: var(--ink); background: #fff; border: 1px solid #fff;
+    transition: background 0.18s ease, transform 0.18s ease;
+  }
+  .sap-btn-primary:hover { background: #e9ecf3; transform: translateY(-1px); }
+
+  .sap-btn-secondary {
+    display: inline-flex; align-items: center; justify-content: center;
+    padding: 14px 24px; border-radius: 8px;
+    font-weight: 600; font-size: 15.5px;
+    color: #fff; background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.26);
+    transition: background 0.18s ease, border-color 0.18s ease;
+  }
+  .sap-btn-secondary:hover { background: rgba(255, 255, 255, 0.08); border-color: rgba(255, 255, 255, 0.5); }
+
+  .sap-note { font-size: 13.5px; color: rgba(255, 255, 255, 0.5); line-height: 1.6; max-width: 560px; }
+
+  .sap-steps {
+    list-style: none;
+    display: flex; flex-direction: column; gap: 1px;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 14px;
+    overflow: hidden;
+  }
+  .sap-step {
+    display: flex; align-items: center; gap: 16px;
+    background: #171a21;
+    padding: 20px 22px;
+  }
+  .sap-step-num {
+    font-size: 13px; font-weight: 700; color: #7ea6ff;
+    letter-spacing: 0.04em;
+    flex-shrink: 0;
+  }
+  .sap-step-title { font-size: 15.5px; font-weight: 600; color: #fff; line-height: 1.4; }
+</style>

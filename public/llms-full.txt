@@ -132,6 +132,6 @@ A: Claude, GPT, custom RAG pipelines, Next.js, Astro, React, Supabase, Python, n
 ## Contact Information
 
 - Website: https://www.tankrich.com
-- Email: hello@tankrich.com
+- Email: info@patrolxtech.com
 - WhatsApp: https://wa.me/919352194655 (fastest way to reach us)
 - Location: Melbourne, Australia, serving clients worldwide

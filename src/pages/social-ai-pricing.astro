@@ -1,0 +1,654 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import { plans, setupFee, channels } from '../data/socialAi';
+
+const everyPlan = [
+  {
+    title: "Multiple channel support",
+    description:
+      "Instagram, Facebook, LinkedIn and TikTok. Approve once, publish everywhere you are connected, with each channel reported back separately.",
+  },
+  {
+    title: "Approval before anything is posted",
+    description:
+      "Approval is on by default on every plan. Every post comes to you first, and on video you approve the words before production starts as well. Auto approval is available per post type once you want it.",
+  },
+  {
+    title: "Written in your voice",
+    description:
+      "Captions and scripts come from the brand brief we build with you at setup, including the list of things you never want said.",
+  },
+  {
+    title: "Run entirely from your phone",
+    description:
+      "Send a photo, read what comes back, tap approve. No desktop, no scheduling tool, no new app to learn.",
+  },
+  {
+    title: "Live progress, never silence",
+    description:
+      "While a video is being produced you get a progress message you can question at any time, and a straight answer if a job fails.",
+  },
+  {
+    title: "Guardrails as standard",
+    description:
+      "No invented prices or figures, approved words spoken verbatim, publishes never silently retried, and photos screened before they air.",
+  },
+];
+
+const faqs = [
+  {
+    question: "Do these prices include GST?",
+    answer:
+      "No. Every price on this page is in Australian dollars and excludes GST. GST is added to the setup fee and to each monthly invoice.",
+  },
+  {
+    question: `What is the $${setupFee.price} setup fee for?`,
+    answer:
+      "The initial consultation and your Social AI development. We learn how your business talks, write your brand brief, connect your channels, build your avatar and voice if you are on a video plan, and tune the bot on your real photos until the output is right. It is charged once, before your first month.",
+  },
+  {
+    question: "What counts as one image generation or one video?",
+    answer:
+      "One generation is one finished piece of content produced for you. Publishing that one piece to several connected channels still counts as one, not one per channel.",
+  },
+  {
+    question: "What does Option D, bring your own server and API keys, mean?",
+    answer:
+      `It means the software runs on infrastructure you own, using accounts in your name, and you pay those bills directly instead of buying generation credits from us. The $${plans[3].price} per month plus GST covers us deploying, operating, monitoring and updating the software for you. It suits businesses with their own infrastructure and someone technical on hand.`,
+  },
+  {
+    question: "What if I run out of credits partway through a month?",
+    answer:
+      "Message us. We can either top you up or move you onto a larger plan, whichever works out better for you. You will never be silently cut off mid-post.",
+  },
+  {
+    question: "Can I change plans later?",
+    answer:
+      "Yes. The setup work carries across, so moving between plans is a billing change rather than a rebuild. Talk to us about the timing that suits your invoicing.",
+  },
+  {
+    question: "Do I pay the setup fee again if I add another channel?",
+    answer:
+      "No. Adding a channel later needs no new development. Connect the account and the next post goes to it too.",
+  },
+];
+
+const offers = plans.map(plan => ({
+  "@type": "Offer",
+  name: `${plan.option}: ${plan.name}`,
+  description: plan.tagline,
+  price: plan.price,
+  priceCurrency: "AUD",
+  url: "https://www.tankrich.com/social-ai-pricing",
+  priceSpecification: {
+    "@type": "UnitPriceSpecification",
+    price: plan.price,
+    priceCurrency: "AUD",
+    valueAddedTaxIncluded: false,
+    unitCode: "MON",
+    billingIncrement: 1,
+  },
+}));
+
+const structuredData = [
+  {
+    "@type": "WebPage",
+    "@id": "https://www.tankrich.com/social-ai-pricing#webpage",
+    "url": "https://www.tankrich.com/social-ai-pricing",
+    "name": "Tankrich Social Media AI Pricing",
+    "isPartOf": { "@id": "https://www.tankrich.com/#website" },
+    "inLanguage": "en",
+  },
+  {
+    "@type": "Product",
+    "@id": "https://www.tankrich.com/social-ai-pricing#product",
+    "name": "Tankrich Social Media AI",
+    "description":
+      "AI social media content creation and publishing for small business. Monthly plans covering image generation and avatar video, with multiple channel support on every plan. Prices in AUD, excluding GST.",
+    "brand": { "@id": "https://www.tankrich.com/#organization" },
+    "offers": {
+      "@type": "AggregateOffer",
+      "priceCurrency": "AUD",
+      "lowPrice": plans[3].price,
+      "highPrice": plans[2].price,
+      "offerCount": plans.length,
+      "offers": offers,
+    },
+  },
+  {
+    "@type": "FAQPage",
+    "@id": "https://www.tankrich.com/social-ai-pricing#faq",
+    mainEntity: faqs.map(f => ({
+      "@type": "Question",
+      name: f.question,
+      acceptedAnswer: { "@type": "Answer", text: f.answer },
+    })),
+  },
+];
+---
+
+<BaseLayout
+  title="Social Media AI Pricing | Tankrich AI Consulting"
+  description="Tankrich Social Media AI pricing. One-off setup of $750 AUD plus GST, then plans from $99 to $699 per month plus GST for image generation and avatar video. Multiple channel support on every plan."
+  canonicalUrl="https://www.tankrich.com/social-ai-pricing"
+  keywords="social media AI pricing, AI social media cost, AI content creation pricing Australia, avatar video pricing, small business social media AI"
+  structuredData={structuredData}
+>
+  <Nav />
+  <main>
+    <!-- ============ HERO ============ -->
+    <section class="pr-hero">
+      <div class="container">
+        <div class="pr-hero-inner">
+          <a href="/social-ai" class="pr-back">← Social Media AI</a>
+          <h1 class="pr-headline">Simple pricing, sized to how much you post</h1>
+          <p class="pr-sub">
+            One setup fee to get you sounding like you, then a monthly plan. Every plan
+            includes multiple channel support and your approval before anything is published.
+          </p>
+          <p class="pr-gst">
+            All prices are in Australian dollars and <strong>exclude GST</strong>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SETUP + PLANS ============ -->
+    <section class="section">
+      <div class="container">
+        <div class="pr-setup">
+          <div class="pr-setup-copy">
+            <span class="eyebrow">Starts here</span>
+            <h2 class="pr-setup-title">{setupFee.name}</h2>
+            <p class="pr-setup-desc">{setupFee.description}</p>
+            <ul class="pr-setup-list">
+              {setupFee.includes.map(item => (
+                <li><span class="pr-tick" aria-hidden="true">→</span>{item}</li>
+              ))}
+            </ul>
+          </div>
+          <div class="pr-setup-price">
+            <div class="pr-setup-amount">${setupFee.price}</div>
+            <div class="pr-setup-unit">AUD + GST</div>
+            <div class="pr-setup-once">One-off, charged before your first month</div>
+            {setupFee.paymentLink && (
+              <a href={setupFee.paymentLink} class="btn-primary pr-setup-pay">Pay setup fee</a>
+              <span class="pr-setup-secure">GST added at checkout · card payment via Stripe</span>
+            )}
+          </div>
+        </div>
+
+        <div class="section-head pr-plans-head">
+          <span class="eyebrow">Then choose a plan</span>
+          <h2 class="section-title">Four monthly options</h2>
+          <p class="section-lead">
+            Pick on volume, not on features. The guardrails, the approvals and the multiple
+            channel support are the same on all four.
+          </p>
+        </div>
+
+        <div class="pr-plans">
+          {plans.map(plan => (
+            <article class={`pr-plan${plan.featured ? ' pr-plan-featured' : ''}`}>
+              {plan.featured && <span class="pr-plan-flag">Most popular</span>}
+              <span class="pr-plan-option">{plan.option}</span>
+              <h3 class="pr-plan-name">{plan.name}</h3>
+
+              <div class="pr-plan-price">
+                <span class="pr-plan-amount">${plan.price}</span>
+                <span class="pr-plan-period">/month<br />+ GST</span>
+              </div>
+
+              {plan.note && <span class="pr-plan-note">{plan.note}</span>}
+
+              <p class="pr-plan-tagline">{plan.tagline}</p>
+
+              <div class="pr-plan-meters">
+                <div class="pr-meter">
+                  <span class="pr-meter-label">Images</span>
+                  <span class="pr-meter-value">{plan.images}</span>
+                </div>
+                <div class="pr-meter">
+                  <span class="pr-meter-label">Videos</span>
+                  <span class="pr-meter-value">{plan.videos}</span>
+                </div>
+              </div>
+
+              <ul class="pr-plan-list">
+                {plan.bullets.map(b => (
+                  <li><span class="pr-tick" aria-hidden="true">→</span>{b}</li>
+                ))}
+              </ul>
+
+              <p class="pr-plan-best"><strong>Best for:</strong> {plan.bestFor}</p>
+
+              {plan.paymentLink ? (
+                <a href={plan.paymentLink} class={plan.featured ? 'btn-primary pr-plan-cta' : 'btn-secondary pr-plan-cta'}
+                  >Subscribe to {plan.name}</a
+                >
+              ) : (
+                <a
+                  href="https://wa.me/919352194655"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class={plan.featured ? 'btn-primary pr-plan-cta' : 'btn-secondary pr-plan-cta'}
+                  >Talk to us about {plan.name}</a
+                >
+              )}
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ COMPARISON ============ -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Side by side</span>
+          <h2 class="section-title">Compare the plans</h2>
+          <p class="section-lead">
+            Monthly prices, in Australian dollars, excluding GST. The one-off ${setupFee.price} + GST
+            setup applies to all four.
+          </p>
+        </div>
+
+        <div class="pr-table-wrap">
+          <table class="pr-table">
+            <thead>
+              <tr>
+                <th scope="col">Plan</th>
+                <th scope="col">Monthly + GST</th>
+                <th scope="col">Image generations</th>
+                <th scope="col">Avatar videos</th>
+                <th scope="col">Channels</th>
+              </tr>
+            </thead>
+            <tbody>
+              {plans.map(plan => (
+                <tr class={plan.featured ? 'pr-row-featured' : undefined}>
+                  <th scope="row">
+                    <span class="pr-row-option">{plan.option}</span>
+                    {plan.name}
+                    {plan.note && <span class="pr-row-note">{plan.note}</span>}
+                  </th>
+                  <td class="pr-row-price">${plan.price}</td>
+                  <td>{plan.images}</td>
+                  <td>{plan.videos}</td>
+                  <td>Multiple</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <div class="pr-channels">
+          <span class="pr-channels-label">Every plan can post to</span>
+          <div class="pr-channels-list">
+            {channels.map(channel => <span class="pr-chip">{channel.name}</span>)}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ IN EVERY PLAN ============ -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">On all four plans</span>
+          <h2 class="section-title">What you get regardless of what you pay</h2>
+          <p class="section-lead">
+            The difference between the plans is volume. Everything below is standard.
+          </p>
+        </div>
+
+        <div class="pr-included">
+          {everyPlan.map(item => (
+            <div class="pr-inc">
+              <h3 class="pr-inc-title">{item.title}</h3>
+              <p class="pr-inc-desc">{item.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Pricing questions</span>
+          <h2 class="section-title">Before you commit</h2>
+          <p class="section-lead">
+            Anything not covered here, ask us directly and we will give you a straight answer.
+          </p>
+        </div>
+
+        <div class="pr-faq">
+          {faqs.map(faq => (
+            <details class="pr-faq-item">
+              <summary class="pr-faq-q">
+                <span>{faq.question}</span>
+                <span class="pr-faq-sign" aria-hidden="true"></span>
+              </summary>
+              <p class="pr-faq-a">{faq.answer}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CTA ============ -->
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="pr-cta">
+          <div class="pr-cta-inner">
+            <span class="eyebrow" style="color:#9db4ff;">Get started</span>
+            <h2 class="pr-cta-title">Want to see it running first?</h2>
+            <p class="pr-cta-lead">
+              Message us for a demo. We will show you client deployments we have live right
+              now, then tell you honestly which plan fits how you actually post.
+            </p>
+
+            <div class="pr-cta-actions">
+              <a
+                href="https://wa.me/919352194655"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="pr-cta-whatsapp"
+              >
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                </svg>
+                Message us on WhatsApp
+              </a>
+              <a href="mailto:info@patrolxtech.com" class="pr-cta-email">info@patrolxtech.com</a>
+            </div>
+
+            <p class="pr-cta-note">📍 Melbourne, Australia · serving clients worldwide</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>
+
+<style>
+  .section { padding: 112px 0; }
+  .section-alt { background: var(--bg-alt); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .section-head { max-width: 680px; margin-bottom: 64px; }
+  .section-title { font-size: clamp(32px, 4.4vw, 50px); font-weight: 700; margin: 16px 0 20px; }
+  .section-lead { font-size: 19px; color: var(--muted); line-height: 1.6; }
+
+  /* ---------------- Hero ---------------- */
+  .pr-hero { border-bottom: 1px solid var(--border); background: var(--bg); }
+  .pr-hero-inner { max-width: 780px; padding-top: 140px; padding-bottom: 72px; }
+  @media (min-width: 768px) { .pr-hero-inner { padding-top: 176px; padding-bottom: 88px; } }
+
+  .pr-back {
+    display: inline-block;
+    font-size: 14.5px; font-weight: 600; color: var(--accent);
+    margin-bottom: 26px;
+    transition: color 0.18s ease;
+  }
+  .pr-back:hover { color: var(--accent-2); }
+
+  .pr-headline {
+    font-size: clamp(38px, 5.8vw, 66px);
+    font-weight: 700;
+    letter-spacing: -0.035em;
+    margin-bottom: 24px;
+  }
+  .pr-sub { font-size: clamp(17px, 2vw, 20px); color: var(--body); line-height: 1.6; margin-bottom: 22px; max-width: 640px; }
+
+  .pr-gst {
+    display: inline-block;
+    font-size: 14px; color: var(--muted);
+    background: var(--bg-alt);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 9px 16px;
+  }
+  .pr-gst strong { color: var(--ink); font-weight: 600; }
+
+  /* ---------------- Setup ---------------- */
+  .pr-setup {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 40px 34px;
+    margin-bottom: 96px;
+  }
+  @media (min-width: 860px) { .pr-setup { grid-template-columns: 1.6fr 1fr; gap: 48px; align-items: center; } }
+
+  .pr-setup-title { font-size: clamp(24px, 3vw, 32px); font-weight: 700; margin: 14px 0 14px; }
+  .pr-setup-desc { font-size: 16px; color: var(--muted); line-height: 1.65; margin-bottom: 22px; }
+  .pr-setup-list { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+  .pr-setup-list li {
+    display: flex; gap: 10px; align-items: flex-start;
+    font-size: 15px; color: var(--body); line-height: 1.55;
+  }
+  .pr-tick { color: var(--accent); font-weight: 700; flex-shrink: 0; }
+
+  .pr-setup-price {
+    background: var(--bg-alt);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 32px 26px;
+    text-align: center;
+  }
+  .pr-setup-amount { font-size: clamp(44px, 6vw, 58px); font-weight: 700; color: var(--ink); letter-spacing: -0.04em; line-height: 1; }
+  .pr-setup-unit { font-size: 15px; font-weight: 600; color: var(--accent); margin-top: 8px; }
+  .pr-setup-once { font-size: 13.5px; color: var(--muted); margin-top: 12px; line-height: 1.5; }
+  .pr-setup-pay { width: 100%; margin-top: 20px; }
+  .pr-setup-secure { display: block; font-size: 12.5px; color: var(--muted); margin-top: 10px; line-height: 1.5; }
+
+  .pr-plans-head { margin-bottom: 48px; }
+
+  /* ---------------- Plan cards ---------------- */
+  .pr-plans { display: grid; grid-template-columns: 1fr; gap: 20px; align-items: stretch; }
+  @media (min-width: 700px) { .pr-plans { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1100px) { .pr-plans { grid-template-columns: repeat(4, 1fr); gap: 16px; } }
+
+  .pr-plan {
+    position: relative;
+    display: flex; flex-direction: column;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 32px 26px;
+    transition: border-color 0.2s ease;
+  }
+  .pr-plan:hover { border-color: var(--border-strong); }
+  .pr-plan-featured { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
+
+  .pr-plan-flag {
+    position: absolute; top: -11px; left: 26px;
+    background: var(--accent); color: #fff;
+    font-size: 11.5px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+    padding: 4px 12px; border-radius: 999px;
+  }
+
+  .pr-plan-option {
+    display: block;
+    font-size: 11.5px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 10px;
+  }
+  .pr-plan-name { font-size: 20px; font-weight: 700; margin-bottom: 18px; }
+
+  .pr-plan-price { display: flex; align-items: baseline; gap: 8px; }
+  .pr-plan-amount { font-size: 40px; font-weight: 700; color: var(--ink); letter-spacing: -0.04em; line-height: 1; }
+  .pr-plan-period { font-size: 12.5px; color: var(--muted); line-height: 1.3; }
+
+  .pr-plan-note {
+    display: inline-block;
+    margin-top: 12px;
+    font-size: 12px; font-weight: 600;
+    color: var(--accent-2);
+    background: var(--accent-soft);
+    border-radius: 6px;
+    padding: 5px 10px;
+  }
+
+  .pr-plan-tagline { font-size: 14.5px; color: var(--muted); line-height: 1.55; margin: 16px 0 20px; }
+
+  .pr-plan-meters {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 22px;
+  }
+  .pr-meter { background: var(--bg-alt); padding: 12px 12px; }
+  .pr-meter-label {
+    display: block;
+    font-size: 10.5px; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 4px;
+  }
+  .pr-meter-value { display: block; font-size: 13.5px; font-weight: 600; color: var(--ink); line-height: 1.35; }
+
+  .pr-plan-list { list-style: none; display: flex; flex-direction: column; gap: 9px; margin-bottom: 20px; }
+  .pr-plan-list li {
+    display: flex; gap: 9px; align-items: flex-start;
+    font-size: 14px; color: var(--body); line-height: 1.5;
+  }
+
+  .pr-plan-best {
+    font-size: 13.5px; color: var(--muted); line-height: 1.55;
+    padding-top: 18px; margin-top: auto;
+    border-top: 1px solid var(--border);
+  }
+  .pr-plan-best strong { color: var(--ink); font-weight: 600; }
+
+  .pr-plan-cta { margin-top: 20px; width: 100%; font-size: 14.5px; padding: 13px 18px; }
+
+  /* ---------------- Table ---------------- */
+  .pr-table-wrap {
+    overflow-x: auto;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+  }
+  .pr-table { width: 100%; border-collapse: collapse; min-width: 720px; }
+
+  .pr-table th, .pr-table td {
+    text-align: left;
+    padding: 20px 22px;
+    font-size: 14.5px;
+    border-bottom: 1px solid var(--border);
+  }
+  .pr-table tbody tr:last-child th,
+  .pr-table tbody tr:last-child td { border-bottom: none; }
+
+  .pr-table thead th {
+    font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--muted);
+    background: var(--bg-alt);
+    white-space: nowrap;
+  }
+
+  .pr-table tbody th { font-weight: 700; color: var(--ink); font-size: 15.5px; }
+  .pr-table tbody td { color: var(--body); }
+
+  .pr-row-featured { background: var(--accent-soft); }
+
+  .pr-row-option {
+    display: block;
+    font-size: 11px; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 4px;
+  }
+  .pr-row-note { display: block; font-size: 12.5px; font-weight: 500; color: var(--muted); margin-top: 4px; }
+  .pr-row-price { font-weight: 700; color: var(--ink); font-size: 17px; white-space: nowrap; }
+
+  .pr-channels { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; margin-top: 28px; }
+  .pr-channels-label { font-size: 14px; font-weight: 600; color: var(--muted); }
+  .pr-channels-list { display: flex; flex-wrap: wrap; gap: 8px; }
+  .pr-chip {
+    font-size: 13px; font-weight: 600; color: var(--ink);
+    background: #fff;
+    border: 1px solid var(--border-strong);
+    border-radius: 999px;
+    padding: 6px 14px;
+  }
+
+  /* ---------------- Included ---------------- */
+  .pr-included {
+    display: grid; grid-template-columns: 1fr; gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+  }
+  @media (min-width: 700px) { .pr-included { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1040px) { .pr-included { grid-template-columns: repeat(3, 1fr); } }
+
+  .pr-inc { background: #fff; padding: 30px 28px; }
+  .pr-inc-title { font-size: 17px; font-weight: 700; margin-bottom: 10px; }
+  .pr-inc-desc { font-size: 14.5px; color: var(--muted); line-height: 1.6; }
+
+  /* ---------------- FAQ ---------------- */
+  .pr-faq { border: 1px solid var(--border); border-radius: 16px; overflow: hidden; background: #fff; }
+  .pr-faq-item { border-bottom: 1px solid var(--border); }
+  .pr-faq-item:last-child { border-bottom: none; }
+
+  .pr-faq-q {
+    display: flex; align-items: center; justify-content: space-between; gap: 20px;
+    padding: 24px 28px;
+    font-size: 17px; font-weight: 600; color: var(--ink);
+    cursor: pointer;
+    list-style: none;
+    transition: background 0.18s ease;
+  }
+  .pr-faq-q::-webkit-details-marker { display: none; }
+  .pr-faq-q:hover { background: var(--bg-alt); }
+
+  .pr-faq-sign { position: relative; width: 14px; height: 14px; flex-shrink: 0; }
+  .pr-faq-sign::before,
+  .pr-faq-sign::after {
+    content: "";
+    position: absolute; top: 50%; left: 0;
+    width: 14px; height: 2px; border-radius: 2px;
+    background: var(--accent);
+    transform: translateY(-50%);
+    transition: transform 0.2s ease;
+  }
+  .pr-faq-sign::after { transform: translateY(-50%) rotate(90deg); }
+  .pr-faq-item[open] .pr-faq-sign::after { transform: translateY(-50%) rotate(0deg); }
+
+  .pr-faq-a { padding: 0 28px 26px; font-size: 15.5px; color: var(--muted); line-height: 1.68; max-width: 780px; }
+
+  /* ---------------- CTA ---------------- */
+  .pr-cta { position: relative; overflow: hidden; border-radius: 20px; background: var(--bg-ink); padding: 80px 32px; }
+  .pr-cta-inner { position: relative; z-index: 1; max-width: 640px; margin: 0 auto; text-align: center; }
+  .pr-cta-title { font-size: clamp(32px, 4.6vw, 50px); font-weight: 700; color: #fff; margin: 16px 0 20px; letter-spacing: -0.03em; }
+  .pr-cta-lead { font-size: 18px; color: rgba(255,255,255,0.72); line-height: 1.6; margin-bottom: 36px; }
+  .pr-cta-actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; align-items: center; margin-bottom: 28px; }
+
+  .pr-cta-whatsapp {
+    display: inline-flex; align-items: center; gap: 11px;
+    padding: 15px 26px; border-radius: 8px; font-weight: 600; font-size: 16px; color: #fff;
+    background: #25d366;
+    transition: background 0.18s ease, transform 0.18s ease;
+  }
+  .pr-cta-whatsapp:hover { background: #20c35d; transform: translateY(-1px); }
+
+  .pr-cta-email {
+    font-size: 16px; font-weight: 600; color: #fff;
+    padding: 15px 24px; border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.22);
+    transition: background 0.18s ease;
+  }
+  .pr-cta-email:hover { background: rgba(255,255,255,0.08); }
+
+  .pr-cta-note { font-size: 14px; color: rgba(255,255,255,0.55); }
+</style>
