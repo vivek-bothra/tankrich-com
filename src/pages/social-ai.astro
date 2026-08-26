@@ -1,0 +1,860 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import { steps, postTypes, guardrails, channels, setupFee, plans } from '../data/socialAi';
+
+const faqs = [
+  {
+    question: "What do I actually have to do?",
+    answer:
+      "Send a photo, a short video, or a couple of lines about what happened today, from your phone, wherever you are. The caption, the video and the posting are handled for you. The only other thing you do is tap approve.",
+  },
+  {
+    question: "Do I have to be on camera?",
+    answer:
+      "No. On the Image Only plan there is no video at all. On the video plans your avatar and cloned voice are built once during setup, from a short recording, and after that you never have to film anything again.",
+  },
+  {
+    question: "Which channels can it post to?",
+    answer:
+      "Instagram, Facebook, LinkedIn and TikTok. Every plan includes multiple channel support, so one approval publishes to all of your connected accounts at once, and each channel is reported back to you separately.",
+  },
+  {
+    question: "Can anything get posted without me seeing it?",
+    answer:
+      "Only if you decide it can. Approval is on by default: every post comes back to you first, and on video you approve twice, once on the words and again on the finished video. Once you are happy with how a post type reads, you can switch that one over to auto approval. Nothing is ever set to auto without you turning it on.",
+  },
+  {
+    question: "How long does a video take?",
+    answer:
+      "Usually a few minutes from approving the script. While it renders you get a live progress message rather than silence, and you can ask it how the job is going at any point and get a real answer.",
+  },
+  {
+    question: "Will the posts sound like a robot wrote them?",
+    answer:
+      "They are written from a brand brief we build with you during setup: how your business talks, who you are talking to, and the things you never want said. Nothing gets invented either, no price, date or figure appears in a post unless you typed it.",
+  },
+  {
+    question: "What does it cost?",
+    answer:
+      `Setup is a one-off $${setupFee.price} AUD plus GST for the initial consultation and Social AI development. After that, plans run from $${plans[3].price} to $${plans[2].price} per month plus GST depending on how much video and image generation you need.`,
+  },
+  {
+    question: "Who is behind it?",
+    answer:
+      "Tankrich AI Consulting, operating as PatrolX Technologies Pty Ltd, based in Melbourne and serving clients worldwide. The same team builds AI systems in production for businesses across Australia, India and global markets.",
+  },
+];
+
+const structuredData = [
+  {
+    "@type": "WebPage",
+    "@id": "https://www.tankrich.com/social-ai#webpage",
+    "url": "https://www.tankrich.com/social-ai",
+    "name": "Tankrich Social Media AI: AI Social Media Management for Small Business",
+    "isPartOf": { "@id": "https://www.tankrich.com/#website" },
+    "inLanguage": "en",
+  },
+  {
+    "@type": "Service",
+    "@id": "https://www.tankrich.com/social-ai#service",
+    "name": "Tankrich Social Media AI",
+    "serviceType": "AI social media content creation and publishing",
+    "description":
+      "An AI social media service for small business. Text a photo or video from your phone, the bot writes the post or produces an avatar video in your own voice, you approve it, and it publishes to Instagram, Facebook, LinkedIn and TikTok.",
+    "provider": { "@id": "https://www.tankrich.com/#organization" },
+    "areaServed": ["Australia", "Worldwide"],
+    "offers": {
+      "@type": "AggregateOffer",
+      "priceCurrency": "AUD",
+      "lowPrice": plans[3].price,
+      "highPrice": plans[2].price,
+      "offerCount": plans.length,
+      "url": "https://www.tankrich.com/social-ai-pricing",
+    },
+  },
+  {
+    "@type": "FAQPage",
+    "@id": "https://www.tankrich.com/social-ai#faq",
+    mainEntity: faqs.map(f => ({
+      "@type": "Question",
+      name: f.question,
+      acceptedAnswer: { "@type": "Answer", text: f.answer },
+    })),
+  },
+];
+---
+
+<BaseLayout
+  title="Tankrich Social Media AI: AI Social Media for Small Business | Melbourne"
+  description="A simple social media solution for small business. Text a photo or video from your phone, our AI writes the post or films an avatar video in your voice, you approve it, and it posts to Instagram, Facebook, LinkedIn and TikTok. From $99 per month plus GST."
+  canonicalUrl="https://www.tankrich.com/social-ai"
+  keywords="AI social media, social media AI for small business, AI content creation, AI Instagram posting, avatar video, AI social media management Melbourne, automated social media posting"
+  structuredData={structuredData}
+>
+  <Nav />
+  <main>
+    <!-- ============ HERO ============ -->
+    <section class="sa-hero">
+      <div class="container">
+        <div class="sa-hero-grid">
+          <div class="sa-hero-copy">
+            <div class="sa-badge">
+              <span class="sa-badge-star" aria-hidden="true">★</span>
+              Now available
+            </div>
+
+            <h1 class="sa-headline">
+              Tankrich <span class="sa-headline-break">Social Media AI</span>
+            </h1>
+
+            <p class="sa-sub">A simple social media solution for small business.</p>
+
+            <div class="sa-pullquote">
+              <p>
+                Never let your photos or videos go to waste while you are in the shop or at
+                work. Text them in, approve what comes back, and you are posted.
+              </p>
+            </div>
+
+            <div class="sa-hero-actions">
+              <a href="/social-ai-pricing" class="btn-primary">See plans and pricing</a>
+              <a
+                href="https://wa.me/919352194655"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-secondary">Book a demo →</a
+              >
+            </div>
+
+            <p class="sa-hero-note">
+              One-off setup ${setupFee.price} + GST. Plans from ${plans[3].price} per month + GST.
+              All plans include multiple channel support.
+            </p>
+          </div>
+
+          <!-- Phone mock: a post, as it comes back to you for approval -->
+          <div class="sa-hero-visual" aria-hidden="true">
+            <div class="sa-chat">
+              <div class="sa-chat-bubble">Here is a shot from this morning ☕</div>
+              <div class="sa-chat-meta">You, 7:42am</div>
+            </div>
+
+            <div class="sa-phone">
+              <div class="sa-phone-notch"></div>
+              <div class="sa-phone-screen">
+                <div class="sa-post-head">
+                  <div class="sa-avatar"></div>
+                  <div class="sa-post-handle">
+                    <strong>Your Business</strong>
+                    <span>Sponsored by nobody. Just you.</span>
+                  </div>
+                </div>
+
+                <div class="sa-post-image">
+                  <div class="sa-post-overlay">
+                    <span class="sa-post-kicker">Made fresh.</span>
+                    <span class="sa-post-script">Made for you.</span>
+                  </div>
+                </div>
+
+                <div class="sa-post-actions">
+                  <span class="sa-icon sa-icon-heart"></span>
+                  <span class="sa-icon sa-icon-bubble"></span>
+                  <span class="sa-icon sa-icon-send"></span>
+                </div>
+
+                <div class="sa-post-caption">
+                  <strong>Your Business</strong> Supporting local. Thank you 💙
+                </div>
+              </div>
+            </div>
+
+            <div class="sa-approve">
+              <span class="sa-approve-tick">✓</span> Approve and post
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ HOW IT WORKS ============ -->
+    <section id="how" class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">How it works</span>
+          <h2 class="section-title">Four steps, and three of them are ours</h2>
+          <p class="section-lead">
+            The whole point is that it fits into a working day. You send something and you
+            approve something. Everything in between is handled.
+          </p>
+        </div>
+
+        <div class="sa-steps">
+          {steps.map(step => (
+            <div class="sa-step">
+              <div class="sa-step-number" aria-hidden="true">{step.number}</div>
+              <h3 class="sa-step-title">{step.title}</h3>
+              <p class="sa-step-desc">{step.description}</p>
+            </div>
+          ))}
+        </div>
+
+        <p class="sa-steps-foot">
+          <span class="sa-gear" aria-hidden="true">⚙</span>
+          Totally customised to your business brief.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ APPROVAL GATES ============ -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Nothing goes out unseen</span>
+          <h2 class="section-title">The two moments you are asked to approve</h2>
+          <p class="section-lead">
+            The bot stops twice, and both stops matter. The first protects your money. The
+            second protects your feed.
+          </p>
+        </div>
+
+        <div class="sa-flow">
+          <div class="sa-flow-node">
+            <span class="sa-flow-tag">You send</span>
+            <h3>Photos and facts</h3>
+            <p>A picture, a clip, and the details only you know.</p>
+          </div>
+
+          <div class="sa-flow-arrow" aria-hidden="true">→</div>
+
+          <div class="sa-flow-node">
+            <span class="sa-flow-tag">We draft</span>
+            <h3>The words</h3>
+            <p>Caption or script, written in your selected video and voice from your brief.</p>
+          </div>
+
+          <div class="sa-flow-arrow" aria-hidden="true">→</div>
+
+          <div class="sa-flow-node sa-flow-gate">
+            <span class="sa-flow-tag">Gate 1</span>
+            <h3>You approve the words</h3>
+            <p>Changes are free right up until you tap approve.</p>
+          </div>
+
+          <div class="sa-flow-arrow" aria-hidden="true">→</div>
+
+          <div class="sa-flow-node">
+            <span class="sa-flow-tag">We produce</span>
+            <h3>The finished post</h3>
+            <p>Rendered and packaged, with live progress while it works.</p>
+          </div>
+
+          <div class="sa-flow-arrow" aria-hidden="true">→</div>
+
+          <div class="sa-flow-node sa-flow-gate">
+            <span class="sa-flow-tag">Gate 2</span>
+            <h3>You approve and post</h3>
+            <p>Watch it first. Skip, and nothing is ever published.</p>
+          </div>
+        </div>
+
+        <div class="sa-note">
+          <p>
+            Producing the video is the only step that spends anything, and it sits behind
+            Gate 1. That is deliberate: a wording change costs you nothing as long as you
+            make it before you approve. It is also why there is no regenerate button at Gate
+            2. Skip it, start again, and nothing has been wasted.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ WHAT YOU CAN ASK FOR ============ -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">What you can ask for</span>
+          <h2 class="section-title">Three kinds of post, one conversation</h2>
+          <p class="section-lead">
+            Say hello and you get a short menu. Everything else, the writing, the filming,
+            the captions, the posting, happens on the other side of that menu.
+          </p>
+        </div>
+
+        <div class="sa-jobs">
+          {postTypes.map(job => (
+            <article class="sa-job">
+              <span class="sa-job-tag">{job.tag}</span>
+              <h3 class="sa-job-title">{job.title}</h3>
+              <p class="sa-job-desc">{job.description}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ GUARDRAILS ============ -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Guardrails</span>
+          <h2 class="section-title">Rules that are there for a reason</h2>
+          <p class="section-lead">
+            Each of these looks like a missing feature until you know what it prevents. Most
+            of them were bought with a real incident on somebody's real account.
+          </p>
+        </div>
+
+        <div class="sa-rails">
+          {guardrails.map(rail => (
+            <div class="sa-rail">
+              <h3 class="sa-rail-title">{rail.title}</h3>
+              <p class="sa-rail-desc">{rail.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CHANNELS + BRAND BRIEF ============ -->
+    <section class="section">
+      <div class="container">
+        <div class="sa-split">
+          <div class="sa-split-copy">
+            <span class="eyebrow">Built around your business</span>
+            <h2 class="section-title">One approval, every channel</h2>
+            <p class="section-lead">
+              Every plan includes multiple channel support. Approve once and the post goes to
+              all of your connected accounts, with each one reported back separately so you
+              know exactly what went where.
+            </p>
+            <p class="sa-split-body">
+              Adding another channel later takes no new development. Connect the account and
+              the next post goes to it too.
+            </p>
+            <a href="/social-ai-pricing" class="link-arrow">See what each plan includes →</a>
+          </div>
+
+          <div class="sa-channels">
+            {channels.map(channel => (
+              <div class="sa-channel">
+                <span class="sa-channel-dot" aria-hidden="true"></span>
+                <div>
+                  <strong>{channel.name}</strong>
+                  <span>{channel.note}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div class="sa-brief">
+          <h3 class="sa-brief-title">What we build during setup</h3>
+          <p class="sa-brief-lead">{setupFee.description}</p>
+          <ul class="sa-brief-list">
+            {setupFee.includes.map(item => (
+              <li><span class="sa-tick" aria-hidden="true">→</span>{item}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PRICING TEASER ============ -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Pricing</span>
+          <h2 class="section-title">Four plans. No surprises.</h2>
+          <p class="section-lead">
+            A one-off ${setupFee.price} plus GST to get you set up and sounding like you,
+            then a monthly plan sized to how much you want to post.
+          </p>
+        </div>
+
+        <div class="sa-plans">
+          {plans.map(plan => (
+            <a href="/social-ai-pricing" class={`sa-plan${plan.featured ? ' sa-plan-featured' : ''}`}>
+              <span class="sa-plan-option">{plan.option}</span>
+              <h3 class="sa-plan-name">{plan.name}</h3>
+              <div class="sa-plan-price">
+                <span class="sa-plan-amount">${plan.price}</span>
+                <span class="sa-plan-period">/month + GST</span>
+              </div>
+              <p class="sa-plan-tagline">{plan.tagline}</p>
+            </a>
+          ))}
+        </div>
+
+        <div class="sa-plans-cta">
+          <a href="/social-ai-pricing" class="btn-primary">Full pricing and inclusions</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Questions</span>
+          <h2 class="section-title">Frequently asked questions</h2>
+          <p class="section-lead">The things small business owners ask us first.</p>
+        </div>
+
+        <div class="sa-faq">
+          {faqs.map(faq => (
+            <details class="sa-faq-item">
+              <summary class="sa-faq-q">
+                <span>{faq.question}</span>
+                <span class="sa-faq-sign" aria-hidden="true"></span>
+              </summary>
+              <p class="sa-faq-a">{faq.answer}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CTA ============ -->
+    <section id="contact" class="section section-alt">
+      <div class="container">
+        <div class="sa-cta">
+          <div class="sa-cta-inner">
+            <span class="eyebrow" style="color:#9db4ff;">Get started</span>
+            <h2 class="sa-cta-title">Happy to give you a demo</h2>
+            <p class="sa-cta-lead">
+              Message us and we will show you client deployments we have running right now,
+              then walk through what yours would look like. More time, more customers, more
+              growth, without another job on your plate.
+            </p>
+
+            <div class="sa-cta-actions">
+              <a
+                href="https://wa.me/919352194655"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="sa-cta-whatsapp"
+              >
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                </svg>
+                Message us on WhatsApp
+              </a>
+              <a href="mailto:info@patrolxtech.com" class="sa-cta-email">info@patrolxtech.com</a>
+            </div>
+
+            <p class="sa-cta-note">📍 Melbourne, Australia · serving clients worldwide</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>
+
+<style>
+  .section { padding: 112px 0; }
+  .section-alt { background: var(--bg-alt); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .section-head { max-width: 680px; margin-bottom: 64px; }
+  .section-title { font-size: clamp(32px, 4.4vw, 50px); font-weight: 700; margin: 16px 0 20px; }
+  .section-lead { font-size: 19px; color: var(--muted); line-height: 1.6; }
+
+  /* ---------------- Hero ---------------- */
+  .sa-hero { border-bottom: 1px solid var(--border); background: var(--bg); }
+
+  .sa-hero-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 64px;
+    align-items: center;
+    padding-top: 140px;
+    padding-bottom: 88px;
+  }
+  @media (min-width: 900px) {
+    .sa-hero-grid { grid-template-columns: 1.15fr 0.85fr; gap: 56px; padding-top: 172px; padding-bottom: 112px; }
+  }
+
+  .sa-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 7px 16px; border-radius: 999px;
+    background: var(--accent-soft);
+    border: 1px solid #d3e0fd;
+    color: var(--accent-2);
+    font-size: 13px; font-weight: 600;
+    margin-bottom: 28px;
+  }
+  .sa-badge-star { font-size: 12px; }
+
+  .sa-headline {
+    font-size: clamp(42px, 6.4vw, 76px);
+    font-weight: 700;
+    letter-spacing: -0.035em;
+    margin-bottom: 22px;
+  }
+  .sa-headline-break { display: block; color: var(--accent); }
+
+  .sa-sub {
+    font-size: clamp(19px, 2.2vw, 24px);
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 26px;
+  }
+
+  .sa-pullquote {
+    border-left: 3px solid var(--accent);
+    padding-left: 18px;
+    margin-bottom: 34px;
+    max-width: 480px;
+  }
+  .sa-pullquote p { font-size: 16.5px; color: var(--body); line-height: 1.6; }
+
+  .sa-hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 24px; }
+
+  .sa-hero-note { font-size: 14px; color: var(--muted); max-width: 460px; line-height: 1.6; }
+
+  /* Phone mock */
+  .sa-hero-visual { position: relative; display: flex; justify-content: center; padding: 20px 0 44px; }
+  @media (min-width: 900px) {
+    .sa-hero-visual { justify-content: flex-end; padding: 78px 0 62px; }
+  }
+
+  .sa-phone {
+    position: relative;
+    width: 258px;
+    border-radius: 32px;
+    background: #12141a;
+    padding: 9px;
+    box-shadow: 0 26px 60px rgba(15, 17, 21, 0.22), 0 3px 10px rgba(15, 17, 21, 0.1);
+  }
+  .sa-phone-notch {
+    position: absolute; top: 9px; left: 50%; transform: translateX(-50%);
+    width: 84px; height: 18px; border-radius: 0 0 11px 11px;
+    background: #12141a; z-index: 2;
+  }
+  .sa-phone-screen {
+    background: #fff;
+    border-radius: 25px;
+    overflow: hidden;
+    padding-top: 26px;
+  }
+
+  .sa-post-head { display: flex; align-items: center; gap: 9px; padding: 8px 12px 10px; }
+  .sa-avatar {
+    width: 30px; height: 30px; border-radius: 50%; flex-shrink: 0;
+    background: linear-gradient(135deg, var(--accent) 0%, #1e3a8a 100%);
+  }
+  .sa-post-handle { display: flex; flex-direction: column; line-height: 1.25; min-width: 0; }
+  .sa-post-handle strong { font-size: 12.5px; color: var(--ink); font-weight: 700; }
+  .sa-post-handle span { font-size: 10.5px; color: var(--muted); }
+
+  .sa-post-image {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    background:
+      radial-gradient(120% 90% at 22% 18%, #dfe7f7 0%, rgba(223, 231, 247, 0) 62%),
+      linear-gradient(155deg, #1e3a8a 0%, #2563eb 52%, #60a5fa 100%);
+  }
+  .sa-post-overlay {
+    position: absolute; left: 16px; right: 16px; bottom: 18px;
+    display: flex; flex-direction: column; gap: 2px;
+  }
+  .sa-post-kicker {
+    font-size: 19px; font-weight: 800; color: #fff; letter-spacing: -0.02em;
+    text-transform: uppercase;
+  }
+  .sa-post-script {
+    font-size: 17px; font-weight: 500; font-style: italic; color: #ffd166;
+    letter-spacing: -0.01em;
+  }
+
+  .sa-post-actions { display: flex; gap: 13px; padding: 11px 12px 6px; }
+  .sa-icon { width: 15px; height: 15px; border: 1.6px solid var(--ink); display: block; }
+  .sa-icon-heart { border-radius: 50% 50% 4px 50%; transform: rotate(45deg); }
+  .sa-icon-bubble { border-radius: 50% 50% 50% 3px; }
+  .sa-icon-send { border-radius: 3px; transform: rotate(45deg) skew(-10deg, -10deg); }
+
+  .sa-post-caption {
+    padding: 2px 12px 15px;
+    font-size: 11.5px; color: var(--body); line-height: 1.45;
+  }
+  .sa-post-caption strong { color: var(--ink); font-weight: 700; }
+
+  .sa-chat { max-width: 200px; margin-bottom: 18px; }
+  @media (min-width: 900px) {
+    .sa-chat { position: absolute; top: 0; left: 0; z-index: 3; margin-bottom: 0; }
+  }
+
+  .sa-chat-bubble {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 14px 14px 14px 3px;
+    padding: 11px 14px;
+    font-size: 13.5px; color: var(--body);
+    box-shadow: 0 6px 18px rgba(15, 17, 21, 0.07);
+  }
+  .sa-chat-meta { font-size: 11px; color: var(--muted); padding: 6px 0 0 4px; }
+
+  .sa-approve {
+    margin-top: 18px;
+    display: inline-flex; align-items: center; gap: 8px;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 10px 18px 10px 12px;
+    font-size: 13.5px; font-weight: 600; color: var(--ink);
+    box-shadow: 0 8px 22px rgba(15, 17, 21, 0.09);
+  }
+  .sa-approve-tick {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 20px; height: 20px; border-radius: 50%;
+    background: var(--live); color: #fff; font-size: 12px; font-weight: 700;
+  }
+  @media (min-width: 900px) {
+    .sa-approve { position: absolute; bottom: 6px; left: 0; z-index: 3; margin-top: 0; }
+  }
+  @media (max-width: 899px) {
+    .sa-hero-visual { flex-direction: column; align-items: center; }
+  }
+
+  /* ---------------- Steps ---------------- */
+  .sa-steps {
+    display: grid; grid-template-columns: 1fr; gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+  }
+  @media (min-width: 640px) { .sa-steps { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1040px) { .sa-steps { grid-template-columns: repeat(4, 1fr); } }
+
+  .sa-step { background: #fff; padding: 36px 30px; transition: background 0.2s ease; }
+  .sa-step:hover { background: var(--bg-alt); }
+  .sa-step-number { font-size: 30px; font-weight: 700; letter-spacing: -0.02em; color: var(--accent); margin-bottom: 24px; }
+  .sa-step-title { font-size: 19px; font-weight: 700; margin-bottom: 12px; }
+  .sa-step-desc { font-size: 15px; color: var(--muted); line-height: 1.6; }
+
+  .sa-steps-foot {
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+    margin-top: 32px;
+    font-size: 15.5px; font-weight: 600; color: var(--ink);
+  }
+  .sa-gear { color: var(--accent); }
+
+  /* ---------------- Flow ---------------- */
+  .sa-flow {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    align-items: stretch;
+  }
+  @media (min-width: 1120px) {
+    .sa-flow { grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr auto 1fr; gap: 8px; align-items: stretch; }
+  }
+
+  .sa-flow-node {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 22px 18px;
+    height: 100%;
+  }
+  .sa-flow-node h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+  .sa-flow-node p { font-size: 14px; color: var(--muted); line-height: 1.55; }
+
+  .sa-flow-tag {
+    display: block;
+    font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 10px;
+  }
+
+  .sa-flow-gate { border-color: var(--accent); background: var(--accent-soft); }
+  .sa-flow-gate .sa-flow-tag { color: var(--accent-2); }
+
+  .sa-flow-arrow {
+    display: flex; align-items: center; justify-content: center;
+    color: var(--border-strong);
+    font-size: 20px;
+    transform: rotate(90deg);
+  }
+  @media (min-width: 1120px) { .sa-flow-arrow { transform: none; } }
+
+  .sa-note {
+    margin-top: 32px;
+    max-width: 760px;
+    border-left: 3px solid var(--accent);
+    padding-left: 20px;
+  }
+  .sa-note p { font-size: 16px; color: var(--body); line-height: 1.65; }
+
+  /* ---------------- Jobs ---------------- */
+  .sa-jobs { display: grid; grid-template-columns: 1fr; gap: 20px; }
+  @media (min-width: 760px) { .sa-jobs { grid-template-columns: repeat(3, 1fr); } }
+
+  .sa-job {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 30px 26px;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+  }
+  .sa-job:hover { border-color: var(--border-strong); transform: translateY(-2px); }
+  .sa-job-tag {
+    display: block;
+    font-size: 11.5px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 14px;
+  }
+  .sa-job-title { font-size: 20px; font-weight: 700; margin-bottom: 10px; }
+  .sa-job-desc { font-size: 15px; color: var(--muted); line-height: 1.6; }
+
+  /* ---------------- Guardrails ---------------- */
+  .sa-rails {
+    display: grid; grid-template-columns: 1fr; gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+  }
+  @media (min-width: 700px) { .sa-rails { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1040px) { .sa-rails { grid-template-columns: repeat(3, 1fr); } }
+
+  .sa-rail { background: #fff; padding: 30px 28px; }
+  .sa-rail-title { font-size: 17px; font-weight: 700; margin-bottom: 10px; }
+  .sa-rail-desc { font-size: 14.5px; color: var(--muted); line-height: 1.6; }
+
+  /* ---------------- Split / channels ---------------- */
+  .sa-split { display: grid; grid-template-columns: 1fr; gap: 44px; align-items: center; }
+  @media (min-width: 900px) { .sa-split { grid-template-columns: 1.05fr 0.95fr; gap: 64px; } }
+
+  .sa-split-copy .section-title { margin-top: 16px; }
+  .sa-split-body { font-size: 16px; color: var(--body); line-height: 1.65; margin-bottom: 22px; }
+
+  .sa-channels {
+    display: grid; grid-template-columns: 1fr; gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+  }
+  @media (min-width: 520px) { .sa-channels { grid-template-columns: repeat(2, 1fr); } }
+
+  .sa-channel { background: #fff; padding: 24px 22px; display: flex; gap: 12px; align-items: flex-start; }
+  .sa-channel-dot {
+    width: 9px; height: 9px; border-radius: 50%;
+    background: var(--accent);
+    margin-top: 7px; flex-shrink: 0;
+  }
+  .sa-channel strong { display: block; font-size: 16px; font-weight: 700; color: var(--ink); }
+  .sa-channel span { display: block; font-size: 13.5px; color: var(--muted); margin-top: 2px; }
+
+  .sa-brief {
+    margin-top: 72px;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 40px 34px;
+  }
+  .sa-brief-title { font-size: 22px; font-weight: 700; margin-bottom: 12px; }
+  .sa-brief-lead { font-size: 16px; color: var(--muted); line-height: 1.65; max-width: 720px; margin-bottom: 24px; }
+  .sa-brief-list { list-style: none; display: grid; grid-template-columns: 1fr; gap: 10px; }
+  @media (min-width: 760px) { .sa-brief-list { grid-template-columns: repeat(2, 1fr); gap: 10px 32px; } }
+  .sa-brief-list li {
+    display: flex; gap: 10px; align-items: flex-start;
+    font-size: 15px; color: var(--body); line-height: 1.55;
+  }
+  .sa-tick { color: var(--accent); font-weight: 700; flex-shrink: 0; }
+
+  /* ---------------- Plans teaser ---------------- */
+  .sa-plans { display: grid; grid-template-columns: 1fr; gap: 16px; }
+  @media (min-width: 640px) { .sa-plans { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1040px) { .sa-plans { grid-template-columns: repeat(4, 1fr); } }
+
+  .sa-plan {
+    display: block;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px 24px;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+  }
+  .sa-plan:hover { border-color: var(--ink); transform: translateY(-2px); }
+  .sa-plan-featured { border-color: var(--accent); }
+
+  .sa-plan-option {
+    display: block;
+    font-size: 11.5px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 12px;
+  }
+  .sa-plan-name { font-size: 18px; font-weight: 700; margin-bottom: 14px; }
+  .sa-plan-price { display: flex; align-items: baseline; gap: 6px; margin-bottom: 12px; }
+  .sa-plan-amount { font-size: 32px; font-weight: 700; color: var(--ink); letter-spacing: -0.03em; }
+  .sa-plan-period { font-size: 13px; color: var(--muted); }
+  .sa-plan-tagline { font-size: 14px; color: var(--muted); line-height: 1.55; }
+
+  .sa-plans-cta { margin-top: 36px; }
+
+  /* ---------------- FAQ ---------------- */
+  .sa-faq {
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    background: #fff;
+  }
+  .sa-faq-item { border-bottom: 1px solid var(--border); }
+  .sa-faq-item:last-child { border-bottom: none; }
+
+  .sa-faq-q {
+    display: flex; align-items: center; justify-content: space-between; gap: 20px;
+    padding: 24px 28px;
+    font-size: 17px; font-weight: 600; color: var(--ink);
+    cursor: pointer;
+    list-style: none;
+    transition: background 0.18s ease;
+  }
+  .sa-faq-q::-webkit-details-marker { display: none; }
+  .sa-faq-q:hover { background: var(--bg-alt); }
+
+  .sa-faq-sign { position: relative; width: 14px; height: 14px; flex-shrink: 0; }
+  .sa-faq-sign::before,
+  .sa-faq-sign::after {
+    content: "";
+    position: absolute; top: 50%; left: 0;
+    width: 14px; height: 2px; border-radius: 2px;
+    background: var(--accent);
+    transform: translateY(-50%);
+    transition: transform 0.2s ease;
+  }
+  .sa-faq-sign::after { transform: translateY(-50%) rotate(90deg); }
+  .sa-faq-item[open] .sa-faq-sign::after { transform: translateY(-50%) rotate(0deg); }
+
+  .sa-faq-a { padding: 0 28px 26px; font-size: 15.5px; color: var(--muted); line-height: 1.68; max-width: 780px; }
+
+  /* ---------------- CTA ---------------- */
+  .sa-cta { position: relative; overflow: hidden; border-radius: 20px; background: var(--bg-ink); padding: 80px 32px; }
+  .sa-cta-inner { position: relative; z-index: 1; max-width: 640px; margin: 0 auto; text-align: center; }
+  .sa-cta-title { font-size: clamp(32px, 4.6vw, 50px); font-weight: 700; color: #fff; margin: 16px 0 20px; letter-spacing: -0.03em; }
+  .sa-cta-lead { font-size: 18px; color: rgba(255,255,255,0.72); line-height: 1.6; margin-bottom: 36px; }
+  .sa-cta-actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; align-items: center; margin-bottom: 28px; }
+
+  .sa-cta-whatsapp {
+    display: inline-flex; align-items: center; gap: 11px;
+    padding: 15px 26px; border-radius: 8px; font-weight: 600; font-size: 16px; color: #fff;
+    background: #25d366;
+    transition: background 0.18s ease, transform 0.18s ease;
+  }
+  .sa-cta-whatsapp:hover { background: #20c35d; transform: translateY(-1px); }
+
+  .sa-cta-email {
+    font-size: 16px; font-weight: 600; color: #fff;
+    padding: 15px 24px; border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.22);
+    transition: background 0.18s ease;
+  }
+  .sa-cta-email:hover { background: rgba(255,255,255,0.08); }
+
+  .sa-cta-note { font-size: 14px; color: rgba(255,255,255,0.55); }
+</style>
