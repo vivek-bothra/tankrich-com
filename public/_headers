@@ -1,3 +1,7 @@
+# Cloudflare Pages applies every matching rule and merges the results, so the
+# catch-all below must not carry Cache-Control: it would leak into the asset
+# rules and shorten their edge lifetime. HTML pages are listed explicitly.
+
 # Content-hashed build output never changes under the same name.
 /_astro/*
   Cache-Control: public, max-age=31536000, immutable
@@ -12,8 +16,13 @@
 /og-image.png
   Cache-Control: public, max-age=604800
 
-# HTML: serve from edge instantly, revalidate in the background so a deploy
-# still goes live promptly.
+# HTML: revalidate on navigation, but serve instantly from cache while doing so.
+/
+  Cache-Control: public, max-age=0, must-revalidate, stale-while-revalidate=86400
+/social-ai
+  Cache-Control: public, max-age=0, must-revalidate, stale-while-revalidate=86400
+/social-ai-pricing
+  Cache-Control: public, max-age=0, must-revalidate, stale-while-revalidate=86400
+
 /*
-  Cache-Control: public, max-age=0, s-maxage=3600, stale-while-revalidate=86400
   X-Content-Type-Options: nosniff
