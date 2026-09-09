@@ -2,7 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
-import { steps, postTypes, guardrails, channels, setupFee, plans } from '../data/socialAi';
+import { steps, postTypes, guardrails, channels, setupFee, plans, pricedPlans, lowestPrice, highestPrice } from '../data/socialAi';
 
 const faqs = [
   {
@@ -38,7 +38,7 @@ const faqs = [
   {
     question: "What does it cost?",
     answer:
-      `Setup is a one-off $${setupFee.price} AUD plus GST for the initial consultation and Social AI development. After that, plans run from $${plans[3].price} to $${plans[2].price} per month plus GST depending on how much video and image generation you need.`,
+      `Setup is a one-off $${setupFee.price} AUD plus GST for the initial consultation and Social AI development. After that, plans run from $${lowestPrice} to $${highestPrice} per month plus GST depending on how much video and image generation you need. Option D, unlimited generation on your own server and API keys, is quoted individually.`,
   },
   {
     question: "Who is behind it?",
@@ -68,9 +68,9 @@ const structuredData = [
     "offers": {
       "@type": "AggregateOffer",
       "priceCurrency": "AUD",
-      "lowPrice": plans[3].price,
-      "highPrice": plans[2].price,
-      "offerCount": plans.length,
+      "lowPrice": lowestPrice,
+      "highPrice": highestPrice,
+      "offerCount": pricedPlans.length,
       "url": "https://www.tankrich.com/social-ai-pricing",
     },
   },
@@ -129,7 +129,7 @@ const structuredData = [
             </div>
 
             <p class="sa-hero-note">
-              One-off setup ${setupFee.price} + GST. Plans from ${plans[3].price} per month + GST.
+              One-off setup ${setupFee.price} + GST. Plans from ${lowestPrice} per month + GST.
               All plans include multiple channel support.
             </p>
           </div>
@@ -380,8 +380,17 @@ const structuredData = [
               <span class="sa-plan-option">{plan.option}</span>
               <h3 class="sa-plan-name">{plan.name}</h3>
               <div class="sa-plan-price">
-                <span class="sa-plan-amount">${plan.price}</span>
-                <span class="sa-plan-period">/month + GST</span>
+                {plan.price ? (
+                  <>
+                    <span class="sa-plan-amount">${plan.price}</span>
+                    <span class="sa-plan-period">/month + GST</span>
+                  </>
+                ) : (
+                  <>
+                    <span class="sa-plan-amount sa-plan-amount-quote">Talk to us</span>
+                    <span class="sa-plan-period">priced on your setup</span>
+                  </>
+                )}
               </div>
               <p class="sa-plan-tagline">{plan.tagline}</p>
             </a>
@@ -792,6 +801,7 @@ const structuredData = [
   .sa-plan-name { font-size: 18px; font-weight: 700; margin-bottom: 14px; }
   .sa-plan-price { display: flex; align-items: baseline; gap: 6px; margin-bottom: 12px; }
   .sa-plan-amount { font-size: 32px; font-weight: 700; color: var(--ink); letter-spacing: -0.03em; }
+  .sa-plan-amount-quote { font-size: 24px; letter-spacing: -0.02em; }
   .sa-plan-period { font-size: 13px; color: var(--muted); }
   .sa-plan-tagline { font-size: 14px; color: var(--muted); line-height: 1.55; }
 

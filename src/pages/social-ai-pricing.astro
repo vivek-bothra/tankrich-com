@@ -2,7 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
-import { plans, setupFee, channels } from '../data/socialAi';
+import { plans, pricedPlans, lowestPrice, highestPrice, setupFee, channels } from '../data/socialAi';
 
 const everyPlan = [
   {
@@ -56,7 +56,7 @@ const faqs = [
   {
     question: "What does Option D, bring your own server and API keys, mean?",
     answer:
-      `It means the software runs on infrastructure you own, using accounts in your name, and you pay those bills directly instead of buying generation credits from us. The $${plans[3].price} per month plus GST covers us deploying, operating, monitoring and updating the software for you. It suits businesses with their own infrastructure and someone technical on hand.`,
+      "It means the software runs on infrastructure you own, using accounts in your name, and you pay those bills directly instead of buying generation credits from us. We quote Option D individually, because the monthly fee for deploying, operating, monitoring and updating the software depends on your setup. Message us on WhatsApp and we will price it for you. It suits businesses with their own infrastructure and someone technical on hand.",
   },
   {
     question: "What if I run out of credits partway through a month?",
@@ -75,7 +75,7 @@ const faqs = [
   },
 ];
 
-const offers = plans.map(plan => ({
+const offers = pricedPlans.map(plan => ({
   "@type": "Offer",
   name: `${plan.option}: ${plan.name}`,
   description: plan.tagline,
@@ -111,9 +111,9 @@ const structuredData = [
     "offers": {
       "@type": "AggregateOffer",
       "priceCurrency": "AUD",
-      "lowPrice": plans[3].price,
-      "highPrice": plans[2].price,
-      "offerCount": plans.length,
+      "lowPrice": lowestPrice,
+      "highPrice": highestPrice,
+      "offerCount": pricedPlans.length,
       "offers": offers,
     },
   },
@@ -131,7 +131,7 @@ const structuredData = [
 
 <BaseLayout
   title="Social Media AI Pricing | Tankrich AI Consulting"
-  description="Tankrich Social Media AI pricing. One-off setup of $750 AUD plus GST, then plans from $99 to $699 per month plus GST for image generation and avatar video. Multiple channel support on every plan."
+  description="Tankrich Social Media AI pricing. One-off setup of $750 AUD plus GST, then plans from $39 to $399 per month plus GST for image generation and avatar video. Multiple channel support on every plan."
   canonicalUrl="https://www.tankrich.com/social-ai-pricing"
   keywords="social media AI pricing, AI social media cost, AI content creation pricing Australia, avatar video pricing, small business social media AI"
   structuredData={structuredData}
@@ -197,8 +197,17 @@ const structuredData = [
               <h3 class="pr-plan-name">{plan.name}</h3>
 
               <div class="pr-plan-price">
-                <span class="pr-plan-amount">${plan.price}</span>
-                <span class="pr-plan-period">/month<br />+ GST</span>
+                {plan.price ? (
+                  <>
+                    <span class="pr-plan-amount">${plan.price}</span>
+                    <span class="pr-plan-period">/month<br />+ GST</span>
+                  </>
+                ) : (
+                  <>
+                    <span class="pr-plan-amount pr-plan-amount-quote">Talk to us</span>
+                    <span class="pr-plan-period">Priced on<br />your setup</span>
+                  </>
+                )}
               </div>
 
               {plan.note && <span class="pr-plan-note">{plan.note}</span>}
@@ -274,7 +283,7 @@ const structuredData = [
                     {plan.name}
                     {plan.note && <span class="pr-row-note">{plan.note}</span>}
                   </th>
-                  <td class="pr-row-price">${plan.price}</td>
+                  <td class="pr-row-price">{plan.price ? `$${plan.price}` : 'Talk to us'}</td>
                   <td>{plan.images}</td>
                   <td>{plan.videos}</td>
                   <td>Multiple</td>
@@ -485,6 +494,7 @@ const structuredData = [
 
   .pr-plan-price { display: flex; align-items: baseline; gap: 8px; }
   .pr-plan-amount { font-size: 40px; font-weight: 700; color: var(--ink); letter-spacing: -0.04em; line-height: 1; }
+  .pr-plan-amount-quote { font-size: 30px; letter-spacing: -0.02em; }
   .pr-plan-period { font-size: 12.5px; color: var(--muted); line-height: 1.3; }
 
   .pr-plan-note {

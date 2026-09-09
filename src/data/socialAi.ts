@@ -22,7 +22,8 @@ export interface Plan {
   id: string;
   option: string;
   name: string;
-  price: number;
+  /** Monthly price in AUD, excluding GST. Omitted on plans that are quoted individually. */
+  price?: number;
   tagline: string;
   images: string;
   videos: string;
@@ -39,7 +40,7 @@ export const plans: Plan[] = [
     id: "image-only",
     option: "Option A",
     name: "Image Only",
-    price: 199,
+    price: 39,
     tagline: "Photo in, finished post out. No video.",
     images: "200 image generations",
     videos: "Not included",
@@ -55,7 +56,7 @@ export const plans: Plan[] = [
     id: "image-video",
     option: "Option B",
     name: "Image + Avatar Video",
-    price: 499,
+    price: 299,
     tagline: "Talking-head video plus everything in Image Only.",
     images: "200 image generations",
     videos: "35 avatar videos",
@@ -72,7 +73,7 @@ export const plans: Plan[] = [
     id: "high-volume",
     option: "Option C",
     name: "High Volume",
-    price: 699,
+    price: 399,
     tagline: "For a daily posting habit across several channels.",
     images: "300 image generations",
     videos: "50 avatar videos",
@@ -88,7 +89,6 @@ export const plans: Plan[] = [
     id: "unlimited",
     option: "Option D",
     name: "Unlimited Generation",
-    price: 99,
     tagline: "Bring your own server and API keys. We run the software.",
     images: "Unlimited",
     videos: "Unlimited",
@@ -103,6 +103,15 @@ export const plans: Plan[] = [
       "Businesses with their own infrastructure and someone technical, who want volume without a per-credit ceiling.",
   },
 ];
+
+/** Plans that are sold at a published monthly price. Option D is quoted individually. */
+export const pricedPlans = plans.filter(
+  (plan): plan is Plan & { price: number } => typeof plan.price === "number",
+);
+
+/** Lowest and highest published monthly prices, in AUD excluding GST. */
+export const lowestPrice = Math.min(...pricedPlans.map(plan => plan.price));
+export const highestPrice = Math.max(...pricedPlans.map(plan => plan.price));
 
 export const steps = [
   {
