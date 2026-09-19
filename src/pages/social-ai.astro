@@ -6,9 +6,14 @@ import { steps, postTypes, guardrails, channels, setupFee, plans, pricedPlans, l
 
 const faqs = [
   {
+    question: "Who is Tella?",
+    answer:
+      "Tella is the bot behind Tankrich Social Media AI. It is the thing you text your photos to, and the thing that writes the caption, produces the avatar video and publishes the post once you approve it. One Tella is set up for your business at the start, tuned to your voice, and it is the only thing you ever have to deal with.",
+  },
+  {
     question: "What do I actually have to do?",
     answer:
-      "Send a photo, a short video, or a couple of lines about what happened today, from your phone, wherever you are. The caption, the video and the posting are handled for you. The only other thing you do is tap approve.",
+      "Text Tella a photo, a short video, or a couple of lines about what happened today, from your phone, wherever you are. Tella handles the caption, the video and the posting. The only other thing you do is tap approve.",
   },
   {
     question: "Do I have to be on camera?",
@@ -18,7 +23,7 @@ const faqs = [
   {
     question: "Which channels can it post to?",
     answer:
-      "Instagram, Facebook, LinkedIn and TikTok. Every plan includes multiple channel support, so one approval publishes to all of your connected accounts at once, and each channel is reported back to you separately.",
+      "Instagram, Facebook, LinkedIn and TikTok. Every plan includes multiple channel support, so one approval sends Tella to all of your connected accounts at once, and each channel is reported back to you separately.",
   },
   {
     question: "Can anything get posted without me seeing it?",
@@ -28,12 +33,12 @@ const faqs = [
   {
     question: "How long does a video take?",
     answer:
-      "Usually a few minutes from approving the script. While it renders you get a live progress message rather than silence, and you can ask it how the job is going at any point and get a real answer.",
+      "Usually a few minutes from approving the script. While it renders Tella sends live progress rather than silence, and you can ask Tella how the job is going at any point and get a real answer.",
   },
   {
     question: "Will the posts sound like a robot wrote them?",
     answer:
-      "They are written from a brand brief we build with you during setup: how your business talks, who you are talking to, and the things you never want said. Nothing gets invented either, no price, date or figure appears in a post unless you typed it.",
+      "Tella writes from a brand brief we build with you during setup: how your business talks, who you are talking to, and the things you never want said. Nothing gets invented either, no price, date or figure appears in a post unless you typed it.",
   },
   {
     question: "What does it cost?",
@@ -62,7 +67,7 @@ const structuredData = [
     "name": "Tankrich Social Media AI",
     "serviceType": "AI social media content creation and publishing",
     "description":
-      "An AI social media service for small business. Text a photo or video from your phone, the bot writes the post or produces an avatar video in your own voice, you approve it, and it publishes to Instagram, Facebook, LinkedIn and TikTok.",
+      "An AI social media service for small business. Text a photo or video to Tella from your phone, Tella writes the post or produces an avatar video in your own voice, you approve it, and Tella publishes to Instagram, Facebook, LinkedIn and TikTok.",
     "provider": { "@id": "https://www.tankrich.com/#organization" },
     "areaServed": ["Australia", "Worldwide"],
     "offers": {
@@ -88,9 +93,9 @@ const structuredData = [
 
 <BaseLayout
   title="Tankrich Social Media AI: AI Social Media for Small Business | Melbourne"
-  description="A simple social media solution for small business. Text a photo or video from your phone, our AI writes the post or films an avatar video in your voice, you approve it, and it posts to Instagram, Facebook, LinkedIn and TikTok. From $99 per month plus GST."
+  description="Meet Tella, the bot behind Tankrich Social Media AI. Text a photo or video from your phone, Tella writes the post or films an avatar video in your voice, you approve it, and it posts to Instagram, Facebook, LinkedIn and TikTok. From $39 per month plus GST."
   canonicalUrl="https://www.tankrich.com/social-ai"
-  keywords="AI social media, social media AI for small business, AI content creation, AI Instagram posting, avatar video, AI social media management Melbourne, automated social media posting"
+  keywords="Tella, Tankrich Tella, AI social media, social media AI for small business, AI content creation, AI Instagram posting, avatar video, AI social media management Melbourne, automated social media posting"
   structuredData={structuredData}
 >
   <Nav />
@@ -109,12 +114,15 @@ const structuredData = [
               Tankrich <span class="sa-headline-break">Social Media AI</span>
             </h1>
 
-            <p class="sa-sub">A simple social media solution for small business.</p>
+            <p class="sa-sub">
+              Meet <strong>Tella</strong>, your social media bot. A simple social media
+              solution for small business.
+            </p>
 
             <div class="sa-pullquote">
               <p>
                 Never let your photos or videos go to waste while you are in the shop or at
-                work. Text them in, approve what comes back, and you are posted.
+                work. Text them to Tella, approve what comes back, and you are posted.
               </p>
             </div>
 
@@ -138,7 +146,7 @@ const structuredData = [
           <div class="sa-hero-visual" aria-hidden="true">
             <div class="sa-chat">
               <div class="sa-chat-bubble">Here is a shot from this morning ☕</div>
-              <div class="sa-chat-meta">You, 7:42am</div>
+              <div class="sa-chat-meta">You → Tella, 7:42am</div>
             </div>
 
             <div class="sa-phone">
@@ -186,8 +194,8 @@ const structuredData = [
           <span class="eyebrow">How it works</span>
           <h2 class="section-title">Four steps, and three of them are ours</h2>
           <p class="section-lead">
-            The whole point is that it fits into a working day. You send something and you
-            approve something. Everything in between is handled.
+            The whole point is that it fits into a working day. You send Tella something and
+            you approve something. Everything in between is Tella's.
           </p>
         </div>
 
@@ -215,7 +223,7 @@ const structuredData = [
           <span class="eyebrow">Nothing goes out unseen</span>
           <h2 class="section-title">The two moments you are asked to approve</h2>
           <p class="section-lead">
-            The bot stops twice, and both stops matter. The first protects your money. The
+            Tella stops twice, and both stops matter. The first protects your money. The
             second protects your feed.
           </p>
         </div>
@@ -230,7 +238,7 @@ const structuredData = [
           <div class="sa-flow-arrow" aria-hidden="true">→</div>
 
           <div class="sa-flow-node">
-            <span class="sa-flow-tag">We draft</span>
+            <span class="sa-flow-tag">Tella drafts</span>
             <h3>The words</h3>
             <p>Caption or script, written in your selected video and voice from your brief.</p>
           </div>
@@ -246,7 +254,7 @@ const structuredData = [
           <div class="sa-flow-arrow" aria-hidden="true">→</div>
 
           <div class="sa-flow-node">
-            <span class="sa-flow-tag">We produce</span>
+            <span class="sa-flow-tag">Tella produces</span>
             <h3>The finished post</h3>
             <p>Rendered and packaged, with live progress while it works.</p>
           </div>
@@ -278,8 +286,8 @@ const structuredData = [
           <span class="eyebrow">What you can ask for</span>
           <h2 class="section-title">Three kinds of post, one conversation</h2>
           <p class="section-lead">
-            Say hello and you get a short menu. Everything else, the writing, the filming,
-            the captions, the posting, happens on the other side of that menu.
+            Say hello to Tella and you get a short menu. Everything else, the writing, the
+            filming, the captions, the posting, happens on the other side of that menu.
           </p>
         </div>
 
@@ -332,7 +340,7 @@ const structuredData = [
             </p>
             <p class="sa-split-body">
               Adding another channel later takes no new development. Connect the account and
-              the next post goes to it too.
+              Tella's next post goes to it too.
             </p>
             <a href="/social-ai-pricing" class="link-arrow">See what each plan includes →</a>
           </div>
@@ -351,7 +359,7 @@ const structuredData = [
         </div>
 
         <div class="sa-brief">
-          <h3 class="sa-brief-title">What we build during setup</h3>
+          <h3 class="sa-brief-title">How Tella gets built during setup</h3>
           <p class="sa-brief-lead">{setupFee.description}</p>
           <ul class="sa-brief-list">
             {setupFee.includes.map(item => (
@@ -510,6 +518,8 @@ const structuredData = [
     color: var(--ink);
     margin-bottom: 26px;
   }
+  /* The bot's name carries the brand accent so it reads as a name, not emphasis. */
+  .sa-sub strong { font-weight: 700; color: var(--accent); }
 
   .sa-pullquote {
     border-left: 3px solid var(--accent);

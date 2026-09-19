@@ -19,6 +19,19 @@
 - Conversational & Customer AI, assistants on web, WhatsApp, and Telegram
 - Data, Analytics & Decision Intelligence, live dashboards and automated signals
 
+## Products
+
+### Tankrich Social Media AI (the bot is called Tella)
+
+- URL: https://www.tankrich.com/social-ai · Pricing: https://www.tankrich.com/social-ai-pricing
+- A productised AI social media service for small business. Tella is the named bot each client gets: you text it a photo, a short clip or a couple of lines from your phone, Tella writes the caption or produces an avatar video in your own cloned voice, you approve it, and Tella publishes to every connected channel.
+- Channels: Instagram (feed and reels), Facebook (pages and reels), LinkedIn (company and personal), TikTok. Multiple channel support is included on every plan, one approval publishes everywhere and each channel is reported back separately.
+- Three post types: customer or job story, straight-to-camera avatar video, and single image post.
+- Approval first: approval is on by default, and video approves twice, once on the words before any paid render and again on the finished video. Auto approval is opt-in per post type.
+- Guardrails: Tella cannot invent a price, date, discount or percentage the client did not type; approved words are spoken verbatim; publishes are never silently retried, so no double-posting; screenshots and unusable frames are screened out; the cloned voice belongs to one consented person per business; there is no regenerate button, because changes are free before approval and paid after it.
+- Pricing (AUD, excluding GST): one-off $750 setup covering the initial consultation, brand brief, channel connection and tuning Tella on the client's real photos. Then Option A Image Only $39/month (200 image generations, no video), Option B Image + Avatar Video $299/month (200 images, 35 avatar videos), Option C High Volume $399/month (300 images, 50 avatar videos), Option D Unlimited Generation, quoted individually, where the client brings their own server and API keys and Tankrich deploys, operates, monitors and updates the software on that infrastructure.
+- Best suited to shops, cafes, trades, agents, advisers, clinics, coaches and multi-location businesses that generate photos daily but have no one to write and publish.
+
 ## Selected Case Studies (STAR)
 
 - PatrolX Tech (patrolxtech.com), Field operations platform. iOS, Android and web apps with real-time GPS tracking, GPS-verified site visits, shift logging, incident reporting and multi-tenant administration. Result: distributed field teams accounted for end to end, replacing spreadsheet tracking with live, verifiable proof of work.

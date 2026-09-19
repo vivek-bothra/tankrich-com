@@ -1,4 +1,5 @@
 // Content for the Tankrich Social Media AI product pages (/social-ai and /social-ai-pricing).
+// The bot is called Tella. Use the name in copy rather than "the bot" or "your bot".
 // Prices are AUD and exclude GST. Kept in one place so the product page, the pricing
 // page and the home page promo can never drift apart.
 
@@ -8,13 +9,13 @@ export const setupFee = {
   paymentLink: "https://buy.stripe.com/4gM5kF9o7aHl7go1Bt4Ni03",
   name: "Initial consultation and Social AI development",
   description:
-    "A one-off engagement fee. We sit down with you, learn how your business talks, build your brand brief, connect your channels and tune the bot until the posts sound like you. Charged once, before your first month.",
+    "A one-off engagement fee. We sit down with you, learn how your business talks, build your brand brief, connect your channels and tune Tella until the posts sound like you. Charged once, before your first month.",
   includes: [
     "Discovery session on your business, customers and tone of voice",
     "Your brand brief written up: what you sound like, and the never-say list",
     "Channel setup and connection for every account you want posted to",
-    "Bot tuned and tested on your real photos until the output is right",
-    "Handover session so you can run it from your phone on day one",
+    "Tella tuned and tested on your real photos until the output is right",
+    "Handover session so you can run Tella from your phone on day one",
   ],
 };
 
@@ -116,27 +117,27 @@ export const highestPrice = Math.max(...pricedPlans.map(plan => plan.price));
 export const steps = [
   {
     number: "01",
-    title: "Text your Bot",
+    title: "Text Tella",
     description:
-      "Send it from wherever you already are, standing in the shop or sitting in the van. A photo, a short clip, or a couple of lines about what happened today. No app to learn, no desktop, no login.",
+      "Tella is your bot, and it lives in the messaging app you already use. Text it from wherever you are, standing in the shop or sitting in the van. A photo, a short clip, or a couple of lines about what happened today. No app to learn, no desktop, no login.",
   },
   {
     number: "02",
-    title: "Your bots build the post",
+    title: "Tella builds the post",
     description:
-      "The caption gets written in your voice, from your brand brief. If it is a video, your script is spoken by your avatar in your own cloned voice. Nothing is invented that you did not supply.",
+      "Tella writes the caption in your voice, from your brand brief. If it is a video, your script is spoken by your avatar in your own cloned voice. Tella invents nothing you did not supply.",
   },
   {
     number: "03",
     title: "You approve or set for auto approval",
     description:
-      "The finished post comes back to you before anyone else sees it. Change the words, or skip it entirely. Once you trust the output you can switch a post type over to auto approval and let it run without you.",
+      "Tella sends the finished post back to you before anyone else sees it. Change the words, or skip it entirely. Once you trust the output you can switch a post type over to auto approval and let it run without you.",
   },
   {
     number: "04",
     title: "One-click post",
     description:
-      "One tap and it publishes to every channel you have connected, each one reported back to you separately so you know exactly what went where.",
+      "One tap and Tella publishes to every channel you have connected, each one reported back to you separately so you know exactly what went where.",
   },
 ];
 
@@ -151,12 +152,12 @@ export const guardrails = [
   {
     title: "Your figures are the only figures",
     description:
-      "Nothing downstream may invent a price, a date, a discount or a percentage you did not type. If you did not supply it, it does not appear in the post.",
+      "Tella cannot invent a price, a date, a discount or a percentage you did not type. If you did not supply it, it does not appear in the post.",
   },
   {
     title: "Approved words are spoken verbatim",
     description:
-      "The draft caption or script is a starting point. Whatever you approve is exactly what gets published, or exactly what comes out of the avatar's mouth. Unchanged.",
+      "Tella's draft caption or script is a starting point. Whatever you approve is exactly what gets published, or exactly what comes out of the avatar's mouth. Unchanged.",
   },
   {
     title: "Nothing is posted twice",
@@ -166,7 +167,7 @@ export const guardrails = [
   {
     title: "Photos are screened before they air",
     description:
-      "Screenshots, documents and unusable frames are dropped rather than published, so a stray photo in the roll never becomes a post.",
+      "Tella drops screenshots, documents and unusable frames rather than publishing them, so a stray photo in the roll never becomes a post.",
   },
   {
     title: "One business, one voice",
@@ -176,7 +177,7 @@ export const guardrails = [
   {
     title: "There is no regenerate button",
     description:
-      "Every regenerate is another paid render, and people tap it reflexively. Change the words before you approve them, where changes are free.",
+      "Every regenerate is another paid render, and people tap it reflexively. Tella does not offer one. Change the words before you approve them, where changes are free.",
   },
 ];
 
@@ -191,12 +192,12 @@ export const postTypes = [
     tag: "02 · Talk",
     title: "Straight to camera",
     description:
-      "A promotion, an update, an opinion. You supply the script, your chosen avatar delivers it, and it posts.",
+      "A promotion, an update, an opinion. You supply the script, your chosen avatar delivers it, and Tella posts it.",
   },
   {
     tag: "03 · Image",
     title: "Single image post",
     description:
-      "One photo, no video. The caption is written for you from the picture and your brand brief.",
+      "One photo, no video. Tella writes the caption from the picture and your brand brief.",
   },
 ];

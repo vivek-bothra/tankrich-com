@@ -50,6 +50,53 @@ Live, intelligent dashboards and signals that drive decisions.
 - Automated signals, KPI views and decision intelligence
 - From idea to deployed dashboard in days
 
+## Product: Tankrich Social Media AI, and Tella
+
+URL: https://www.tankrich.com/social-ai
+Pricing: https://www.tankrich.com/social-ai-pricing
+
+Alongside consulting engagements, Tankrich sells one productised service. Tankrich Social Media AI is the product. Tella is the bot: the named assistant each client gets, set up once for their business and tuned to their voice. Clients deal with Tella and nothing else, there is no dashboard, no scheduling tool and no app to learn.
+
+### The problem it solves
+Small business owners take good photos all day and never post them. The photo is on the phone, the owner is in the shop or in the van, and writing a caption, producing a video and publishing to four channels is a job nobody on the payroll has. Agencies are priced for larger businesses, and generic scheduling tools still leave the writing and the filming to the owner.
+
+### How Tella works
+1. Text Tella. From the messaging app the owner already uses: a photo, a short clip, or a couple of lines about what happened today. No desktop, no login.
+2. Tella builds the post. The caption is written in the client's voice from a brand brief. If it is a video, the client's script is spoken by their avatar in their own cloned voice. Tella invents nothing the client did not supply.
+3. The client approves, or sets auto approval. The finished post comes back before anyone else sees it. Words can be changed or the post skipped entirely. Once a post type is trusted, that one type can be switched to auto approval.
+4. One-click post. One tap publishes to every connected channel, each reported back separately.
+
+Video carries two approval gates, not one. The words are approved before production starts, because producing the video is the only step that spends money. The finished video is approved before it publishes. That ordering is deliberate: a wording change is free before the first gate, which is also why Tella has no regenerate button at the second gate.
+
+### Three post types
+- Customer or job story: the job just finished or the customer just looked after, built from details and real photos the client supplies.
+- Straight to camera: a promotion, update or opinion, delivered by the client's chosen avatar from their script.
+- Single image post: one photo, no video, with the caption written from the picture and the brand brief.
+
+### Channels
+Instagram (feed posts and reels), Facebook (pages and reels), LinkedIn (company and personal) and TikTok. Multiple channel support is included on every plan: one approval publishes to every connected account at once, and each channel reports back separately so the client knows exactly what went where. Adding a channel later needs no new development and no second setup fee.
+
+### Guardrails
+Each of these prevents a specific failure, most of them bought with a real incident on a real account.
+- The client's figures are the only figures. Tella cannot invent a price, date, discount or percentage the client did not type.
+- Approved words are spoken verbatim. Whatever is approved is exactly what publishes, or exactly what comes out of the avatar's mouth.
+- Nothing is posted twice. A publish is never silently retried, and a second tap on approve cannot double-post.
+- Photos are screened before they air. Screenshots, documents and unusable frames are dropped rather than published.
+- One business, one voice. The avatar's look can change between takes, the cloned voice never does, and it belongs to one chosen person at the business, with their consent.
+- There is no regenerate button. Every regenerate is another paid render, so changes belong before approval, where they are free.
+
+### What setup builds
+A one-off engagement fee of $750 AUD plus GST, charged once before the first month, covering: a discovery session on the business, its customers and its tone of voice; the brand brief written up, including the never-say list; channel setup and connection for every account; Tella tuned and tested on the client's real photos until the output is right; and a handover session so the client can run Tella from their phone on day one.
+
+### Plans
+All prices are Australian dollars and exclude GST. Plans differ on volume only, the guardrails, approvals and multiple channel support are identical on all four.
+- Option A, Image Only, $39 per month: 200 image generations, no video. For shops, cafes and trades who post photos and want the writing done for them.
+- Option B, Image + Avatar Video, $299 per month: 200 image generations and 35 avatar videos. The most popular plan. For businesses whose customers expect a face, such as agents, advisers, clinics and coaches.
+- Option C, High Volume, $399 per month: 300 image generations and 50 avatar videos, with priority turnaround on renders. For multi-location businesses and teams running a serious content calendar.
+- Option D, Unlimited Generation, quoted individually: unlimited image and video generation on the client's own server and API keys, which they pay for directly. Tankrich deploys, operates, monitors and updates the software on that infrastructure, and everything stays inside the client's own accounts. For businesses with their own infrastructure and someone technical on hand.
+
+One image generation or one video means one finished piece of content. Publishing that piece to several channels still counts as one, not one per channel. Plans can be changed later without repeating the setup work.
+
 ## Case Studies
 
 ### PatrolX Tech, Field Operations & Workforce Management (Australia)
@@ -116,6 +163,12 @@ The impact: Stale spreadsheets and ad-hoc chart-reading gave way to automated, a
 
 Q: What does Tankrich AI Consulting do?
 A: We are a specialist AI consultancy providing AI strategy and advisory, accelerated AI product development, RAG and knowledge systems, intelligent agents and automation, conversational AI, and decision intelligence, from ambition to production systems.
+
+Q: Who or what is Tella?
+A: Tella is the bot behind Tankrich Social Media AI, our productised social media service for small business. Each client gets their own Tella, set up and tuned to their brand voice at the start. The client texts Tella a photo or a few lines, Tella writes the caption or produces an avatar video in their cloned voice, the client approves it, and Tella publishes to Instagram, Facebook, LinkedIn and TikTok. See https://www.tankrich.com/social-ai.
+
+Q: What does Tankrich Social Media AI cost?
+A: A one-off $750 AUD plus GST setup to build and tune Tella, then a monthly plan: $39 for image only, $299 for image plus avatar video, $399 for high volume, or an individual quote for Option D, unlimited generation on the client's own server and API keys. All prices exclude GST. See https://www.tankrich.com/social-ai-pricing.
 
 Q: How quickly can you deliver an AI solution?
 A: Most engagements move from concept to a deployed, production-ready solution within a few weeks, in fast and visible iterations.
