@@ -1,26 +1,232 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import Nav from '../components/Nav.astro';
-import Hero from '../components/Hero.astro';
-import Products from '../components/Products.astro';
-import Projects from '../components/Projects.astro';
-import HowItWorks from '../components/HowItWorks.astro';
-import About from '../components/About.astro';
-import FAQ from '../components/FAQ.astro';
-import Contact from '../components/Contact.astro';
-import Footer from '../components/Footer.astro';
+const year = new Date().getFullYear();
 ---
 
-<BaseLayout>
-  <Nav home />
-  <main>
-    <Hero />
-    <Products />
-    <Projects />
-    <HowItWorks />
-    <About />
-    <FAQ />
-    <Contact />
-  </main>
-  <Footer home />
-</BaseLayout>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>Tankrich | Coming Soon</title>
+    <meta name="description" content="Tankrich has set out on a new road. Something new is coming soon." />
+    <link rel="canonical" href="https://www.tankrich.com/" />
+    <meta name="theme-color" content="#07080d" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.tankrich.com/" />
+    <meta property="og:title" content="Tankrich | Coming Soon" />
+    <meta property="og:description" content="Tankrich has set out on a new road. Something new is coming soon." />
+
+    <link rel="preload" href="/fonts/cinzel-latin.woff2" as="font" type="font/woff2" crossorigin />
+
+    <style is:global>
+      @font-face {
+        font-family: 'Cinzel';
+        font-style: normal;
+        font-weight: 400 700;
+        font-display: swap;
+        src: url('/fonts/cinzel-latin.woff2') format('woff2');
+      }
+      @font-face {
+        font-family: 'Cormorant Garamond';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url('/fonts/cormorant-latin.woff2') format('woff2');
+      }
+      @font-face {
+        font-family: 'Cormorant Garamond';
+        font-style: italic;
+        font-weight: 400;
+        font-display: swap;
+        src: url('/fonts/cormorant-italic-latin.woff2') format('woff2');
+      }
+
+      :root {
+        --night: #07080d;
+        --night-2: #11131c;
+        --gold: #d4a64a;
+        --gold-bright: #f3d58a;
+        --ember: #e0703a;
+        --parchment: #e9dfc7;
+        --mist: #9c9686;
+      }
+
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+
+      html, body { height: 100%; }
+
+      body {
+        background: radial-gradient(ellipse at 50% 35%, var(--night-2) 0%, var(--night) 70%);
+        background-color: var(--night);
+        color: var(--parchment);
+        font-family: 'Cormorant Garamond', Georgia, serif;
+        -webkit-font-smoothing: antialiased;
+        overflow-x: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="stars" aria-hidden="true"></div>
+    <div class="stars stars-far" aria-hidden="true"></div>
+
+    <main class="stage">
+      <svg class="ring" viewBox="0 0 200 200" aria-hidden="true">
+        <defs>
+          <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#8a5f1c" />
+            <stop offset="35%" stop-color="#f3d58a" />
+            <stop offset="55%" stop-color="#d4a64a" />
+            <stop offset="80%" stop-color="#fff1c4" />
+            <stop offset="100%" stop-color="#8a5f1c" />
+          </linearGradient>
+          <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="4" result="blur" />
+            <feMerge>
+              <feMergeNode in="blur" />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
+        </defs>
+        <circle class="ring-halo" cx="100" cy="100" r="62" fill="none" stroke="#e0703a" stroke-width="10" />
+        <circle cx="100" cy="100" r="62" fill="none" stroke="url(#gold)" stroke-width="9" filter="url(#glow)" />
+        <circle cx="100" cy="100" r="66" fill="none" stroke="#fff1c4" stroke-opacity="0.35" stroke-width="0.8" />
+        <circle cx="100" cy="100" r="58" fill="none" stroke="#5a3d10" stroke-opacity="0.6" stroke-width="0.8" />
+      </svg>
+
+      <p class="eyebrow">Tankrich</p>
+      <h1 class="title">Coming Soon</h1>
+      <div class="rule" aria-hidden="true"><span>✦</span></div>
+      <p class="lede">
+        The old road has ended. A new one is being forged in the deep places,
+        and it will be worth the journey.
+      </p>
+    </main>
+
+    <svg class="mountains" viewBox="0 0 1440 220" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0 220 L0 150 L90 118 L170 140 L260 82 L330 120 L420 96 L520 140 L610 70 L680 104 L760 58 L840 112 L930 88 L1020 132 L1110 76 L1190 118 L1280 92 L1360 128 L1440 104 L1440 220 Z" fill="#0d0f16" />
+      <path d="M0 220 L0 186 L120 160 L240 182 L360 150 L480 176 L600 146 L720 172 L840 140 L960 170 L1080 150 L1200 178 L1320 156 L1440 174 L1440 220 Z" fill="#05060a" />
+      <circle cx="760" cy="58" r="3" fill="#e0703a" class="beacon" />
+    </svg>
+
+    <footer class="foot">
+      <p><span>© {year} Tankrich</span><span class="foot-sep"> · </span><span>PatrolX Technologies Pty Ltd</span></p>
+    </footer>
+
+    <style>
+      .stars {
+        position: fixed; inset: 0; pointer-events: none;
+        background-image:
+          radial-gradient(1px 1px at 12% 18%, #fff 50%, transparent 51%),
+          radial-gradient(1px 1px at 27% 62%, #fff 50%, transparent 51%),
+          radial-gradient(1.5px 1.5px at 41% 12%, #f3d58a 50%, transparent 51%),
+          radial-gradient(1px 1px at 58% 34%, #fff 50%, transparent 51%),
+          radial-gradient(1px 1px at 73% 9%, #fff 50%, transparent 51%),
+          radial-gradient(1.5px 1.5px at 86% 46%, #fff 50%, transparent 51%),
+          radial-gradient(1px 1px at 94% 21%, #f3d58a 50%, transparent 51%),
+          radial-gradient(1px 1px at 6% 44%, #fff 50%, transparent 51%),
+          radial-gradient(1px 1px at 35% 38%, #fff 50%, transparent 51%),
+          radial-gradient(1px 1px at 66% 58%, #fff 50%, transparent 51%);
+        animation: twinkle 6s ease-in-out infinite alternate;
+      }
+      .stars-far {
+        background-image:
+          radial-gradient(1px 1px at 18% 28%, #c9c3b3 50%, transparent 51%),
+          radial-gradient(1px 1px at 48% 22%, #c9c3b3 50%, transparent 51%),
+          radial-gradient(1px 1px at 79% 31%, #c9c3b3 50%, transparent 51%),
+          radial-gradient(1px 1px at 9% 8%, #c9c3b3 50%, transparent 51%),
+          radial-gradient(1px 1px at 62% 6%, #c9c3b3 50%, transparent 51%),
+          radial-gradient(1px 1px at 90% 66%, #c9c3b3 50%, transparent 51%),
+          radial-gradient(1px 1px at 22% 50%, #c9c3b3 50%, transparent 51%);
+        opacity: 0.6;
+        animation-duration: 9s;
+        animation-direction: alternate-reverse;
+      }
+      @keyframes twinkle { from { opacity: 0.35; } to { opacity: 1; } }
+
+      .stage {
+        position: relative; z-index: 1;
+        min-height: 100vh; min-height: 100svh;
+        display: flex; flex-direction: column; align-items: center; justify-content: center;
+        text-align: center;
+        padding: 48px 16px 180px;
+      }
+
+      .ring {
+        width: clamp(120px, 28vw, 180px); height: auto;
+        margin-bottom: 28px;
+        animation: float 7s ease-in-out infinite;
+      }
+      .ring-halo { opacity: 0.25; filter: blur(8px); animation: smoulder 4s ease-in-out infinite alternate; }
+      @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+      @keyframes smoulder { from { opacity: 0.12; } to { opacity: 0.4; } }
+
+      .eyebrow {
+        font-family: 'Cinzel', serif;
+        font-size: 14px; letter-spacing: 0.42em; text-transform: uppercase;
+        color: var(--mist);
+        margin-bottom: 14px;
+        padding-left: 0.42em;
+      }
+
+      .title {
+        font-family: 'Cinzel', serif;
+        font-weight: 600;
+        font-size: clamp(40px, 9vw, 88px);
+        letter-spacing: 0.08em;
+        line-height: 1.05;
+        background: linear-gradient(180deg, var(--gold-bright) 0%, var(--gold) 55%, #8a5f1c 100%);
+        -webkit-background-clip: text; background-clip: text;
+        color: transparent;
+        text-shadow: 0 0 40px rgba(212, 166, 74, 0.18);
+      }
+
+      .rule {
+        display: flex; align-items: center; gap: 14px;
+        width: min(320px, 70vw);
+        margin: 26px auto;
+        color: var(--gold);
+        font-size: 13px;
+      }
+      .rule::before, .rule::after {
+        content: ""; flex: 1; height: 1px;
+        background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      }
+
+      .lede {
+        font-style: italic;
+        font-size: clamp(20px, 3.2vw, 26px);
+        line-height: 1.5;
+        max-width: 560px;
+        color: var(--parchment);
+        opacity: 0.88;
+      }
+
+      .mountains {
+        position: fixed; left: 0; right: 0; bottom: 0;
+        width: 100%; height: clamp(110px, 18vh, 200px);
+        pointer-events: none;
+      }
+      .beacon { animation: smoulder 2.5s ease-in-out infinite alternate; filter: drop-shadow(0 0 6px #e0703a); }
+
+      .foot {
+        position: fixed; left: 0; right: 0; bottom: 18px; z-index: 2;
+        text-align: center;
+        padding: 0 16px;
+      }
+      .foot p {
+        font-family: 'Cinzel', serif;
+        font-size: 11.5px; letter-spacing: 0.14em;
+        color: var(--mist); opacity: 0.75;
+      }
+      @media (max-width: 480px) {
+        .foot span { display: block; }
+        .foot-sep { display: none !important; }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .stars, .ring, .ring-halo, .beacon { animation: none; }
+      }
+    </style>
+  </body>
+</html>
