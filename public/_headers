@@ -19,10 +19,6 @@
 # HTML: revalidate on navigation, but serve instantly from cache while doing so.
 /
   Cache-Control: public, max-age=0, must-revalidate, stale-while-revalidate=86400
-/social-ai
-  Cache-Control: public, max-age=0, must-revalidate, stale-while-revalidate=86400
-/social-ai-pricing
-  Cache-Control: public, max-age=0, must-revalidate, stale-while-revalidate=86400
 
 /*
   X-Content-Type-Options: nosniff
